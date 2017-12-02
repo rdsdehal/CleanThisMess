@@ -20,7 +20,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Meat_Material
-    second: {fileID: 2100000, guid: 4317972efe7d6f24190cbfb2d12d4c6c, type: 2}
+    second: {fileID: 2100000, guid: 3c02b817c12c13b4ab7e354fd60c0934, type: 2}
   materials:
     importMaterials: 0
     materialName: 0
