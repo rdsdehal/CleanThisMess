@@ -31,6 +31,7 @@ public class ChildBehaviour : MoveableObject
         MovingTowardChair,
         MovingTowardObject,
         ThrowSomething,
+        Berserker,
         Sitting,
         Eating,
         Spitting,
@@ -48,10 +49,11 @@ public class ChildBehaviour : MoveableObject
 
     public float m_ObjectMinDistance = 0.2f;
     public float m_SittingSmoothTime = 1f;
+    public float m_PlateRayDistance = 1f;
 
     private bool m_HaveEat = false;
 
-    public LayerMask objectLayer;
+    public LayerMask m_RaycastLayer;
 
     void SwitchState(CurrentState m_NewState)
     {
@@ -83,7 +85,11 @@ public class ChildBehaviour : MoveableObject
                 break;
             case CurrentState.Sitting:
                 canBePickedUp = false;
+                m_Timer = 0f;
+                m_IdleTimer = Random.Range(3f, 6f);
                 m_Chair.EnterChair();
+                m_NavMeshAgent.enabled = false;
+                m_Renderer.transform.position = m_Chair.transform.position + Vector3.up * 0.5f;
                 break;
             case CurrentState.Eating:
                 m_Timer = 0f;
@@ -102,6 +108,10 @@ public class ChildBehaviour : MoveableObject
                 break;
             case CurrentState.Release:
 
+                break;
+            case CurrentState.Berserker:
+                m_Renderer.transform.position = transform.position + Vector3.up * 0.25f;
+                m_NavMeshAgent.enabled = true;
                 break;
 
         }
@@ -131,7 +141,7 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.MovingTowardChair:
-                if (m_NavMeshAgent.remainingDistance <= 0.6f)
+                if (m_NavMeshAgent.remainingDistance <= 0.3f)
                 {
                     SwitchState(CurrentState.Sitting);
                 }
@@ -145,17 +155,35 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.ThrowSomething:
+                m_Throwable.GetComponent<Rigidbody>().AddForceAtPosition((transform.forward * 30f) + Vector3.up * 30f, transform.position, ForceMode.Impulse);
                 SwitchState(CurrentState.MovingTowardChair);
                 break;
 
             case CurrentState.Sitting:
-                m_Renderer.transform.position = Vector3.SmoothDamp(m_Renderer.transform.position, m_Chair.transform.position + Vector3.up * 0.5f, ref m_CurrentVelocity, m_SittingSmoothTime);
                 m_Timer += Time.deltaTime;
-                if (Vector3.Distance(m_Renderer.transform.position, m_Chair.transform.position + Vector3.up * 0.5f) < 0.01f)
+
+                RaycastHit plateHit;
+                Ray forwardRay = new Ray(transform.position, transform.forward);
+                if (Physics.Raycast(forwardRay, out plateHit, m_PlateRayDistance, m_RaycastLayer))
                 {
-                    m_Renderer.transform.position = m_Chair.transform.position + Vector3.up * 0.5f;
-                    SwitchState(CurrentState.Eating);
+                    Plate m_Plate = plateHit.collider.GetComponentInParent<Plate>();
+                    if (m_Plate != null && m_Plate.plateState == Plate.PlateState.Full)
+                    {
+                        SwitchState(CurrentState.Eating);
+                    }
+                    if (m_Timer >= m_IdleTimer)
+                    {
+                        SwitchState(CurrentState.Berserker);
+                    }
                 }
+                else
+                {
+                    if (m_Timer >= m_IdleTimer)
+                    {
+                        SwitchState(CurrentState.Berserker);
+                    }
+                }
+
                 break;
 
             case CurrentState.Eating:
@@ -206,9 +234,8 @@ public class ChildBehaviour : MoveableObject
             case CurrentState.Release:
                 m_NavMeshAgent.enabled = true;
                 RaycastHit releaseHit;
-                Debug.Log("LOL");
-                Ray downRay = new Ray(transform.position, transform.position + Vector3.down);
-                if (Physics.Raycast(downRay, out releaseHit, 100.0f, objectLayer))
+                Ray downRay = new Ray(transform.position, Vector3.down);
+                if (Physics.Raycast(downRay, out releaseHit, 100.0f, m_RaycastLayer))
                 {
                     m_Chair = releaseHit.collider.GetComponentInParent<Chair>();
                     if (m_Chair != null)
@@ -234,6 +261,9 @@ public class ChildBehaviour : MoveableObject
                         }
                     }
                 }
+                break;
+            case CurrentState.Berserker:
+                SwitchState(CurrentState.MovingTowardExit);
                 break;
         }
     }
@@ -265,6 +295,7 @@ public class ChildBehaviour : MoveableObject
                 m_Chair.ExitChair();
                 m_HaveEat = true;
                 canBePickedUp = true;
+                m_NavMeshAgent.enabled = true;
                 break;
             case CurrentState.Spitting:
 
@@ -279,6 +310,9 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.Release:
+
+                break;
+            case CurrentState.Berserker:
 
                 break;
         }
