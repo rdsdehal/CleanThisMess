@@ -31,6 +31,7 @@ public class ChildBehaviour : MoveableObject
     {
         Spawn,
         Idle,
+        InQueue,
         SittingIdle,
         MovingInQueue,
         MovingTowardChair,
@@ -57,6 +58,8 @@ public class ChildBehaviour : MoveableObject
 
     private bool m_HaveEat = false;
 
+    public int m_CurrentWaitPoint = 0;
+
     public LayerMask m_RaycastLayer;
 
     void SwitchState(CurrentState m_NewState)
@@ -73,11 +76,17 @@ public class ChildBehaviour : MoveableObject
             case CurrentState.Spawn:
 
                 break;
-            case CurrentState.Idle:
-                m_IdleTimer = Random.Range(5f, 10f);
+            case CurrentState.InQueue:
+
                 break;
             case CurrentState.MovingInQueue:
-
+                if (m_CurrentWaitPoint > 0)
+                {
+                    m_NavMeshAgent.SetDestination(m_EntryPoint.GetNewSpawnPoint(m_CurrentWaitPoint));
+                }
+                break;
+            case CurrentState.Idle:
+                m_IdleTimer = Random.Range(8f, 12f);
                 break;
             case CurrentState.MovingTowardChair:
                 m_Chair = m_ChairManager.FindChair(this.gameObject);
@@ -141,9 +150,25 @@ public class ChildBehaviour : MoveableObject
         switch (m_CurrentState)
         {
             case CurrentState.Spawn:
-                SwitchState(CurrentState.Idle);
+                if (m_CurrentWaitPoint == 0)
+                {
+                    SwitchState(CurrentState.Idle);
+                }
+                else
+                {
+                    SwitchState(CurrentState.InQueue);
+                }
                 break;
 
+            case CurrentState.InQueue:
+                if (m_EntryPoint.m_MustReload)
+                {
+                    SwitchState(CurrentState.MovingInQueue);
+                }
+                break;
+            case CurrentState.MovingInQueue:
+
+                break;
             case CurrentState.Idle:
                 m_Timer += Time.deltaTime;
                 if (m_Timer >= m_IdleTimer)
@@ -158,7 +183,6 @@ public class ChildBehaviour : MoveableObject
                     }
                 }
                 break;
-
             case CurrentState.MovingTowardChair:
                 if (m_NavMeshAgent.remainingDistance <= 0.6f)
                 {
@@ -315,6 +339,13 @@ public class ChildBehaviour : MoveableObject
                 break;
             case CurrentState.Idle:
                 m_EntryPoint.m_SpawnIndex--;
+                m_EntryPoint.ReloadChild();
+                break;
+            case CurrentState.MovingInQueue:
+
+                break;
+            case CurrentState.InQueue:
+
                 break;
             case CurrentState.MovingTowardChair:
 
