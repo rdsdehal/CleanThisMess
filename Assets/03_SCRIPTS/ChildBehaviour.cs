@@ -234,7 +234,6 @@ public class ChildBehaviour : MoveableObject
                 Ray forwardRay2 = new Ray(transform.position + Vector3.up * 0.3f, transform.forward);
                 if (Physics.Raycast(forwardRay2, out plateHit2, m_PlateRayDistance, m_RaycastLayer, QueryTriggerInteraction.Collide))
                 {
-                    Debug.Log(plateHit2.collider.name);
                     m_Plate = plateHit2.collider.GetComponentInParent<Plate>();
                     if (m_Plate == null)
                     {
