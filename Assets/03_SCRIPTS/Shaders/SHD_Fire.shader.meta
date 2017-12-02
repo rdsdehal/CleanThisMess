@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: da09d76bd82cb0640b9605c0635498f4
-timeCreated: 1512202612
+timeCreated: 1512204192
 licenseType: Free
 ShaderImporter:
   externalObjects: {}
-  defaultTextures: []
+  defaultTextures:
+  - _FireNoise: {fileID: 2800000, guid: 369f4c1b94a8db94d9ed0b42f8eef917, type: 3}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
