@@ -26,7 +26,9 @@ public class MoveableObject : MonoBehaviour
 		transform.parent = joint.transform;
 
 		transform.localPosition = Vector3.zero;
+		float yRot = transform.localEulerAngles.y;
 		transform.localRotation = Quaternion.identity;
+		transform.Rotate( new Vector3( 0, yRot, 0 ) );
 	}
 	public virtual void ReleaseObject( Vector3 mouseVelocity )
 	{
