@@ -25,14 +25,14 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Meat_Material
-    second: {fileID: 2100000, guid: 4317972efe7d6f24190cbfb2d12d4c6c, type: 2}
+    second: {fileID: 2100000, guid: e79e620ae606cae4fa448bc90e50fc41, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Tomato_Material
-    second: {fileID: 2100000, guid: 814777ee7ade6724794e56692949e220, type: 2}
+    second: {fileID: 2100000, guid: 4fbe7f3afe336d8459016c574875d651, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
