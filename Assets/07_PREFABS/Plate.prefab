@@ -620,6 +620,7 @@ MonoBehaviour:
   mouseVelocityFactor: 1
   localAnchor: {x: 0, y: 0, z: 0}
   canBePickedUp: 1
+  benneable: 1
 --- !u!114 &114868177752269574
 MonoBehaviour:
   m_ObjectHideFlags: 1
