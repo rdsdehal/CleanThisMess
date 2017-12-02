@@ -16,7 +16,7 @@ public class MoveableObject : MonoBehaviour
 		m_RigidBody = GetComponent<Rigidbody>();
 	}
 
-	public void PickupObject( Rigidbody joint )
+	public virtual void PickupObject( Rigidbody joint )
 	{
 		m_RigidBody.isKinematic = true;
 		m_RigidBody.useGravity = false;
@@ -26,8 +26,7 @@ public class MoveableObject : MonoBehaviour
 
 		transform.localPosition = Vector3.zero;
 	}
-
-	public void ReleaseObject( Vector3 mouseVelocity )
+	public virtual void ReleaseObject( Vector3 mouseVelocity )
 	{
 		m_RigidBody.velocity = Vector3.zero;
 		m_RigidBody.angularVelocity = Vector3.zero;
@@ -38,7 +37,7 @@ public class MoveableObject : MonoBehaviour
 		m_RigidBody.AddForce( mouseVelocity * mouseVelocityFactor, ForceMode.Impulse );
 	}
 
-	public void ReleaseObject( Transform snapPos )
+	public virtual void ReleaseObject( Transform snapPos )
 	{
 		m_RigidBody.velocity = Vector3.zero;
 		m_RigidBody.angularVelocity = Vector3.zero;
