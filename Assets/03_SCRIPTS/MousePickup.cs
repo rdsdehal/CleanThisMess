@@ -69,7 +69,6 @@ public class MousePickup : MonoBehaviour
 
 			// SHOW GLOW
 			var glow = pickupHit.collider.GetComponentInParent<GlowingObject>();
-			Debug.Log( glow );
 			if ( moveObject.canBePickedUp && !glowRenderer.glowingObjects.Contains( glow ) ) glowRenderer.glowingObjects.Add( glow );
 		}
 	}

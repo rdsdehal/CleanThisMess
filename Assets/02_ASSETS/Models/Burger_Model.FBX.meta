@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 43fc9027a1263c54c870e4c13b16a6bd
-timeCreated: 1512203206
+guid: c5d64d4bedc7bd541aa9f3f8c574c699
+timeCreated: 1512221871
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,20 +9,30 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Plate_Model
+    4300000: Cylinder001
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MaterialDev_Material
-    second: {fileID: 2100000, guid: e67472a6ad3981a4bb91a8ac18af86e4, type: 2}
+      name: BurgerBread_Material
+    second: {fileID: 2100000, guid: c71a3ae51d78bff48a600a0fa96d37ae, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Plate_Material
-    second: {fileID: 2100000, guid: 44e9c52bf1014154d8069de143c72a0f, type: 2}
+      name: BurgerCheese_Material
+    second: {fileID: 2100000, guid: 4fbe7f3afe336d8459016c574875d651, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BurgerSalad_Material
+    second: {fileID: 2100000, guid: 814777ee7ade6724794e56692949e220, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BurgerSteak_Material
+    second: {fileID: 2100000, guid: 4317972efe7d6f24190cbfb2d12d4c6c, type: 2}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
