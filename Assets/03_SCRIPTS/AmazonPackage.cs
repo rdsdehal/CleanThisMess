@@ -10,7 +10,12 @@ public class AmazonPackage : MonoBehaviour
 		packageContents.transform.rotation = Quaternion.identity;
 		packageContents.SetActive( true );
 
-		packageContents.GetComponent<Rigidbody>().AddForce( Vector3.up * 20, ForceMode.Impulse );
+		Invoke( "DoSpawn", 0.05f );
+	}
+
+	private void DoSpawn()
+	{
+		packageContents.GetComponent<Rigidbody>().AddForce( Vector3.up * 5, ForceMode.Impulse );
 		Destroy( gameObject );
 	}
 }
