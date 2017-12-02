@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e100d275e5d481847b3cd9f4bf33a048
-timeCreated: 1512229825
+guid: 258b8cecb5adced46bd12fa1324258a8
+timeCreated: 1512242708
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,23 +9,13 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Plant_Model
+    4300000: Rat_Model
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Chocolate_Material
-    second: {fileID: 2100000, guid: 1ac96f79c32b9fe429f965792b406a2c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Plant_Material
-    second: {fileID: 2100000, guid: 1ac96f79c32b9fe429f965792b406a2c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pot_Material
-    second: {fileID: 2100000, guid: 5815caf753a7ddc47a15639356d3d7ff, type: 2}
+      name: 'Material #215'
+    second: {fileID: 2100000, guid: d9027a3c9df12794e9123d94ecbb4902, type: 2}
   materials:
     importMaterials: 0
     materialName: 0
