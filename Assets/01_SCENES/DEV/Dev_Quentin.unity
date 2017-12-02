@@ -1647,6 +1647,10 @@ Prefab:
       propertyPath: m_Name
       value: Girl_Mesh (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 6b714f12bdc197344b9a1dafba97f492, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3180c5a7ecc4f149859f884d5a58fa4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b714f12bdc197344b9a1dafba97f492, type: 3}
   m_IsPrefabParent: 0
@@ -5567,6 +5571,10 @@ Prefab:
       propertyPath: m_Name
       value: Girl_Mesh (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 6b714f12bdc197344b9a1dafba97f492, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 575fed8a380e7ba47bba60bd77dfe863, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b714f12bdc197344b9a1dafba97f492, type: 3}
   m_IsPrefabParent: 0
@@ -8085,6 +8093,10 @@ Prefab:
       propertyPath: m_Name
       value: Girl_Mesh (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 6b714f12bdc197344b9a1dafba97f492, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 334b423bc24355747b9c27c532b3eb15, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b714f12bdc197344b9a1dafba97f492, type: 3}
   m_IsPrefabParent: 0
