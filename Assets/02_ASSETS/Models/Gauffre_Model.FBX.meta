@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e100d275e5d481847b3cd9f4bf33a048
-timeCreated: 1512229825
+guid: 61c5ae1f82a39374483fcb43ba7888a2
+timeCreated: 1512244323
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,23 +9,13 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Plant_Model
+    4300000: Gauffre_Model
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Chocolate_Material
-    second: {fileID: 2100000, guid: 1ac96f79c32b9fe429f965792b406a2c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Plant_Material
-    second: {fileID: 2100000, guid: 1ac96f79c32b9fe429f965792b406a2c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pot_Material
-    second: {fileID: 2100000, guid: 5815caf753a7ddc47a15639356d3d7ff, type: 2}
+      name: No Name
+    second: {fileID: 2100000, guid: c71a3ae51d78bff48a600a0fa96d37ae, type: 2}
   materials:
     importMaterials: 0
     materialName: 0
@@ -55,7 +45,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.7
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
