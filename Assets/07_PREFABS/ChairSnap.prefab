@@ -86,8 +86,8 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ff5798a32467b154a980b2bbd2c185fe, type: 2}
-  - {fileID: 2100000, guid: 55bd0169183092549b15c5d1a655ca52, type: 2}
+  - {fileID: 2100000, guid: a3b8a94bccafc7944b6e25aa2efbc4ff, type: 2}
+  - {fileID: 2100000, guid: a3b8a94bccafc7944b6e25aa2efbc4ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,3 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: chair
+  lerpSpeed: 10
+  defaultColor: {r: 0.09558821, g: 0.101825476, b: 1, a: 1}
+  selectedColor: {r: 1, g: 0.17647058, b: 0.17647058, a: 1}

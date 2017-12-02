@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Benne : MonoBehaviour
 {
@@ -9,7 +7,7 @@ public class Benne : MonoBehaviour
 		var obj = other.GetComponent<MoveableObject>();
 		if ( obj )
 		{
-			Debug.Log( "IL A JETAY SON OBJEY" );
+			Destroy( obj.gameObject );
 		}
 	}
 }
