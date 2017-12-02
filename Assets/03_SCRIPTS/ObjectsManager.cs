@@ -7,29 +7,20 @@ public class ObjectsManager : MonoBehaviour
     public List<GameObject> m_ChairList;
     public List<GameObject> m_ThrowableList;
 
-    public GameObject FindNearestChair(GameObject m_Child)
+    public GameObject FindChair(GameObject m_Child)
     {
-        GameObject NeareastChair = null;
-        foreach (GameObject element in m_ChairList)
-        {
-            float lastDistance = Mathf.Infinity;
-            float calculatedDistance = Vector3.Distance(element.transform.position, m_Child.transform.position);
-            if (calculatedDistance < lastDistance)
-            {
-                lastDistance = calculatedDistance;
-                NeareastChair = element;
-            }
-        }
-        return NeareastChair;
+        GameObject m_Chair = null;
+        m_Chair = m_ChairList[Random.Range(0, m_ChairList.Count)];
+        return m_Chair;
     }
 
     public GameObject FindNearestThrowable(GameObject m_Child)
     {
         GameObject NearestThrowable = null;
+        float lastDistance = Mathf.Infinity;
         foreach (GameObject element in m_ThrowableList)
         {
-            float lastDistance = Mathf.Infinity;
-            float calculatedDistance = Vector3.Distance(element.transform.position, m_Child.transform.position);
+            float calculatedDistance = Mathf.Abs(Vector3.Distance(m_Child.transform.position, element.transform.position));
             if (lastDistance > calculatedDistance)
             {
                 lastDistance = calculatedDistance;

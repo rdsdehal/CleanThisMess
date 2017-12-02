@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0f84de5a402fe3045a730e434cdcb83a
-timeCreated: 1512217749
+guid: ac6883fae3f5a8b4c931521fb61032b1
+timeCreated: 1512216565
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,23 +9,18 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Chair_Model
+    4300000: Chariotte
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #25'
-    second: {fileID: 2100000, guid: 55bd0169183092549b15c5d1a655ca52, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 'Material #26'
-    second: {fileID: 2100000, guid: ff5798a32467b154a980b2bbd2c185fe, type: 2}
+      name: No Name
+    second: {fileID: 2100000, guid: d89b746112f55ed4dbb45d59840ce222, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
