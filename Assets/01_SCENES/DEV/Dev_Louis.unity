@@ -112,7 +112,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &616472741
+--- !u!1 &385076104 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1420073772779412, guid: 4f5d856bcef8461458bb0d8303e146d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 475981939}
+--- !u!138 &385076105
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385076104}
+  m_ConnectedBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!1001 &475981939
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
