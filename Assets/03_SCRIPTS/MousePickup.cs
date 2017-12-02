@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MousePickup : MonoBehaviour
 {
+	public float maxMagnitudeForLaunch;
 	public LayerMask floorLayer;
 	public LayerMask objectLayer;
 	public LayerMask snapObjectLayer;
@@ -98,7 +99,7 @@ public class MousePickup : MonoBehaviour
 			// DROP NO SNAP
 			if ( snapHit.collider == null )
 			{
-				pickedObject.ReleaseObject( vel );
+				pickedObject.ReleaseObject( Vector3.ClampMagnitude( vel, maxMagnitudeForLaunch ) );
 			}
 			// DROP SNAP
 			else
