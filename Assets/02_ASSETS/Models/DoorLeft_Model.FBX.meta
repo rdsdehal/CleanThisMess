@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e100d275e5d481847b3cd9f4bf33a048
-timeCreated: 1512229825
+guid: 3d9266c89ba40c44fa002479db1d5eef
+timeCreated: 1512241275
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,28 +9,33 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Plant_Model
+    4300000: DoorLeft_Model
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Chocolate_Material
-    second: {fileID: 2100000, guid: 1ac96f79c32b9fe429f965792b406a2c, type: 2}
+      name: DoorCouleurPrimaire_Material
+    second: {fileID: 2100000, guid: 3ccc8d7ce537c4045b0c8e7494ea4a1c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Plant_Material
-    second: {fileID: 2100000, guid: 1ac96f79c32b9fe429f965792b406a2c, type: 2}
+      name: DoorCouleurSecondaire_Material
+    second: {fileID: 2100000, guid: fcd7f760018b56f4391286c648bf18e0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pot_Material
-    second: {fileID: 2100000, guid: 5815caf753a7ddc47a15639356d3d7ff, type: 2}
+      name: DoorCouleurTertiaire_Material
+    second: {fileID: 2100000, guid: a3e4933e6d978a747ad4d2ca57f611d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorGlass_Material
+    second: {fileID: 2100000, guid: 3f728ce53581c7b43acbdca49274b8db, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -55,7 +60,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.7
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -78,7 +83,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

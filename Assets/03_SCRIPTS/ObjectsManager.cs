@@ -5,22 +5,26 @@ using UnityEngine;
 
 public class ObjectsManager : MonoBehaviour
 {
-    private List<Chair> m_ChairList;
+    public List<Chair> m_ChairList;
     public List<GameObject> m_ThrowableList;
-
-    private void Awake()
-    {
-        m_ChairList = FindObjectsOfType<Chair>().ToList();
-    }
+    public Chair m_LastChair = null;
 
     public Chair FindChair(GameObject m_Child)
     {
         Chair m_Chair = null;
-        Chair[] m_AvailableChair = m_ChairList.Where(m => CheckChairRotation(m) == true).ToArray();
-        if (m_AvailableChair.Length > 0)
+        List<Chair> m_AvailableChair = m_ChairList.Where(m => CheckChairRotation(m) == true && m.isOccupied == false).ToList();
+        if (m_AvailableChair.Count() > 0)
         {
-            m_Chair = m_AvailableChair[Random.Range(0, m_AvailableChair.Length)];
+            if (m_LastChair != null)
+            {
+                m_AvailableChair.Remove(m_LastChair);
+            }
+            if (m_AvailableChair.Count() > 0)
+            {
+                m_Chair = m_AvailableChair[Random.Range(0, m_AvailableChair.Count())];
+            }
         }
+        m_LastChair = m_Chair;
         return m_Chair;
     }
 
@@ -28,7 +32,12 @@ public class ObjectsManager : MonoBehaviour
     {
         GameObject NearestThrowable = null;
         float lastDistance = Mathf.Infinity;
-        foreach (GameObject element in m_ThrowableList)
+        List<GameObject> m_AvailableToThrow = m_ThrowableList;
+        if (m_LastChair != null)
+        {
+            m_AvailableToThrow.Remove(m_LastChair.gameObject);
+        }
+        foreach (GameObject element in m_AvailableToThrow)
         {
             float calculatedDistance = Mathf.Abs(Vector3.Distance(m_Child.transform.position, element.transform.position));
             if (lastDistance > calculatedDistance)
@@ -43,7 +52,7 @@ public class ObjectsManager : MonoBehaviour
     public bool CheckChairRotation(Chair m_Chair)
     {
         bool m_IsValid = false;
-        if (Mathf.Round(m_Chair.transform.localEulerAngles.x) <= 0.1f && Mathf.Round(m_Chair.transform.localEulerAngles.z) <= 0.1f)
+        if (Vector3.Dot(m_Chair.transform.up, Vector3.up) > 0.8f)
         {
             m_IsValid = true;
         }
