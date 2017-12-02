@@ -3,8 +3,11 @@
 [RequireComponent( typeof( Rigidbody ) )]
 public class MoveableObject : MonoBehaviour
 {
+	public string objectType;
 	[Range( 0, 1 )]
 	public float mouseVelocityFactor = 1;
+
+	public bool canBePickedUp { get; private set; }
 	private Rigidbody m_RigidBody;
 	private CharacterJointDisabler mouseJoint;
 
@@ -43,5 +46,15 @@ public class MoveableObject : MonoBehaviour
 
 
 		//}
+	}
+
+	public void ReleaseObject( Transform snapPos )
+	{
+		mouseJoint.DestroyJoint();
+		m_RigidBody.velocity = Vector3.zero;
+		m_RigidBody.angularVelocity = Vector3.zero;
+
+		transform.position = snapPos.position;
+		transform.rotation = snapPos.rotation;
 	}
 }
