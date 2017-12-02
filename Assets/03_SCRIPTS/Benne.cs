@@ -6,6 +6,10 @@ public class Benne : MonoBehaviour
 {
 	private void OnTriggerEnter( Collider other )
 	{
-		Debug.Log( "gggg" );
+		var obj = other.GetComponent<MoveableObject>();
+		if ( obj )
+		{
+			Debug.Log( "IL A JETAY SON OBJEY" );
+		}
 	}
 }
