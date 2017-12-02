@@ -36,10 +36,13 @@ public class ChildBehaviour : MonoBehaviour
         PickUp,
     }
 
+    private Vector3 m_CurrentVelocity = Vector3.zero;
+
     private float m_IdleTimer = 0f;
     private float m_Timer = 0f;
 
-    public float m_RemainDistance = 0.2f;
+    public float m_ObjectMinDistance = 0.2f;
+    public float m_SmoothTime = 1f;
 
     void SwitchState(CurrentState m_NewState)
     {
@@ -114,14 +117,14 @@ public class ChildBehaviour : MonoBehaviour
                 break;
 
             case CurrentState.MovingTowardChair:
-                if (m_NavMeshAgent.remainingDistance <= m_RemainDistance)
+                if (m_NavMeshAgent.remainingDistance <= 0.2f)
                 {
                     SwitchState(CurrentState.Sitting);
                 }
                 break;
 
             case CurrentState.MovingTowardObject:
-                if (m_NavMeshAgent.remainingDistance <= m_RemainDistance)
+                if (m_NavMeshAgent.remainingDistance <= m_ObjectMinDistance)
                 {
                     SwitchState(CurrentState.ThrowSomething);
                 }
@@ -132,6 +135,7 @@ public class ChildBehaviour : MonoBehaviour
                 break;
 
             case CurrentState.Sitting:
+                transform.position = Vector3.SmoothDamp(transform.position, m_Chair.transform.position, ref m_CurrentVelocity, m_SmoothTime);
                 SwitchState(CurrentState.Eating);
                 break;
 

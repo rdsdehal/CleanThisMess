@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0f84de5a402fe3045a730e434cdcb83a
-timeCreated: 1512217749
+guid: 817f749831ad4ff4bab5ada544fc4dca
+timeCreated: 1512219789
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,18 +9,18 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Chair_Model
+    4300000: Sink_Model
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #25'
-    second: {fileID: 2100000, guid: 55bd0169183092549b15c5d1a655ca52, type: 2}
+      name: SinkMetal_Material
+    second: {fileID: 2100000, guid: 257495466fe5ae24882c5bb8c5651dd8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #26'
-    second: {fileID: 2100000, guid: ff5798a32467b154a980b2bbd2c185fe, type: 2}
+      name: SinkWood_Material
+    second: {fileID: 2100000, guid: 105d1b284b82aad449cfceedd866a138, type: 2}
   materials:
     importMaterials: 0
     materialName: 0
