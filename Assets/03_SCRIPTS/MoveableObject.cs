@@ -25,6 +25,7 @@ public class MoveableObject : MonoBehaviour
 		transform.parent = joint.transform;
 
 		transform.localPosition = Vector3.zero;
+		transform.localRotation = Quaternion.identity;
 	}
 	public virtual void ReleaseObject( Vector3 mouseVelocity )
 	{

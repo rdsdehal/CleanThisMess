@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 
-public class Sink : MonoBehaviour
+public class CookingStation : MonoBehaviour
 {
 	private void OnTriggerEnter( Collider other )
 	{
 		var plate = other.GetComponentInParent<Plate>();
 		if ( plate != null )
 		{
-			plate.Clean();
-
+			plate.Cook();
 		}
 	}
 }
