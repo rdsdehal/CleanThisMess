@@ -12,9 +12,9 @@ public class ObjectsManager : MonoBehaviour
         GameObject NeareastChair = null;
         foreach (GameObject element in m_ChairList)
         {
-            float lastDistance = 0f;
+            float lastDistance = Mathf.Infinity;
             float calculatedDistance = Vector3.Distance(element.transform.position, m_Child.transform.position);
-            if (lastDistance > calculatedDistance)
+            if (calculatedDistance < lastDistance)
             {
                 lastDistance = calculatedDistance;
                 NeareastChair = element;
@@ -28,7 +28,7 @@ public class ObjectsManager : MonoBehaviour
         GameObject NearestThrowable = null;
         foreach (GameObject element in m_ThrowableList)
         {
-            float lastDistance = 0f;
+            float lastDistance = Mathf.Infinity;
             float calculatedDistance = Vector3.Distance(element.transform.position, m_Child.transform.position);
             if (lastDistance > calculatedDistance)
             {
