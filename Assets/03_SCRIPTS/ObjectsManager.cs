@@ -1,15 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ObjectsManager : MonoBehaviour
 {
-    public List<GameObject> m_ChairList;
+    private List<Chair> m_ChairList;
     public List<GameObject> m_ThrowableList;
 
-    public GameObject FindChair(GameObject m_Child)
+    private void Awake()
     {
-        GameObject m_Chair = null;
+        m_ChairList = FindObjectsOfType<Chair>().ToList();
+    }
+
+    public Chair FindChair(GameObject m_Child)
+    {
+        Chair m_Chair = null;
         m_Chair = m_ChairList[Random.Range(0, m_ChairList.Count)];
         return m_Chair;
     }
