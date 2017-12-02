@@ -1,75 +1,26 @@
 fileFormatVersion: 2
-guid: bd6ece5a24c460a4580946dac11f2144
-timeCreated: 1512229180
+guid: 258b8cecb5adced46bd12fa1324258a8
+timeCreated: 1512242708
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Boy_Cloth
-    100002: Boy_Hair
-    100004: Boy_Head
-    100006: Boy_L_Eye
-    100008: Boy_L_Eyebrow
-    100010: Boy_L_Hand
-    100012: //RootNode
-    100014: Boy_R_Eye
-    100016: Boy_R_Eyebrow
-    100018: Boy_R_Hand
-    100020: Boyl_Legs
-    400000: Boy_Cloth
-    400002: Boy_Hair
-    400004: Boy_Head
-    400006: Boy_L_Eye
-    400008: Boy_L_Eyebrow
-    400010: Boy_L_Hand
-    400012: //RootNode
-    400014: Boy_R_Eye
-    400016: Boy_R_Eyebrow
-    400018: Boy_R_Hand
-    400020: Boyl_Legs
-    2300000: Boy_Cloth
-    2300002: Boy_Hair
-    2300004: Boy_Head
-    2300006: Boy_L_Eye
-    2300008: Boy_L_Eyebrow
-    2300010: Boy_L_Hand
-    2300012: Boy_R_Eye
-    2300014: Boy_R_Eyebrow
-    2300016: Boy_R_Hand
-    2300018: Boyl_Legs
-    3300000: Boy_Cloth
-    3300002: Boy_Hair
-    3300004: Boy_Head
-    3300006: Boy_L_Eye
-    3300008: Boy_L_Eyebrow
-    3300010: Boy_L_Hand
-    3300012: Boy_R_Eye
-    3300014: Boy_R_Eyebrow
-    3300016: Boy_R_Hand
-    3300018: Boyl_Legs
-    4300000: Boy_Hair
-    4300002: Boy_R_Eyebrow
-    4300004: Boy_Cloth
-    4300006: Boy_R_Eye
-    4300008: Boy_L_Eye
-    4300010: Boy_Head
-    4300012: Boyl_Legs
-    4300014: Boy_R_Hand
-    4300016: Boy_L_Hand
-    4300018: Boy_L_Eyebrow
-    7400000: Take 001
-    9500000: //RootNode
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Rat_Model
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Boy_MAT
-    second: {fileID: 2100000, guid: 3c1dc4288b000284f8b0f1a2d274738a, type: 2}
+      name: 'Material #215'
+    second: {fileID: 2100000, guid: d9027a3c9df12794e9123d94ecbb4902, type: 2}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -117,7 +68,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -136,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
