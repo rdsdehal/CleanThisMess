@@ -5,7 +5,7 @@ using UnityEngine;
 public class Chair : MonoBehaviour
 {
     private MoveableObject m_MovableObject = null;
-    private Rigidbody m_Rigidbody = null;
+    [HideInInspector] public Rigidbody m_Rigidbody = null;
     public bool isOccupied = false;
 
     private void Awake()
