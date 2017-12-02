@@ -9,7 +9,6 @@ public class MousePickup : MonoBehaviour
 	public LayerMask objectLayer;
 	public LayerMask snapObjectLayer;
 
-
 	private MoveableObject pickedObject;
 	private Rigidbody m_Rigidbody;
 	private GlowingOutlineRenderer glowRenderer;
