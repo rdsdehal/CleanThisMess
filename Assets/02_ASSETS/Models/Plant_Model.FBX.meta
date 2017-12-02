@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ac6883fae3f5a8b4c931521fb61032b1
-timeCreated: 1512216565
+guid: e100d275e5d481847b3cd9f4bf33a048
+timeCreated: 1512229825
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,13 +9,18 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Chariotte
+    4300000: Plant_Model
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: d89b746112f55ed4dbb45d59840ce222, type: 2}
+      name: Plant_Material
+    second: {fileID: 2100000, guid: 1ac96f79c32b9fe429f965792b406a2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pot_Material
+    second: {fileID: 2100000, guid: 5815caf753a7ddc47a15639356d3d7ff, type: 2}
   materials:
     importMaterials: 0
     materialName: 0

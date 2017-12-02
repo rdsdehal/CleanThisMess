@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 4668542314383978}
   - component: {fileID: 114776961034784062}
   - component: {fileID: 54009997208324112}
+  - component: {fileID: 135005960478984608}
   m_Layer: 0
   m_Name: MousePickup
   m_TagString: Untagged
@@ -214,3 +215,15 @@ MonoBehaviour:
   snapObjectLayer:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!135 &135005960478984608
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1553049720310580}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
