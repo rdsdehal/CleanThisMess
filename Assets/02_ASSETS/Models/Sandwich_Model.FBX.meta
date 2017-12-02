@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6f1c5b0e481ab4c4586dc141c215cd35
-timeCreated: 1512231113
+guid: 3fae983601b76eb4db41549171541c45
+timeCreated: 1512234279
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,18 +9,23 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Plane003
+    4300000: Sandwich_Model
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BurgerSalad_Material
+    second: {fileID: 2100000, guid: 18861880cde203d4597f8f253c477103, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #126'
+    second: {fileID: 2100000, guid: c71a3ae51d78bff48a600a0fa96d37ae, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Meat_Material
     second: {fileID: 2100000, guid: 4317972efe7d6f24190cbfb2d12d4c6c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pate_Material
-    second: {fileID: 2100000, guid: c71a3ae51d78bff48a600a0fa96d37ae, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -78,7 +83,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
