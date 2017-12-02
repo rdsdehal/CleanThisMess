@@ -70,7 +70,7 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.Idle:
-                m_IdleTimer = Random.Range(2f, 5f);
+                m_IdleTimer = Random.Range(5f, 10f);
                 break;
             case CurrentState.MovingTowardChair:
                 m_Chair = m_ChairManager.FindChair(this.gameObject);
@@ -89,7 +89,8 @@ public class ChildBehaviour : MoveableObject
                 m_IdleTimer = Random.Range(3f, 6f);
                 m_Chair.EnterChair();
                 m_NavMeshAgent.enabled = false;
-                m_Renderer.transform.position = m_Chair.transform.position + Vector3.up * 0.5f;
+                transform.position = m_Chair.transform.position + Vector3.up * 0.25f;
+                transform.forward = m_Chair.transform.forward;
                 break;
             case CurrentState.Eating:
                 m_Timer = 0f;
@@ -166,9 +167,11 @@ public class ChildBehaviour : MoveableObject
                 Ray forwardRay = new Ray(transform.position, transform.forward);
                 if (Physics.Raycast(forwardRay, out plateHit, m_PlateRayDistance, m_RaycastLayer))
                 {
+                    Debug.Log("Have Ray a Movable");
                     Plate m_Plate = plateHit.collider.GetComponentInParent<Plate>();
                     if (m_Plate != null && m_Plate.plateState == Plate.PlateState.Full)
                     {
+                        Debug.Log("Have Ray a Plate Full");
                         SwitchState(CurrentState.Eating);
                     }
                     if (m_Timer >= m_IdleTimer)
@@ -263,7 +266,7 @@ public class ChildBehaviour : MoveableObject
                 }
                 break;
             case CurrentState.Berserker:
-                SwitchState(CurrentState.MovingTowardExit);
+                SwitchState(CurrentState.MovingTowardObject);
                 break;
         }
     }
@@ -293,6 +296,7 @@ public class ChildBehaviour : MoveableObject
             case CurrentState.Eating:
                 m_Renderer.transform.position = transform.position + Vector3.up * 0.25f;
                 m_Chair.ExitChair();
+                m_Chair.m_Rigidbody.isKinematic = false;
                 m_HaveEat = true;
                 canBePickedUp = true;
                 m_NavMeshAgent.enabled = true;
