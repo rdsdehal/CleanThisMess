@@ -80,7 +80,8 @@ public class MousePickup : MonoBehaviour
 
 		if ( Physics.Raycast( snapRay, out snapHit, 100, snapObjectLayer, QueryTriggerInteraction.Collide ) )
 		{
-			// SHOW DAT BOI
+			var snap = snapHit.collider.GetComponent<SnapPosition>();
+			snap.Select();
 		}
 
 		// DROP OBJECT
@@ -89,12 +90,12 @@ public class MousePickup : MonoBehaviour
 			Vector3 vel = m_Rigidbody.velocity;
 			vel.y = 0;
 
-			// NO SNAP
+			// DROP NO SNAP
 			if ( snapHit.collider == null )
 			{
 				pickedObject.ReleaseObject( vel );
 			}
-			// SNAP
+			// DROP SNAP
 			else
 			{
 				pickedObject.ReleaseObject( snapHit.collider.transform );

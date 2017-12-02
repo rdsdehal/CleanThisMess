@@ -67,12 +67,9 @@ Shader "Shader Forge/SHD_Hologram" {
                 float4 node_8656 = _Time;
                 float2 node_1473 = (i.uv0+(1.0 - (_PanSpeed*node_8656.g))*float2(1,0));
                 float4 _node_4306_var = tex2D(_node_4306,TRANSFORM_TEX(node_1473, _node_4306));
-                float3 node_2071 = (_Color.rgb*_Emissive);
-                float3 node_1502 = saturate(( node_2071 > 0.5 ? (1.0-(1.0-2.0*(node_2071-0.5))*(1.0-_node_4306_var.rgb)) : (2.0*node_2071*_node_4306_var.rgb) ));
-                float3 emissive = node_1502;
+                float3 emissive = saturate(( (_Color.rgb*_Emissive) > 0.5 ? (1.0-(1.0-2.0*((_Color.rgb*_Emissive)-0.5))*(1.0-_node_4306_var.rgb)) : (2.0*(_Color.rgb*_Emissive)*_node_4306_var.rgb) ));
                 float3 finalColor = emissive;
-                float node_1724 = pow(1.0-max(0,dot(i.normalDir, viewDirection)),_node_6176);
-                return fixed4(finalColor,node_1724);
+                return fixed4(finalColor,pow(1.0-max(0,dot(i.normalDir, viewDirection)),_node_6176));
             }
             ENDCG
         }
