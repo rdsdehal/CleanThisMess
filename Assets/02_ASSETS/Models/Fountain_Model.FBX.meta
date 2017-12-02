@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ac6883fae3f5a8b4c931521fb61032b1
-timeCreated: 1512216565
+guid: 859d760e3011ef64080529e2173a262a
+timeCreated: 1512228081
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,13 +9,13 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Chariotte
+    4300000: Fontaine_Mesh
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: No Name
-    second: {fileID: 2100000, guid: d89b746112f55ed4dbb45d59840ce222, type: 2}
+    second: {fileID: 2100000, guid: feb7574d1bb1cac4185edda612b58dcc, type: 2}
   materials:
     importMaterials: 0
     materialName: 0

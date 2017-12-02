@@ -83,6 +83,12 @@ public class MousePickup : MonoBehaviour
 			snap.Select();
 		}
 
+		// ROTATE OBJECT
+		if ( Input.GetMouseButtonDown( 1 ) )
+		{
+			pickedObject.transform.Rotate( new Vector3( 0, 90, 0 ) );
+		}
+
 		// DROP OBJECT
 		if ( !Input.GetMouseButton( 0 ) )
 		{
