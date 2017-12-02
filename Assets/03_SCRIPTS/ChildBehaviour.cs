@@ -12,6 +12,7 @@ public class ChildBehaviour : MoveableObject
     private GameObject m_Renderer = null;
     private GameObject m_Throwable = null;
     private NavMeshAgent m_NavMeshAgent = null;
+    public MayhemMeter m_MayhemMeter = null;
 
     private void Start()
     {
@@ -55,6 +56,8 @@ public class ChildBehaviour : MoveableObject
     public float m_ObjectMinDistance = 0.2f;
     public float m_SittingSmoothTime = 1f;
     public float m_PlateRayDistance = 1f;
+    public float m_LeaveBonus = 2f;
+    public float m_LeaveMalus = 2f;
 
     private bool m_HaveEat = false;
 
@@ -129,7 +132,15 @@ public class ChildBehaviour : MoveableObject
                 m_NavMeshAgent.SetDestination(m_ExitPosition);
                 break;
             case CurrentState.Disapear:
-
+                if (m_HaveEat)
+                {
+                    m_MayhemMeter.ChangeMeter(m_LeaveBonus);
+                }
+                else
+                {
+                    m_MayhemMeter.ChangeMeter(-m_LeaveMalus);
+                }
+                Destroy(gameObject);
                 break;
             case CurrentState.PickUp:
                 m_NavMeshAgent.enabled = false;
@@ -282,8 +293,10 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.MovingTowardExit:
-
-                SwitchState(CurrentState.Disapear);
+                if (m_NavMeshAgent.remainingDistance <= 0.2f)
+                {
+                    SwitchState(CurrentState.Disapear);
+                }
                 break;
 
             case CurrentState.Disapear:

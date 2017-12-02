@@ -647,7 +647,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1901165882260690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.69, y: 0, z: -3.37}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4597382849446992}
@@ -705,11 +705,14 @@ MonoBehaviour:
   benneable: 0
   initialMalus: 0
   dotPerSecondMalus: 0
+  m_MayhemMeter: {fileID: 0}
   m_CurrentState: 0
   m_ExitPosition: {x: -3.53, y: 0.25, z: -0.29}
   m_ObjectMinDistance: 0.5
   m_SittingSmoothTime: 0.2
   m_PlateRayDistance: 1
+  m_LeaveBonus: 2
+  m_LeaveMalus: 2
   m_CurrentWaitPoint: 0
   m_RaycastLayer:
     serializedVersion: 2

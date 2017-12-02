@@ -8,6 +8,8 @@ public class EntryPoint : MonoBehaviour
     public List<GameObject> m_SpawnPoint;
     public List<ChildBehaviour> m_ChildList;
     public GameObject m_ChildPrefab = null;
+    public MayhemMeter m_MayhemMeter = null;
+    public Vector3 LeavePoint = Vector3.zero;
 
     private float m_Timer = 0;
     private float m_NextSpawnTime = 0;
@@ -33,6 +35,8 @@ public class EntryPoint : MonoBehaviour
             GameObject obj = Instantiate(m_ChildPrefab, m_SpawnPoint[m_SpawnIndex].transform.position, Quaternion.identity);
             m_ChildList.Add(obj.gameObject.GetComponent<ChildBehaviour>());
             m_ChildList[m_SpawnIndex].m_CurrentWaitPoint = m_SpawnIndex;
+            m_ChildList[m_SpawnIndex].m_ExitPosition = LeavePoint;
+            m_ChildList[m_SpawnIndex].m_MayhemMeter = m_MayhemMeter;
             m_SpawnIndex++;
             m_Timer = 0;
         }
