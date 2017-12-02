@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3fae983601b76eb4db41549171541c45
-timeCreated: 1512234279
+guid: bf92b84e6999a86438f37e6a5d6c2695
+timeCreated: 1512236378
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,13 +9,8 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sandwich_Model
+    4300000: Donuts_Material
   externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BurgerSalad_Material
-    second: {fileID: 2100000, guid: 18861880cde203d4597f8f253c477103, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -25,14 +20,9 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Meat_Material
-    second: {fileID: 2100000, guid: e79e620ae606cae4fa448bc90e50fc41, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tomato_Material
-    second: {fileID: 2100000, guid: 4fbe7f3afe336d8459016c574875d651, type: 2}
+    second: {fileID: 2100000, guid: 4317972efe7d6f24190cbfb2d12d4c6c, type: 2}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -83,7 +73,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
