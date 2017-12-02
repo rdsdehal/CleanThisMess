@@ -9,12 +9,32 @@ public class MoveableObject : MonoBehaviour
 	public Vector3 localAnchor;
 	public bool canBePickedUp;
 	public bool benneable;
+	public float initialMalus;
+	public float dotPerSecondMalus;
 
+
+	private bool isTipped;
 	protected Rigidbody m_RigidBody;
+	private MayhemMeter mayhemMeter;
 
 	private void Awake()
 	{
 		m_RigidBody = GetComponent<Rigidbody>();
+		mayhemMeter = FindObjectOfType<MayhemMeter>();
+	}
+
+	private void Update()
+	{
+		if ( Vector3.Dot( transform.up, Vector3.up ) < 0.8f )
+		{
+			if ( !isTipped )
+			{
+				isTipped = true;
+				mayhemMeter.ChangeMeter( -initialMalus );
+			}
+
+			mayhemMeter.ChangeMeter( -dotPerSecondMalus * Time.deltaTime );
+		}
 	}
 
 	public virtual void PickupObject( Rigidbody joint )
