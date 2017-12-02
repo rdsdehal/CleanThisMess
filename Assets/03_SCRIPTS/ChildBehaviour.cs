@@ -16,7 +16,7 @@ public class ChildBehaviour : MoveableObject
     {
         m_ChairManager = FindObjectOfType<ObjectsManager>();
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
-        m_Renderer = GetComponentInChildren<MeshRenderer>().gameObject;
+        m_Renderer = GetComponentInChildren<Animator>().gameObject;
     }
 
     private void Update()
@@ -123,7 +123,7 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.Berserker:
-                m_Renderer.transform.position = transform.position + Vector3.up * 0.25f;
+                m_Renderer.transform.position = transform.position;
                 m_NavMeshAgent.enabled = true;
                 break;
 
@@ -332,7 +332,7 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.SittingIdle:
-                m_Renderer.transform.position = transform.position + Vector3.up * 0.25f;
+                m_Renderer.transform.position = transform.position;
                 m_Chair.ExitChair();
                 m_Chair.m_Rigidbody.isKinematic = false;
                 m_NavMeshAgent.enabled = true;
