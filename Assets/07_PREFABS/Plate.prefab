@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4465725637315690}
   - component: {fileID: 33796319995251682}
   - component: {fileID: 23293528629623842}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plate_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 54700061217475998}
   - component: {fileID: 114847885215646748}
   - component: {fileID: 114093313780504214}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388567378846924}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
