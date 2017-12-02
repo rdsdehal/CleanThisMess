@@ -4,4 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/01_SCENES/SceneDuJeuDeLaFolie.unity
+    guid: f7e635e14cce2d14896816a18b461c61

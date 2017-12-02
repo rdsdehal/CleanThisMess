@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class MousePickup : MonoBehaviour
 {
+	public float maxMagnitudeForLaunch;
 	public LayerMask floorLayer;
 	public LayerMask objectLayer;
 	public LayerMask snapObjectLayer;
-
 
 	private MoveableObject pickedObject;
 	private Rigidbody m_Rigidbody;
@@ -69,7 +69,6 @@ public class MousePickup : MonoBehaviour
 
 			// SHOW GLOW
 			var glow = pickupHit.collider.GetComponentInParent<GlowingObject>();
-			Debug.Log( glow );
 			if ( moveObject.canBePickedUp && !glowRenderer.glowingObjects.Contains( glow ) ) glowRenderer.glowingObjects.Add( glow );
 		}
 	}
@@ -81,7 +80,14 @@ public class MousePickup : MonoBehaviour
 
 		if ( Physics.Raycast( snapRay, out snapHit, 100, snapObjectLayer, QueryTriggerInteraction.Collide ) )
 		{
-			// SHOW DAT BOI
+			var snap = snapHit.collider.GetComponent<SnapPosition>();
+			snap.Select();
+		}
+
+		// ROTATE OBJECT
+		if ( Input.GetMouseButtonDown( 1 ) )
+		{
+			pickedObject.transform.Rotate( new Vector3( 0, 90, 0 ) );
 		}
 
 		// DROP OBJECT
@@ -90,16 +96,31 @@ public class MousePickup : MonoBehaviour
 			Vector3 vel = m_Rigidbody.velocity;
 			vel.y = 0;
 
-			// NO SNAP
+			// DROP NO SNAP
 			if ( snapHit.collider == null )
 			{
-				pickedObject.ReleaseObject( vel );
+				pickedObject.ReleaseObject( Vector3.ClampMagnitude( vel, maxMagnitudeForLaunch ) );
 			}
-			// SNAP
+			// DROP SNAP
 			else
 			{
 				pickedObject.ReleaseObject( snapHit.collider.transform );
 			}
+
+			pickedObject = null;
+
+			foreach ( var item in snapPos )
+			{
+				item.HideSnap();
+			}
+		}
+	}
+
+	private void OnTriggerEnter( Collider other )
+	{
+		if ( other.CompareTag( "DropItem" ) && pickedObject != null )
+		{
+			pickedObject.ReleaseObject( Vector3.zero );
 			pickedObject = null;
 
 			foreach ( var item in snapPos )

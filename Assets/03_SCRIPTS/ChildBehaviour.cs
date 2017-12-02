@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ChildBehaviour : MonoBehaviour
+public class ChildBehaviour : MoveableObject
 {
     private ObjectsManager m_ChairManager = null;
-    private GameObject m_Chair = null;
+    private Chair m_Chair = null;
+    private GameObject m_Renderer = null;
     private GameObject m_Throwable = null;
     private NavMeshAgent m_NavMeshAgent = null;
+
     private void Start()
     {
         m_ChairManager = FindObjectOfType<ObjectsManager>();
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
+        m_Renderer = GetComponentInChildren<MeshRenderer>().gameObject;
     }
 
     private void Update()
@@ -28,21 +31,29 @@ public class ChildBehaviour : MonoBehaviour
         MovingTowardChair,
         MovingTowardObject,
         ThrowSomething,
+        Berserker,
         Sitting,
         Eating,
         Spitting,
         MovingTowardExit,
         Disapear,
         PickUp,
+        Release,
     }
 
     private Vector3 m_CurrentVelocity = Vector3.zero;
+    public Vector3 m_ExitPosition = Vector3.zero;
 
     private float m_IdleTimer = 0f;
     private float m_Timer = 0f;
 
     public float m_ObjectMinDistance = 0.2f;
-    public float m_SmoothTime = 1f;
+    public float m_SittingSmoothTime = 1f;
+    public float m_PlateRayDistance = 1f;
+
+    private bool m_HaveEat = false;
+
+    public LayerMask m_RaycastLayer;
 
     void SwitchState(CurrentState m_NewState)
     {
@@ -59,7 +70,7 @@ public class ChildBehaviour : MonoBehaviour
 
                 break;
             case CurrentState.Idle:
-                m_IdleTimer = Random.Range(2f, 5f);
+                m_IdleTimer = Random.Range(5f, 10f);
                 break;
             case CurrentState.MovingTowardChair:
                 m_Chair = m_ChairManager.FindChair(this.gameObject);
@@ -73,23 +84,37 @@ public class ChildBehaviour : MonoBehaviour
 
                 break;
             case CurrentState.Sitting:
-
+                canBePickedUp = false;
+                m_Timer = 0f;
+                m_IdleTimer = Random.Range(3f, 6f);
+                m_Chair.EnterChair();
+                m_NavMeshAgent.enabled = false;
+                transform.position = m_Chair.transform.position + Vector3.up * 0.25f;
+                transform.forward = m_Chair.transform.forward;
                 break;
             case CurrentState.Eating:
-
+                m_Timer = 0f;
                 break;
             case CurrentState.Spitting:
 
                 break;
             case CurrentState.MovingTowardExit:
-
+                m_NavMeshAgent.SetDestination(m_ExitPosition);
                 break;
             case CurrentState.Disapear:
 
                 break;
             case CurrentState.PickUp:
+                m_NavMeshAgent.enabled = false;
+                break;
+            case CurrentState.Release:
 
                 break;
+            case CurrentState.Berserker:
+                m_Renderer.transform.position = transform.position + Vector3.up * 0.25f;
+                m_NavMeshAgent.enabled = true;
+                break;
+
         }
     }
 
@@ -117,7 +142,7 @@ public class ChildBehaviour : MonoBehaviour
                 break;
 
             case CurrentState.MovingTowardChair:
-                if (m_NavMeshAgent.remainingDistance <= 0.2f)
+                if (m_NavMeshAgent.remainingDistance <= 0.3f)
                 {
                     SwitchState(CurrentState.Sitting);
                 }
@@ -131,22 +156,65 @@ public class ChildBehaviour : MonoBehaviour
                 break;
 
             case CurrentState.ThrowSomething:
+                m_Throwable.GetComponent<Rigidbody>().AddForceAtPosition((transform.forward * 30f) + Vector3.up * 30f, transform.position, ForceMode.Impulse);
                 SwitchState(CurrentState.MovingTowardChair);
                 break;
 
             case CurrentState.Sitting:
-                transform.position = Vector3.SmoothDamp(transform.position, m_Chair.transform.position, ref m_CurrentVelocity, m_SmoothTime);
-                SwitchState(CurrentState.Eating);
-                break;
+                m_Timer += Time.deltaTime;
 
-            case CurrentState.Eating:
-                if (Random.Range(0f, 1f) > 0.2f)
+                RaycastHit plateHit;
+                Ray forwardRay = new Ray(transform.position, transform.forward);
+                if (Physics.Raycast(forwardRay, out plateHit, m_PlateRayDistance, m_RaycastLayer))
                 {
-                    SwitchState(CurrentState.MovingTowardExit);
+                    Debug.Log("Have Ray a Movable");
+                    Plate m_Plate = plateHit.collider.GetComponentInParent<Plate>();
+                    if (m_Plate != null && m_Plate.plateState == Plate.PlateState.Full)
+                    {
+                        Debug.Log("Have Ray a Plate Full");
+                        SwitchState(CurrentState.Eating);
+                    }
+                    if (m_Timer >= m_IdleTimer)
+                    {
+                        SwitchState(CurrentState.Berserker);
+                    }
                 }
                 else
                 {
-                    SwitchState(CurrentState.Spitting);
+                    if (m_Timer >= m_IdleTimer)
+                    {
+                        SwitchState(CurrentState.Berserker);
+                    }
+                }
+
+                break;
+
+            case CurrentState.Eating:
+                m_Timer += Time.deltaTime;
+                if (m_Timer > 4.0f)
+                {
+                    if (m_HaveEat)
+                    {
+                        if (Random.Range(0f, 1f) > 0.8f)
+                        {
+                            SwitchState(CurrentState.MovingTowardExit);
+                        }
+                        else
+                        {
+                            SwitchState(CurrentState.Spitting);
+                        }
+                    }
+                    else
+                    {
+                        if (Random.Range(0f, 1f) > 0.2f)
+                        {
+                            SwitchState(CurrentState.MovingTowardExit);
+                        }
+                        else
+                        {
+                            SwitchState(CurrentState.Spitting);
+                        }
+                    }
                 }
                 break;
 
@@ -165,6 +233,40 @@ public class ChildBehaviour : MonoBehaviour
                 break;
             case CurrentState.PickUp:
 
+                break;
+            case CurrentState.Release:
+                m_NavMeshAgent.enabled = true;
+                RaycastHit releaseHit;
+                Ray downRay = new Ray(transform.position, Vector3.down);
+                if (Physics.Raycast(downRay, out releaseHit, 100.0f, m_RaycastLayer))
+                {
+                    m_Chair = releaseHit.collider.GetComponentInParent<Chair>();
+                    if (m_Chair != null)
+                    {
+                        SwitchState(CurrentState.Sitting);
+                    }
+                }
+                else
+                {
+                    if (m_HaveEat)
+                    {
+                        SwitchState(CurrentState.MovingTowardExit);
+                    }
+                    else
+                    {
+                        if (Random.Range(0f, 1f) > 0.2f)
+                        {
+                            SwitchState(CurrentState.MovingTowardChair);
+                        }
+                        else
+                        {
+                            SwitchState(CurrentState.MovingTowardObject);
+                        }
+                    }
+                }
+                break;
+            case CurrentState.Berserker:
+                SwitchState(CurrentState.MovingTowardObject);
                 break;
         }
     }
@@ -192,7 +294,12 @@ public class ChildBehaviour : MonoBehaviour
 
                 break;
             case CurrentState.Eating:
-
+                m_Renderer.transform.position = transform.position + Vector3.up * 0.25f;
+                m_Chair.ExitChair();
+                m_Chair.m_Rigidbody.isKinematic = false;
+                m_HaveEat = true;
+                canBePickedUp = true;
+                m_NavMeshAgent.enabled = true;
                 break;
             case CurrentState.Spitting:
 
@@ -206,16 +313,27 @@ public class ChildBehaviour : MonoBehaviour
             case CurrentState.PickUp:
 
                 break;
+            case CurrentState.Release:
+
+                break;
+            case CurrentState.Berserker:
+
+                break;
         }
     }
 
-    public void PickupCharacter()
+    public override void PickupObject(Rigidbody joint)
     {
+        base.PickupObject(joint);
         SwitchState(CurrentState.PickUp);
     }
 
-    public void ReleaseCharacter()
+    public override void ReleaseObject(Vector3 mouseVelocity)
     {
-
+        base.ReleaseObject(mouseVelocity);
+        m_RigidBody.isKinematic = true;
+        Vector3 newPosition = new Vector3(transform.position.x, 0.8f, transform.position.z);
+        transform.position = newPosition;
+        SwitchState(CurrentState.Release);
     }
 }

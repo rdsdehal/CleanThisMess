@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47eb200db2a6039429e9db8130dab503, type: 3}
+  m_Name: bTools.Hierarchy.ToolsSettings_Hierarchy
+  m_EditorClassIdentifier: 
+  showTreeLines: 1
+  showShadedBackground: 1
+  iconOrder: 00000000010000000200000003000000040000000500000006000000
+  showError_disabledGO: 1
+  showError_disabledComponent: 1
+  showError_missingScript: 1
+  showError_missingReference: 1
+  showError_missingPrefab: 1
+  showError_skipParticleSystem: 1
