@@ -1,21 +1,70 @@
 fileFormatVersion: 2
-guid: 9329f1068af94734eb59987860981ed2
-timeCreated: 1512236881
+guid: 3318f29d2ccbbd44eb33de77d6a35547
+timeCreated: 1512238136
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Colis_Model
+    100000: FatBoy_Cloth
+    100002: FatBoy_Hair
+    100004: FatBoy_Head
+    100006: FatBoy_L_Eye
+    100008: FatBoy_L_Eyebrow
+    100010: FatBoy_L_Hand
+    100012: FatBoy_Legs
+    100014: //RootNode
+    100016: FatBoy_R_Eye
+    100018: FatBoy_R_Eyebrow
+    100020: FatBoy_R_Hand
+    400000: FatBoy_Cloth
+    400002: FatBoy_Hair
+    400004: FatBoy_Head
+    400006: FatBoy_L_Eye
+    400008: FatBoy_L_Eyebrow
+    400010: FatBoy_L_Hand
+    400012: FatBoy_Legs
+    400014: //RootNode
+    400016: FatBoy_R_Eye
+    400018: FatBoy_R_Eyebrow
+    400020: FatBoy_R_Hand
+    2300000: FatBoy_Cloth
+    2300002: FatBoy_Hair
+    2300004: FatBoy_Head
+    2300006: FatBoy_L_Eye
+    2300008: FatBoy_L_Eyebrow
+    2300010: FatBoy_L_Hand
+    2300012: FatBoy_Legs
+    2300014: FatBoy_R_Eye
+    2300016: FatBoy_R_Eyebrow
+    2300018: FatBoy_R_Hand
+    3300000: FatBoy_Cloth
+    3300002: FatBoy_Hair
+    3300004: FatBoy_Head
+    3300006: FatBoy_L_Eye
+    3300008: FatBoy_L_Eyebrow
+    3300010: FatBoy_L_Hand
+    3300012: FatBoy_Legs
+    3300014: FatBoy_R_Eye
+    3300016: FatBoy_R_Eyebrow
+    3300018: FatBoy_R_Hand
+    4300000: FatBoy_Hair
+    4300002: FatBoy_R_Eyebrow
+    4300004: FatBoy_Cloth
+    4300006: FatBoy_R_Eye
+    4300008: FatBoy_L_Eye
+    4300010: FatBoy_Head
+    4300012: FatBoy_Legs
+    4300014: FatBoy_R_Hand
+    4300016: FatBoy_L_Hand
+    4300018: FatBoy_L_Eyebrow
+    7400000: Take 001
+    9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Colis_Material
-    second: {fileID: 2100000, guid: 236902f4a0edae94a8d8c991c7656a6e, type: 2}
+      name: Boy_MAT
+    second: {fileID: 2100000, guid: 1604d7a4ad212754782d4bf893179a29, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,7 +94,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.3
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -87,7 +136,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

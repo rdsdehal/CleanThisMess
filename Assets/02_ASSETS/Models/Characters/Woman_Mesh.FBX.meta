@@ -1,21 +1,69 @@
 fileFormatVersion: 2
-guid: 9329f1068af94734eb59987860981ed2
-timeCreated: 1512236881
+guid: 21330178b6ac11b40bc262a839538afa
+timeCreated: 1512238138
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Colis_Model
+    100000: Woman_Cloth
+    100002: Woman_Hair
+    100004: Woman_Hair_01
+    100006: Woman_Head
+    100008: Woman_L_Eye
+    100010: Woman_L_Eyebrow
+    100012: Woman_L_Hand
+    100014: //RootNode
+    100016: Woman_R_Eye
+    100018: Woman_R_Eyebrow
+    100020: Woman_R_Hand
+    400000: Woman_Cloth
+    400002: Woman_Hair
+    400004: Woman_Hair_01
+    400006: Woman_Head
+    400008: Woman_L_Eye
+    400010: Woman_L_Eyebrow
+    400012: Woman_L_Hand
+    400014: //RootNode
+    400016: Woman_R_Eye
+    400018: Woman_R_Eyebrow
+    400020: Woman_R_Hand
+    2300000: Woman_Cloth
+    2300002: Woman_Hair
+    2300004: Woman_Hair_01
+    2300006: Woman_Head
+    2300008: Woman_L_Eye
+    2300010: Woman_L_Eyebrow
+    2300012: Woman_L_Hand
+    2300014: Woman_R_Eye
+    2300016: Woman_R_Eyebrow
+    2300018: Woman_R_Hand
+    3300000: Woman_Cloth
+    3300002: Woman_Hair
+    3300004: Woman_Hair_01
+    3300006: Woman_Head
+    3300008: Woman_L_Eye
+    3300010: Woman_L_Eyebrow
+    3300012: Woman_L_Hand
+    3300014: Woman_R_Eye
+    3300016: Woman_R_Eyebrow
+    3300018: Woman_R_Hand
+    4300000: Woman_R_Eyebrow
+    4300002: Woman_R_Eye
+    4300004: Woman_L_Eye
+    4300006: Woman_Head
+    4300008: Woman_Hair
+    4300010: Woman_Cloth
+    4300012: Woman_R_Hand
+    4300014: Woman_L_Eyebrow
+    4300016: Woman_L_Hand
+    4300018: Woman_Hair_01
+    9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Colis_Material
-    second: {fileID: 2100000, guid: 236902f4a0edae94a8d8c991c7656a6e, type: 2}
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: 2d079a1f48c2f6c4fbcd75089f6dc22f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,7 +93,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.3
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -87,7 +135,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
