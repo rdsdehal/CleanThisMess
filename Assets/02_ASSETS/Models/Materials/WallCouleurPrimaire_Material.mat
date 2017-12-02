@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MAT_Fire
-  m_Shader: {fileID: 4800000, guid: da09d76bd82cb0640b9605c0635498f4, type: 3}
-  m_ShaderKeywords: _ISMASK_ON
+  m_Name: WallCouleurPrimaire_Material
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -38,22 +38,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _FireMask:
-        m_Texture: {fileID: 2800000, guid: ee065937c02b2734d8594b8124c972d8, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _FireNoise:
-        m_Texture: {fileID: 2800000, guid: e8c7d2734a69b9d44ae4380461b97773, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _FireNoise2:
-        m_Texture: {fileID: 2800000, guid: cfe3a6bac29b139438182fc8f1e65538, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _FireRamp:
-        m_Texture: {fileID: 2800000, guid: 18141b1a3deaa7f4ba8bb3412c6044b3, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -74,15 +58,10 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Displacement: 0.147
     - _DstBlend: 0
-    - _Firedissolvepower: 1.91
-    - _Firepanspeed: 1.25
-    - _Firesize: 0.78
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 1
     - _GlossyReflections: 1
-    - _IsMask: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -92,8 +71,6 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _node_2414: 3
-    - _node_8779: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.9411765, g: 0.7584775, b: 0.4844291, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
