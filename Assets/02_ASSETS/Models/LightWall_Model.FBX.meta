@@ -1,37 +1,31 @@
 fileFormatVersion: 2
-guid: 0f84de5a402fe3045a730e434cdcb83a
-timeCreated: 1512217749
+guid: ca5bd9f2857ad6749adb7c01fa52c274
+timeCreated: 1512224312
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Chair_Material
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Chair_Model
+    4300000: LightWall_Model
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Chair_Material
-    second: {fileID: 2100000, guid: 56ff2adf279240146911d1ce98a60299, type: 2}
+      name: LightWallCouleurPrimaire_Material
+    second: {fileID: 2100000, guid: 677c9446b71a5a24e961b7dd8cdc0c6d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #25'
-    second: {fileID: 2100000, guid: 55bd0169183092549b15c5d1a655ca52, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 'Material #26'
-    second: {fileID: 2100000, guid: ff5798a32467b154a980b2bbd2c185fe, type: 2}
+      name: LightWallCouleurSecondaire_Material
+    second: {fileID: 2100000, guid: 42eadae3a7d6d3045aa93fdf19d0a572, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

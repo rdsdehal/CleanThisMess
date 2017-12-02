@@ -100,6 +100,7 @@ public class MousePickup : MonoBehaviour
 			{
 				pickedObject.ReleaseObject( snapHit.collider.transform );
 			}
+
 			pickedObject = null;
 
 			foreach ( var item in snapPos )
