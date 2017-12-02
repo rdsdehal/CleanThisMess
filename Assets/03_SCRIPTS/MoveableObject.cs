@@ -3,6 +3,8 @@
 [RequireComponent( typeof( Rigidbody ) )]
 public class MoveableObject : MonoBehaviour
 {
+	[Range( 0, 1 )]
+	public float mouseVelocityFactor = 1;
 	private Rigidbody m_RigidBody;
 	private CharacterJointDisabler mouseJoint;
 
@@ -12,10 +14,6 @@ public class MoveableObject : MonoBehaviour
 		mouseJoint = new CharacterJointDisabler();
 
 		mouseJoint.CopyValuesAndDestroyJoint( GetComponent<CharacterJoint>() );
-	}
-
-	private void Start()
-	{
 	}
 
 	public void PickupObject( Rigidbody joint )
@@ -28,7 +26,6 @@ public class MoveableObject : MonoBehaviour
 		m_RigidBody.isKinematic = false;
 		m_RigidBody.velocity = Vector3.zero;
 		m_RigidBody.angularVelocity = Vector3.zero;
-
 	}
 
 	public void ReleaseObject( Vector3 mouseVelocity )
@@ -36,7 +33,8 @@ public class MoveableObject : MonoBehaviour
 		mouseJoint.DestroyJoint();
 		m_RigidBody.velocity = Vector3.zero;
 		m_RigidBody.angularVelocity = Vector3.zero;
-		m_RigidBody.AddForce( mouseVelocity * 0.2f, ForceMode.Impulse );
+		m_RigidBody.AddForce( mouseVelocity * mouseVelocityFactor, ForceMode.Impulse );
+
 		//RaycastHit hit;
 		//if ( Physics.Raycast( transform.position, Vector3.down, out hit, 100 ) )
 		//{

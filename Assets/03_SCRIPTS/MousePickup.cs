@@ -24,7 +24,6 @@ public class MousePickup : MonoBehaviour
 	{
 		Cursor.visible = false;
 		glowRenderer.glowingObjects.Clear();
-		mouseInput = Input.GetMouseButtonDown( 0 );
 
 		Ray screenRay = cam.ScreenPointToRay( Input.mousePosition );
 		RaycastHit screenHit;
@@ -49,7 +48,7 @@ public class MousePickup : MonoBehaviour
 		Ray worldRay = new Ray( cam.transform.position, transform.position - cam.transform.position );
 		if ( Physics.Raycast( worldRay, out pickupHit, 100, objectLayer ) )
 		{
-			if ( mouseInput && pickedObject == null )
+			if ( Input.GetMouseButtonDown( 0 ) && pickedObject == null )
 			{
 				mouseInput = false;
 
@@ -64,7 +63,7 @@ public class MousePickup : MonoBehaviour
 
 	private void DoFullHand()
 	{
-		if ( mouseInput )
+		if ( !Input.GetMouseButton( 0 ) )
 		{
 			Vector3 vel = m_Rigidbody.velocity;
 			vel.y = 0;
