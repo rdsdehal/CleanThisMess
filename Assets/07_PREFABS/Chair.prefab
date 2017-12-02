@@ -149,7 +149,7 @@ Transform:
   - {fileID: 4769268044617666}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0, y: 0, z: 0}
 --- !u!4 &4957608575576554
 Transform:
   m_ObjectHideFlags: 1
@@ -270,6 +270,7 @@ MonoBehaviour:
   mouseVelocityFactor: 1
   localAnchor: {x: 0, y: 0, z: 0}
   canBePickedUp: 1
+  benneable: 1
 --- !u!114 &114684781057584446
 MonoBehaviour:
   m_ObjectHideFlags: 1
