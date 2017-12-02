@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5c406e44a894e4d95819073df1d4bc, type: 3}
+  m_Name: bTools.ObjectPainter.SavedBrushes
+  m_EditorClassIdentifier: 
+  brushes:
+  - brushName: TestBrush
+    colliderStrict: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 823
+    brushRadius: 5
+    brushRate: 10
+    cullEnabled: 0
+    cullAngle: 60
+    cullInvert: 0
+    cullRef: {x: 0, y: 1, z: 0}
+    prefabs:
+    - paintObject: {fileID: 100000, guid: 2ae50551232db43eabe801fa34dc0c42, type: 3}
+      objectRandomScale: {x: 1, y: 1}
+      objectRandomRotation: {x: 0, y: 0}
+      alignMode: 0
+      weight: 1
