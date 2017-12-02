@@ -10,12 +10,18 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Wall_Model
+    4300002: Wall_low
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MaterialDev_Material
     second: {fileID: 2100000, guid: e67472a6ad3981a4bb91a8ac18af86e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_Material
+    second: {fileID: 2100000, guid: c55aa6385186cff4fac2b51cd84a80b7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
