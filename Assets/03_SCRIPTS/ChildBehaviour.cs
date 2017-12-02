@@ -1,9 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ChildBehaviour : MonoBehaviour
 {
+    private ObjectsManager m_ChairManager = null;
+    private GameObject m_Chair = null;
+    private GameObject m_Throwable = null;
+    private NavMeshAgent m_NavMeshAgent = null;
+    private void Start()
+    {
+        m_ChairManager = FindObjectOfType<ObjectsManager>();
+        m_NavMeshAgent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Update()
+    {
+        OnStateUpdate();
+    }
 
     public CurrentState m_CurrentState;
     public enum CurrentState
@@ -18,12 +33,13 @@ public class ChildBehaviour : MonoBehaviour
         Spitting,
         MovingTowardExit,
         Disapear,
+        PickUp,
     }
 
-    private void Update()
-    {
-        OnStateUpdate();
-    }
+    private float m_IdleTimer = 0f;
+    private float m_Timer = 0f;
+
+    public float m_RemainDistance = 0.2f;
 
     void SwitchState(CurrentState m_NewState)
     {
@@ -40,13 +56,15 @@ public class ChildBehaviour : MonoBehaviour
 
                 break;
             case CurrentState.Idle:
-
+                m_IdleTimer = Random.Range(2f, 5f);
                 break;
             case CurrentState.MovingTowardChair:
-
+                m_Chair = m_ChairManager.FindChair(this.gameObject);
+                m_NavMeshAgent.SetDestination(m_Chair.transform.position);
                 break;
             case CurrentState.MovingTowardObject:
-
+                m_Throwable = m_ChairManager.FindNearestThrowable(this.gameObject);
+                m_NavMeshAgent.SetDestination(m_Throwable.transform.position);
                 break;
             case CurrentState.ThrowSomething:
 
@@ -66,6 +84,9 @@ public class ChildBehaviour : MonoBehaviour
             case CurrentState.Disapear:
 
                 break;
+            case CurrentState.PickUp:
+
+                break;
         }
     }
 
@@ -78,22 +99,32 @@ public class ChildBehaviour : MonoBehaviour
                 break;
 
             case CurrentState.Idle:
-                if (Random.Range(0f, 1f) > 0.5f)
+                m_Timer += Time.deltaTime;
+                if (m_Timer >= m_IdleTimer)
                 {
-                    SwitchState(CurrentState.MovingTowardChair);
-                }
-                else
-                {
-                    SwitchState(CurrentState.MovingTowardObject);
+                    if (Random.Range(0f, 1f) > 0.8f)
+                    {
+                        SwitchState(CurrentState.MovingTowardChair);
+                    }
+                    else
+                    {
+                        SwitchState(CurrentState.MovingTowardObject);
+                    }
                 }
                 break;
 
             case CurrentState.MovingTowardChair:
-                SwitchState(CurrentState.Sitting);
+                if (m_NavMeshAgent.remainingDistance <= m_RemainDistance)
+                {
+                    SwitchState(CurrentState.Sitting);
+                }
                 break;
 
             case CurrentState.MovingTowardObject:
-                SwitchState(CurrentState.ThrowSomething);
+                if (m_NavMeshAgent.remainingDistance <= m_RemainDistance)
+                {
+                    SwitchState(CurrentState.ThrowSomething);
+                }
                 break;
 
             case CurrentState.ThrowSomething:
@@ -126,6 +157,9 @@ public class ChildBehaviour : MonoBehaviour
                 break;
 
             case CurrentState.Disapear:
+
+                break;
+            case CurrentState.PickUp:
 
                 break;
         }
@@ -165,6 +199,19 @@ public class ChildBehaviour : MonoBehaviour
             case CurrentState.Disapear:
 
                 break;
+            case CurrentState.PickUp:
+
+                break;
         }
+    }
+
+    public void PickupCharacter()
+    {
+        SwitchState(CurrentState.PickUp);
+    }
+
+    public void ReleaseCharacter()
+    {
+
     }
 }
