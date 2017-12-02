@@ -142,10 +142,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50451787ff43ab4e82479be1e8e9171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectType: 
+  mouseVelocityFactor: 1
+  localAnchor: {x: 0, y: 0, z: 0}
+  canBePickedUp: 0
   m_CurrentState: 0
   m_ExitPosition: {x: -3.53, y: 0.25, z: 3.92}
   m_ObjectMinDistance: 0.2
   m_SittingSmoothTime: 0.2
+  objectLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!136 &154205858
 CapsuleCollider:
   m_ObjectHideFlags: 0
