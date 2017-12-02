@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4429915700963520}
   - component: {fileID: 54534061585872450}
-  - component: {fileID: 144934984152259642}
+  - component: {fileID: 138033258970384512}
   - component: {fileID: 114132302454424172}
   - component: {fileID: 114226922836085090}
   m_Layer: 9
@@ -256,6 +256,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: chair
   mouseVelocityFactor: 1
+  localAnchor: {x: 0, y: 0, z: 0}
+  canBePickedUp: 1
 --- !u!114 &114226922836085090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -268,44 +270,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineColor: {r: 1, g: 0.86379313, b: 0.41911763, a: 1}
---- !u!144 &144934984152259642
-CharacterJoint:
+--- !u!138 &138033258970384512
+FixedJoint:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420073772779412}
   m_ConnectedBody: {fileID: 0}
-  m_Anchor: {x: 0.14, y: 0.6, z: 0.1}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 0
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  serializedVersion: 2
-  m_SwingAxis: {x: 0, y: 1, z: 0}
-  m_TwistLimitSpring:
-    spring: 0
-    damper: 0
-  m_LowTwistLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_HighTwistLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_SwingLimitSpring:
-    spring: 0
-    damper: 0
-  m_Swing1Limit:
-    limit: 0
-    bounciness: 0.3
-    contactDistance: 0
-  m_Swing2Limit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_EnableProjection: 1
-  m_ProjectionDistance: 0.1
-  m_ProjectionAngle: 180
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
