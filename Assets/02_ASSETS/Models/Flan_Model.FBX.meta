@@ -1,32 +1,32 @@
 fileFormatVersion: 2
-guid: 0f84de5a402fe3045a730e434cdcb83a
-timeCreated: 1512217749
+guid: dcfb73c79dea6f448a2e967faccd3cf4
+timeCreated: 1512223855
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Chair_Material
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Chair_Model
+    4300000: Pizza_Model
+    4300002: FLan_Model
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Chair_Material
-    second: {fileID: 2100000, guid: 56ff2adf279240146911d1ce98a60299, type: 2}
+      name: FlanPate_Material
+    second: {fileID: 2100000, guid: fe6013d44de7cbb49a8a688719fb75ec, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #25'
-    second: {fileID: 2100000, guid: 55bd0169183092549b15c5d1a655ca52, type: 2}
+      name: Flan_Material
+    second: {fileID: 2100000, guid: 41ccac7e67b0ae84db8cfe414f1115ba, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #26'
-    second: {fileID: 2100000, guid: ff5798a32467b154a980b2bbd2c185fe, type: 2}
+      name: Pizza_Material
+    second: {fileID: 2100000, guid: 41ccac7e67b0ae84db8cfe414f1115ba, type: 2}
   materials:
     importMaterials: 0
     materialName: 0
