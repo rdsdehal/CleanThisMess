@@ -22,7 +22,7 @@ ModelImporter:
       name: Plate_Material
     second: {fileID: 2100000, guid: 44e9c52bf1014154d8069de143c72a0f, type: 2}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
