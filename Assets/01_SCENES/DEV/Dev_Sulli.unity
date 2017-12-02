@@ -97,15 +97,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.25
+    agentRadius: 0.21
     agentHeight: 0.5
-    agentSlope: 45
+    agentSlope: 60
     agentClimb: 0.1
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
-    minRegionArea: 2
+    minRegionArea: 1
     manualCellSize: 0
-    cellSize: 0.083333336
+    cellSize: 0.07
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -206,7 +206,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 154205855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2980971, y: 0.24, z: 3.92}
+  m_LocalPosition: {x: 3.53, y: 0.24, z: 3.92}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
@@ -425,6 +425,10 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0f84de5a402fe3045a730e434cdcb83a, type: 3}
   m_PrefabInternal: {fileID: 455472993}
+--- !u!1 &504299699 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 0f84de5a402fe3045a730e434cdcb83a, type: 3}
+  m_PrefabInternal: {fileID: 1396456639}
 --- !u!1 &607017007
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +583,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &799751309 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 0f84de5a402fe3045a730e434cdcb83a, type: 3}
+  m_PrefabInternal: {fileID: 1224974608}
+--- !u!1 &864333544 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 0f84de5a402fe3045a730e434cdcb83a, type: 3}
+  m_PrefabInternal: {fileID: 455472993}
 --- !u!1 &1135380581
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,8 +740,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc156ff14e1dc64a9d63270cec482d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ChairList: []
-  m_ThrowableList: []
+  m_ChairList:
+  - {fileID: 504299699}
+  - {fileID: 864333544}
+  - {fileID: 799751309}
+  m_ThrowableList:
+  - {fileID: 1606590775}
+  - {fileID: 1367894431}
+  - {fileID: 1647585292}
 --- !u!1 &1182493880
 GameObject:
   m_ObjectHideFlags: 0

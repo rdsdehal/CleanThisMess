@@ -56,10 +56,10 @@ public class ChildBehaviour : MonoBehaviour
 
                 break;
             case CurrentState.Idle:
-                m_IdleTimer = Random.Range(2f, 10f);
+                m_IdleTimer = Random.Range(2f, 5f);
                 break;
             case CurrentState.MovingTowardChair:
-                m_Chair = m_ChairManager.FindNearestChair(this.gameObject);
+                m_Chair = m_ChairManager.FindChair(this.gameObject);
                 m_NavMeshAgent.SetDestination(m_Chair.transform.position);
                 break;
             case CurrentState.MovingTowardObject:
@@ -102,7 +102,7 @@ public class ChildBehaviour : MonoBehaviour
                 m_Timer += Time.deltaTime;
                 if (m_Timer >= m_IdleTimer)
                 {
-                    if (Random.Range(0f, 1f) > 0.5f)
+                    if (Random.Range(0f, 1f) > 0.8f)
                     {
                         SwitchState(CurrentState.MovingTowardChair);
                     }
