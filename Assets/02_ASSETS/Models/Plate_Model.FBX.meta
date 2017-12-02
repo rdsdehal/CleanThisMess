@@ -16,11 +16,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: MaterialDev_Material
     second: {fileID: 2100000, guid: e67472a6ad3981a4bb91a8ac18af86e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plate_Material
+    second: {fileID: 2100000, guid: 44e9c52bf1014154d8069de143c72a0f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

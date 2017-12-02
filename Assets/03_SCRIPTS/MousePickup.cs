@@ -9,11 +9,11 @@ public class MousePickup : MonoBehaviour
 	public LayerMask objectLayer;
 	public LayerMask snapObjectLayer;
 
+
 	private MoveableObject pickedObject;
 	private Rigidbody m_Rigidbody;
 	private GlowingOutlineRenderer glowRenderer;
 	private Camera cam;
-	private bool mouseInput;
 	private List<SnapPosition> snapPos = new List<SnapPosition>();
 
 	private void Awake()
@@ -50,24 +50,26 @@ public class MousePickup : MonoBehaviour
 	{
 		RaycastHit pickupHit;
 		Ray worldRay = new Ray( cam.transform.position, transform.position - cam.transform.position );
+
 		if ( Physics.Raycast( worldRay, out pickupHit, 100, objectLayer ) )
 		{
 			// PICKUP OBJECT
-			if ( Input.GetMouseButtonDown( 0 ) && pickedObject == null )
+			var moveObject = pickupHit.collider.GetComponentInParent<MoveableObject>();
+			if ( Input.GetMouseButtonDown( 0 ) && moveObject.canBePickedUp )
 			{
-				mouseInput = false;
-
-				pickedObject = pickupHit.collider.GetComponentInParent<MoveableObject>();
+				pickedObject = moveObject;
 				pickedObject.PickupObject( m_Rigidbody );
 
+				// SHOW SNAPS
 				foreach ( var item in snapPos )
 				{
 					if ( item.objectType == pickedObject.objectType ) item.ShowSnap();
 				}
 			}
 
+			// SHOW GLOW
 			var glow = pickupHit.collider.GetComponentInParent<GlowingObject>();
-			if ( !glowRenderer.glowingObjects.Contains( glow ) ) glowRenderer.glowingObjects.Add( glow );
+			if ( moveObject.canBePickedUp && !glowRenderer.glowingObjects.Contains( glow ) ) glowRenderer.glowingObjects.Add( glow );
 		}
 	}
 
@@ -78,10 +80,9 @@ public class MousePickup : MonoBehaviour
 
 		if ( Physics.Raycast( snapRay, out snapHit, 100, snapObjectLayer, QueryTriggerInteraction.Collide ) )
 		{
-			// SHOW DAT BOI
-			Debug.Log( "ggg" );
+			var snap = snapHit.collider.GetComponent<SnapPosition>();
+			snap.Select();
 		}
-
 
 		// DROP OBJECT
 		if ( !Input.GetMouseButton( 0 ) )
@@ -89,12 +90,12 @@ public class MousePickup : MonoBehaviour
 			Vector3 vel = m_Rigidbody.velocity;
 			vel.y = 0;
 
-			// NO SNAP
+			// DROP NO SNAP
 			if ( snapHit.collider == null )
 			{
 				pickedObject.ReleaseObject( vel );
 			}
-			// SNAP
+			// DROP SNAP
 			else
 			{
 				pickedObject.ReleaseObject( snapHit.collider.transform );
@@ -105,8 +106,6 @@ public class MousePickup : MonoBehaviour
 			{
 				item.HideSnap();
 			}
-
-			mouseInput = false;
 		}
 	}
 }
