@@ -16,7 +16,11 @@ public class ObjectsManager : MonoBehaviour
     public Chair FindChair(GameObject m_Child)
     {
         Chair m_Chair = null;
-        m_Chair = m_ChairList[Random.Range(0, m_ChairList.Count)];
+        Chair[] m_AvailableChair = m_ChairList.Where(m => CheckChairRotation(m) == true).ToArray();
+        if (m_AvailableChair.Length > 0)
+        {
+            m_Chair = m_AvailableChair[Random.Range(0, m_AvailableChair.Length)];
+        }
         return m_Chair;
     }
 
@@ -34,6 +38,16 @@ public class ObjectsManager : MonoBehaviour
             }
         }
         return NearestThrowable;
+    }
+
+    public bool CheckChairRotation(Chair m_Chair)
+    {
+        bool m_IsValid = false;
+        if (Mathf.Round(m_Chair.transform.localEulerAngles.x) <= 0.1f && Mathf.Round(m_Chair.transform.localEulerAngles.z) <= 0.1f)
+        {
+            m_IsValid = true;
+        }
+        return m_IsValid;
     }
 }
 
