@@ -6,6 +6,7 @@ public class EntryPoint : MonoBehaviour
 {
 
     public List<GameObject> m_SpawnPoint;
+    public int m_SpawnIndex = 0;
     public GameObject m_ChildPrefab = null;
 
     private float m_Timer = 0;
@@ -26,7 +27,8 @@ public class EntryPoint : MonoBehaviour
         m_Timer += Time.deltaTime;
         if (m_Timer >= m_NextSpawnTime)
         {
-            Instantiate(m_ChildPrefab, m_SpawnPoint[]);
+            Instantiate(m_ChildPrefab, m_SpawnPoint[m_SpawnIndex].transform);
+            m_SpawnIndex++;
         }
     }
 }
