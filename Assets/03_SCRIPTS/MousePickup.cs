@@ -114,4 +114,18 @@ public class MousePickup : MonoBehaviour
 			}
 		}
 	}
+
+	private void OnTriggerEnter( Collider other )
+	{
+		if ( other.CompareTag( "DropItem" ) && pickedObject != null )
+		{
+			pickedObject.ReleaseObject( Vector3.zero );
+			pickedObject = null;
+
+			foreach ( var item in snapPos )
+			{
+				item.HideSnap();
+			}
+		}
+	}
 }
