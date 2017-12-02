@@ -14,6 +14,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Chocolate_Material
+    second: {fileID: 2100000, guid: 1ac96f79c32b9fe429f965792b406a2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Plant_Material
     second: {fileID: 2100000, guid: 1ac96f79c32b9fe429f965792b406a2c, type: 2}
   - first:
