@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class ChildBehaviour : MoveableObject
 {
     private ObjectsManager m_ChairManager = null;
+    private EntryPoint m_EntryPoint = null;
     private Chair m_Chair = null;
     private Plate m_Plate = null;
     private GameObject m_Renderer = null;
@@ -15,8 +16,9 @@ public class ChildBehaviour : MoveableObject
     private void Start()
     {
         m_ChairManager = FindObjectOfType<ObjectsManager>();
+        m_EntryPoint = FindObjectOfType<EntryPoint>();
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
-        m_Renderer = GetComponentInChildren<MeshRenderer>().gameObject;
+        m_Renderer = GetComponentInChildren<Animator>().gameObject;
     }
 
     private void Update()
@@ -30,6 +32,7 @@ public class ChildBehaviour : MoveableObject
         Spawn,
         Idle,
         SittingIdle,
+        MovingInQueue,
         MovingTowardChair,
         MovingTowardObject,
         ThrowSomething,
@@ -72,6 +75,9 @@ public class ChildBehaviour : MoveableObject
                 break;
             case CurrentState.Idle:
                 m_IdleTimer = Random.Range(5f, 10f);
+                break;
+            case CurrentState.MovingInQueue:
+
                 break;
             case CurrentState.MovingTowardChair:
                 m_Chair = m_ChairManager.FindChair(this.gameObject);
@@ -123,7 +129,7 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.Berserker:
-                m_Renderer.transform.position = transform.position + Vector3.up * 0.25f;
+                m_Renderer.transform.position = transform.position;
                 m_NavMeshAgent.enabled = true;
                 break;
 
@@ -308,7 +314,7 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.Idle:
-
+                m_EntryPoint.m_SpawnIndex--;
                 break;
             case CurrentState.MovingTowardChair:
 
@@ -332,7 +338,7 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.SittingIdle:
-                m_Renderer.transform.position = transform.position + Vector3.up * 0.25f;
+                m_Renderer.transform.position = transform.position;
                 m_Chair.ExitChair();
                 m_Chair.m_Rigidbody.isKinematic = false;
                 m_NavMeshAgent.enabled = true;
