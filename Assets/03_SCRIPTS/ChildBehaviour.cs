@@ -36,9 +36,10 @@ public class ChildBehaviour : MonoBehaviour
         PickUp,
     }
 
+    private Vector3 m_CurrentVelocity = Vector3.zero;
+
     private float m_IdleTimer = 0f;
     private float m_Timer = 0f;
-    private float m_CurrentVelocity = 0f;
 
     public float m_ObjectMinDistance = 0.2f;
     public float m_SmoothTime = 1f;
