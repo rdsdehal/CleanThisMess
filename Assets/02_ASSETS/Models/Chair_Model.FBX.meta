@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 881015cc86c307d478c3907dfdf98b9c
-timeCreated: 1512203206
+guid: 0f84de5a402fe3045a730e434cdcb83a
+timeCreated: 1512207831
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -17,10 +17,10 @@ ModelImporter:
       name: MaterialDev_Material
     second: {fileID: 2100000, guid: e67472a6ad3981a4bb91a8ac18af86e4, type: 2}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -68,7 +68,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
