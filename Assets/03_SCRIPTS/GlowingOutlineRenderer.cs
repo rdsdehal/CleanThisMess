@@ -61,7 +61,7 @@ public class GlowingOutlineRenderer : MonoBehaviour
 		_blurTexelSize = new Vector2( 1.5f / ( Screen.width >> 1 ), 1.5f / ( Screen.height >> 1 ) );
 		_commandBuffer.SetGlobalVector( _blurSizeID, _blurTexelSize );
 
-		for ( int i = 0 ; i < 4 ; i++ )
+		for ( int i = 0 ; i < 2 ; i++ )
 		{
 			_commandBuffer.Blit( _blurPassRenderTexID, _tempRenderTexID, _blurMaterial, 0 );
 			_commandBuffer.Blit( _tempRenderTexID, _blurPassRenderTexID, _blurMaterial, 1 );
