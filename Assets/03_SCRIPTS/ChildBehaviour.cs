@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ChildBehaviour : MonoBehaviour
+public class ChildBehaviour : MoveableObject
 {
     private ObjectsManager m_ChairManager = null;
     private Chair m_Chair = null;
@@ -83,6 +83,7 @@ public class ChildBehaviour : MonoBehaviour
 
                 break;
             case CurrentState.Sitting:
+                canBePickedUp = false;
                 m_Chair.EnterChair();
                 m_LastPositionBeforeSitting = m_Renderer.transform.position;
                 break;
@@ -100,6 +101,37 @@ public class ChildBehaviour : MonoBehaviour
                 break;
             case CurrentState.PickUp:
                 m_NavMeshAgent.enabled = false;
+                break;
+            case CurrentState.Release:
+                m_NavMeshAgent.enabled = true;
+                RaycastHit releaseHit;
+                Ray downRay = new Ray(transform.position, transform.position + Vector3.down);
+                if (Physics.Raycast(downRay, out releaseHit, 100.0f, objectLayer))
+                {
+                    m_Chair = releaseHit.collider.GetComponentInParent<Chair>();
+                    if (m_Chair != null)
+                    {
+                        SwitchState(CurrentState.Eating);
+                    }
+                    else
+                    {
+                        if (m_HaveEat)
+                        {
+                            SwitchState(CurrentState.MovingTowardExit);
+                        }
+                        else
+                        {
+                            if (Random.Range(0f, 1f) > 0.2f)
+                            {
+                                SwitchState(CurrentState.MovingTowardChair);
+                            }
+                            else
+                            {
+                                SwitchState(CurrentState.MovingTowardObject);
+                            }
+                        }
+                    }
+                }
                 break;
         }
     }
@@ -228,6 +260,7 @@ public class ChildBehaviour : MonoBehaviour
                 m_Renderer.transform.position = m_LastPositionBeforeSitting;
                 m_Chair.ExitChair();
                 m_HaveEat = true;
+                canBePickedUp = true;
                 break;
             case CurrentState.Spitting:
 
@@ -239,46 +272,22 @@ public class ChildBehaviour : MonoBehaviour
 
                 break;
             case CurrentState.PickUp:
-                m_NavMeshAgent.enabled = true;
-                RaycastHit releaseHit;
-                Ray downRay = new Ray(transform.position, transform.position + Vector3.down);
-                if (Physics.Raycast(downRay, out releaseHit, 100.0f, objectLayer))
-                {
-                    m_Chair = releaseHit.collider.GetComponentInParent<Chair>();
-                    if (m_Chair != null)
-                    {
-                        SwitchState(CurrentState.Eating);
-                    }
-                    else
-                    {
-                        if (m_HaveEat)
-                        {
-                            SwitchState(CurrentState.MovingTowardExit);
-                        }
-                        else
-                        {
-                            if (Random.Range(0f, 1f) > 0.2f)
-                            {
-                                SwitchState(CurrentState.MovingTowardChair);
-                            }
-                            else
-                            {
-                                SwitchState(CurrentState.MovingTowardObject);
-                            }
-                        }
-                    }
-                }
+
                 break;
         }
     }
 
-    public void PickupCharacter()
+    public override void PickupObject(Rigidbody joint)
     {
+        base.PickupObject(joint);
         SwitchState(CurrentState.PickUp);
     }
 
-    public void ReleaseCharacter()
+    public override void ReleaseObject(Vector3 mouseVelocity)
     {
+        base.ReleaseObject(mouseVelocity);
+        Vector3 newPosition = new Vector3(transform.position.x, 0.0f, transform.position.z);
+        transform.position = newPosition;
         SwitchState(CurrentState.Release);
     }
 }
