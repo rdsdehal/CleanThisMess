@@ -112,24 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &385076104 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1420073772779412, guid: 4f5d856bcef8461458bb0d8303e146d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 475981939}
---- !u!138 &385076105
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 385076104}
-  m_ConnectedBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1001 &475981939
 Prefab:
   m_ObjectHideFlags: 0
@@ -137,6 +119,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 23931796268734970, guid: 4f5d856bcef8461458bb0d8303e146d7,
+        type: 2}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4429915700963520, guid: 4f5d856bcef8461458bb0d8303e146d7, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -169,7 +156,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 23931796268734970, guid: 4f5d856bcef8461458bb0d8303e146d7,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ff5798a32467b154a980b2bbd2c185fe, type: 2}
+    - target: {fileID: 23931796268734970, guid: 4f5d856bcef8461458bb0d8303e146d7,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 55bd0169183092549b15c5d1a655ca52, type: 2}
+    m_RemovedComponents:
+    - {fileID: 138033258970384512, guid: 4f5d856bcef8461458bb0d8303e146d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4f5d856bcef8461458bb0d8303e146d7, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &634341060

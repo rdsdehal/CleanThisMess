@@ -35,7 +35,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4429915700963520}
   - component: {fileID: 54534061585872450}
-  - component: {fileID: 138033258970384512}
   - component: {fileID: 114132302454424172}
   - component: {fileID: 114226922836085090}
   m_Layer: 9
@@ -177,7 +176,8 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e67472a6ad3981a4bb91a8ac18af86e4, type: 2}
+  - {fileID: 2100000, guid: ff5798a32467b154a980b2bbd2c185fe, type: 2}
+  - {fileID: 2100000, guid: 55bd0169183092549b15c5d1a655ca52, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -270,16 +270,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineColor: {r: 1, g: 0.86379313, b: 0.41911763, a: 1}
---- !u!138 &138033258970384512
-FixedJoint:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1420073772779412}
-  m_ConnectedBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
