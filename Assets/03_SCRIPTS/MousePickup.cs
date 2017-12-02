@@ -9,12 +9,15 @@ public class MousePickup : MonoBehaviour
 	public LayerMask floorLayer;
 	public LayerMask objectLayer;
 	public LayerMask snapObjectLayer;
+	public Mesh emptyHand;
+	public Mesh grabHand;
 
 	private MoveableObject pickedObject;
 	private Rigidbody m_Rigidbody;
 	private GlowingOutlineRenderer glowRenderer;
 	private Camera cam;
 	private List<SnapPosition> snapPos = new List<SnapPosition>();
+	private MeshFilter handRenderer;
 
 	private void Awake()
 	{
@@ -22,6 +25,7 @@ public class MousePickup : MonoBehaviour
 		glowRenderer = FindObjectOfType<GlowingOutlineRenderer>();
 		cam = Camera.main;
 		snapPos = FindObjectsOfType<SnapPosition>().ToList();
+		handRenderer = GetComponentInChildren<MeshFilter>();
 	}
 
 	private void Update()
@@ -59,6 +63,7 @@ public class MousePickup : MonoBehaviour
 			{
 				pickedObject = moveObject;
 				pickedObject.PickupObject( m_Rigidbody );
+				handRenderer.sharedMesh = grabHand;
 
 				// SHOW SNAPS
 				foreach ( var item in snapPos )
@@ -108,6 +113,7 @@ public class MousePickup : MonoBehaviour
 			}
 
 			pickedObject = null;
+			handRenderer.sharedMesh = emptyHand;
 
 			foreach ( var item in snapPos )
 			{
