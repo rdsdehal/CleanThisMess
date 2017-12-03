@@ -167,6 +167,7 @@ public class ChildBehaviour : MoveableObject
                 m_IdleTimer = Random.Range(m_SitIdleTimer.x, m_SitIdleTimer.y);
                 break;
             case CurrentState.MovingTowardExit:
+                m_Animator.CrossFade("Boy_Walk", 0.5f);
                 m_NavMeshAgent.SetDestination(m_ExitPosition);
                 break;
             case CurrentState.Disapear:

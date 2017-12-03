@@ -6,10 +6,11 @@ public class EntryPoint : MonoBehaviour
 {
 
     public GameObject m_SpawnPoint;
+    public GameObject m_WaitingPoint;
+    public GameObject LeavePoint;
     public List<ChildBehaviour> m_ChildList;
     public GameObject[] m_ChildPrefab = null;
     public MayhemMeter m_MayhemMeter = null;
-    public Vector3 LeavePoint = Vector3.zero;
     public Vector2 SpawnTime = Vector2.one;
 
     private float m_Timer = 0;
