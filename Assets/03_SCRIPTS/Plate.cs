@@ -11,6 +11,7 @@ public class Plate : MonoBehaviour
 	}
 
 	public PlateState plateState = PlateState.Clean;
+	public ParticleSystem infecteParticle;
 
 	public GameObject dirtyPlate;
 	public GameObject[] food;
@@ -21,6 +22,7 @@ public class Plate : MonoBehaviour
 		plateState = PlateState.Clean;
 
 		dirtyPlate.SetActive( false );
+		infecteParticle.Stop( true, ParticleSystemStopBehavior.StopEmitting );
 		for ( int i = 0 ; i < food.Length ; i++ )
 		{
 			food[i].SetActive( false );
@@ -41,6 +43,7 @@ public class Plate : MonoBehaviour
 				plateState = PlateState.Garbage;
 
 				garbage[Random.Range( 0, garbage.Length )].SetActive( true );
+				infecteParticle.Play( true );
 			}
 			else
 			{
@@ -56,6 +59,7 @@ public class Plate : MonoBehaviour
 		plateState = PlateState.Dirty;
 
 		dirtyPlate.SetActive( true );
+		infecteParticle.Stop( true, ParticleSystemStopBehavior.StopEmitting );
 		for ( int i = 0 ; i < food.Length ; i++ )
 		{
 			food[i].SetActive( false );
