@@ -13,7 +13,7 @@ PhysicsManager:
   m_DefaultSolverVelocityIterations: 1
   m_QueriesHitBackfaces: 0
   m_QueriesHitTriggers: 1
-  m_EnableAdaptiveForce: 0
+  m_EnableAdaptiveForce: 1
   m_EnablePCM: 1
   m_LayerCollisionMatrix: c9fbffffc8f8ffffc8f8ffffffffffffc8f8ffffc8f8ffffffffffffffffffffc9fbffffc9fbffffc8f8ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
   m_AutoSimulation: 1
