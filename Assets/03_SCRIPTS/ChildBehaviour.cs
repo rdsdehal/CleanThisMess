@@ -30,14 +30,14 @@ public class ChildBehaviour : MoveableObject
     private void Update()
     {
         OnStateUpdate();
-        if (m_HaveEat)
-        {
-            vfx_StillHappy.Play(true);
-        }
-        else
-        {
-            vfx_StillAngry.Play(true);
-        }
+        //if (m_HaveEat)
+        //{
+        //    vfx_StillHappy.Play(true);
+        //}
+        //else
+        //{
+        //    vfx_StillAngry.Play(true);
+        //}
     }
 
     public CurrentState m_CurrentState;
