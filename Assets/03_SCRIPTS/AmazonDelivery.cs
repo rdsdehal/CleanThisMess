@@ -6,6 +6,7 @@ public class AmazonDelivery : MonoBehaviour
 	public Vector2 randomDeliveryTime;
 	public Transform deliveryPoint;
 	public GameObject packageBase;
+	public GameObject burningMessPrefab;
 
 	public void ScheduleDelivery( GameObject packageContents )
 	{

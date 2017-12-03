@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 54446932595823510}
   - component: {fileID: 114373046975277108}
   - component: {fileID: 114836545227269732}
+  - component: {fileID: 208189523506561058}
   m_Layer: 9
   m_Name: Cloison_
   m_TagString: Untagged
@@ -123,8 +124,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1605868469263006}
-  m_LocalRotation: {x: -0, y: 0.69721764, z: -0, w: 0.7168595}
-  m_LocalPosition: {x: 0.6, y: 0.5906806, z: 0.09}
+  m_LocalRotation: {x: -0, y: 0.030253863, z: -0, w: 0.9995423}
+  m_LocalPosition: {x: -0.8610563, y: 0.5906806, z: 2.8429797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4045932397724270}
@@ -231,3 +232,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineColor: {r: 1, g: 0.86379313, b: 0.41911763, a: 1}
+--- !u!208 &208189523506561058
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605868469263006}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.155, y: 0.615, z: 1.01}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.6, z: 0}
+  m_TimeToStationary: 0.5

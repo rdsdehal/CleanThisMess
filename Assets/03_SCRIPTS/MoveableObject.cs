@@ -9,18 +9,21 @@ public class MoveableObject : MonoBehaviour
 	public Vector3 localAnchor;
 	public bool canBePickedUp;
 	public bool benneable;
+	public bool benneOmozons;
+	public bool canBurn;
 	public float initialMalus;
 	public float dotPerSecondMalus;
-
 
 	private bool isTipped;
 	protected Rigidbody m_RigidBody;
 	private MayhemMeter mayhemMeter;
+	private AmazonDelivery amazon;
 
 	private void Awake()
 	{
 		m_RigidBody = GetComponent<Rigidbody>();
 		mayhemMeter = FindObjectOfType<MayhemMeter>();
+		amazon = FindObjectOfType<AmazonDelivery>();
 	}
 
 	private void Update()
@@ -72,5 +75,13 @@ public class MoveableObject : MonoBehaviour
 
 		transform.position = snapPos.position;
 		transform.rotation = snapPos.rotation;
+	}
+
+	public virtual void Burn()
+	{
+		amazon.ScheduleDelivery( gameObject );
+		gameObject.SetActive( false );
+		var obj = Instantiate( amazon.burningMessPrefab, transform.position, Quaternion.identity );
+		obj.GetComponent<Rigidbody>().AddForce( Vector3.up * 5, ForceMode.Impulse );
 	}
 }
