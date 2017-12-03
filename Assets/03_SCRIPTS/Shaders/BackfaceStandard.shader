@@ -1,6 +1,6 @@
 // Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt)
 
-Shader "StandardOnTop"
+Shader "bShaders/BackfaceStandard"
 {
 	Properties
 	{
@@ -65,7 +65,8 @@ Shader "StandardOnTop"
 			Tags { "LightMode" = "ForwardBase" }
 
 			Blend [_SrcBlend] [_DstBlend]
-			ZTest Always
+			ZWrite [_ZWrite]
+			Cull off
 
 			CGPROGRAM
 			#pragma target 3.0
@@ -233,7 +234,7 @@ Shader "StandardOnTop"
 			Tags { "LightMode" = "ForwardBase" }
 
 			Blend [_SrcBlend] [_DstBlend]
-			ZTest Always
+			ZWrite [_ZWrite]
 
 			CGPROGRAM
 			#pragma target 2.0
