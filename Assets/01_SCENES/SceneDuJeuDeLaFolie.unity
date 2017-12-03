@@ -4073,7 +4073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2686e64ccbfcac84899962ae08fe7ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regenEverySec: 0.25
+  regenEverySec: 1
 --- !u!1 &758405897
 GameObject:
   m_ObjectHideFlags: 0
