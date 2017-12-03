@@ -3,6 +3,11 @@
 public class CookingStation : MonoBehaviour
 {
 	public ParticleSystem fx;
+
+	public AudioSource audiosource;
+	public AudioClip clip;
+	public AudioClip unluckyPlat;
+
 	private void OnTriggerEnter( Collider other )
 	{
 
@@ -12,6 +17,15 @@ public class CookingStation : MonoBehaviour
 			plate.Cook();
 			fx.transform.position = plate.transform.position;
 			fx.Play();
+
+			if ( plate.plateState == Plate.PlateState.Garbage )
+			{
+				audiosource.PlayOneShot( unluckyPlat );
+			}
+			else
+			{
+				audiosource.PlayOneShot( clip );
+			}
 		}
 
 		var moveableObject = other.GetComponentInParent<MoveableObject>();
@@ -20,6 +34,7 @@ public class CookingStation : MonoBehaviour
 			moveableObject.Burn();
 			fx.transform.position = moveableObject.transform.position;
 			fx.Play();
+			audiosource.PlayOneShot( clip );
 		}
 	}
 }

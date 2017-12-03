@@ -9,6 +9,9 @@ public class AmazonDelivery : MonoBehaviour
 	public GameObject burningMessPrefab;
 	public ParticleSystem fx;
 
+	public AudioSource audiosource;
+	public AudioClip clip;
+
 	public void ScheduleDelivery( GameObject packageContents )
 	{
 		StartCoroutine( DoDelivery( packageContents ) );
@@ -27,5 +30,6 @@ public class AmazonDelivery : MonoBehaviour
 	{
 		fx.transform.position = pos;
 		fx.Play();
+		audiosource.PlayOneShot( clip );
 	}
 }
