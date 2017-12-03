@@ -3236,6 +3236,14 @@ Prefab:
       propertyPath: m_Name
       value: Table (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4814134354333726, guid: 66fd4391823a93c47abd9ff432a77db3, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814134354333726, guid: 66fd4391823a93c47abd9ff432a77db3, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 4.9499145
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66fd4391823a93c47abd9ff432a77db3, type: 2}
   m_IsPrefabParent: 0
@@ -12336,6 +12344,21 @@ Prefab:
       propertyPath: m_ThrowableList.Array.data[47]
       value: 
       objectReference: {fileID: 2008028059}
+    - target: {fileID: 114174213631972780, guid: f77e905f79007b842859ac06baad1f1d,
+        type: 2}
+      propertyPath: SpawnTime.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114174213631972780, guid: f77e905f79007b842859ac06baad1f1d,
+        type: 2}
+      propertyPath: SpawnTime.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114174213631972780, guid: f77e905f79007b842859ac06baad1f1d,
+        type: 2}
+      propertyPath: timeBeforeHardness
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f77e905f79007b842859ac06baad1f1d, type: 2}
   m_IsPrefabParent: 0
