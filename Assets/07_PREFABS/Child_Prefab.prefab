@@ -1080,7 +1080,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1362696804005082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.075, y: 0.938, z: 0}
+  m_LocalPosition: {x: -0.001, y: 1.047, z: 0}
   m_LocalScale: {x: 0.3199396, y: 0.3199397, z: 0.3199397}
   m_Children: []
   m_Father: {fileID: 4124643831442126}
@@ -14678,7 +14678,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 995107663
+  randomSeed: -1699877517
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -37875,7 +37875,7 @@ ParticleSystem:
   simulationSpeed: 1
   stopAction: 0
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -37924,7 +37924,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1623161004
+  randomSeed: 308479274
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -38320,7 +38320,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 2
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -38484,7 +38484,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -38563,29 +38563,8 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_BurstCount: 1
-    m_Bursts:
-    - serializedVersion: 2
-      time: 0
-      countCurve:
-        serializedVersion: 2
-        minMaxState: 0
-        scalar: 1
-        minScalar: 0
-        maxCurve:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        minCurve:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-      cycleCount: 1
-      repeatInterval: 0.01
+    m_BurstCount: 0
+    m_Bursts: []
   SizeModule:
     enabled: 1
     curve:
