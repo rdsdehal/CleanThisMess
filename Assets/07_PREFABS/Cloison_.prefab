@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4604019133299204}
   - component: {fileID: 114187806428135872}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NavMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
