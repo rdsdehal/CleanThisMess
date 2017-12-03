@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1702280258371846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.225856, y: 1.7899914, z: -3.4451153}
+  m_LocalPosition: {x: 2.2627542, y: 1.3571914, z: -5.1104302}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4941043173036542}
@@ -246,6 +246,8 @@ MonoBehaviour:
   localAnchor: {x: 0, y: 0, z: 0}
   canBePickedUp: 1
   benneable: 1
+  benneOmozons: 1
+  canBurn: 1
   initialMalus: 0.5
   dotPerSecondMalus: 0.1
 --- !u!114 &114949210108938512
