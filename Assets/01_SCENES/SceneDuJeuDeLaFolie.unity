@@ -4024,7 +4024,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -4034,7 +4034,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.033333335
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 9abe5f49f95ecd846b7bc2409e42d65a, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 25fa25b26d0801543ac8bf06c07a615f, type: 2}
 --- !u!4 &757868416
 Transform:
   m_ObjectHideFlags: 0
@@ -8092,8 +8092,7 @@ Prefab:
       propertyPath: m_Name
       value: Table (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 208971512313134780, guid: 66fd4391823a93c47abd9ff432a77db3, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66fd4391823a93c47abd9ff432a77db3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1426678354
