@@ -9,7 +9,13 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
+    4300000: GroundBasket_Model
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GroudBasket_Material
+    second: {fileID: 2100000, guid: 559b4c691da57a8448d0d52e69893353, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
