@@ -35,9 +35,19 @@ public class Plate : MonoBehaviour
 	{
 		if ( plateState == PlateState.Clean )
 		{
-			plateState = PlateState.Full;
 
-			food[Random.Range( 0, food.Length )].SetActive( true );
+			if ( Random.value > 0.85f )
+			{
+				plateState = PlateState.Garbage;
+
+				garbage[Random.Range( 0, garbage.Length )].SetActive( true );
+			}
+			else
+			{
+				plateState = PlateState.Full;
+
+				food[Random.Range( 0, food.Length )].SetActive( true );
+			}
 		}
 	}
 
