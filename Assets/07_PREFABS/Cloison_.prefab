@@ -152,16 +152,16 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1605868469263006}
-  m_LocalRotation: {x: -0, y: 0.030253863, z: -0, w: 0.9995423}
-  m_LocalPosition: {x: -0.58, y: 0.5906806, z: 2.8429797}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.6949952, z: -0, w: 0.7190144}
+  m_LocalPosition: {x: -4.31, y: 0.5906806, z: -0.01}
+  m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children:
   - {fileID: 4045932397724270}
   - {fileID: 4123239395735922}
   - {fileID: 4604019133299204}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 3.4670002, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 88.054, z: 0}
 --- !u!23 &23638064512052440
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -259,9 +259,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: cloison
   mouseVelocityFactor: 1
-  mouseOffset: 0
+  mouseOffset: 1.3
   canBePickedUp: 1
-  localOffset: {x: 0, y: 0, z: 0}
+  localOffset: {x: 0, y: -1.3, z: 0}
   benneable: 0
   benneOmozons: 1
   canBurn: 0
