@@ -2,6 +2,7 @@
 
 public class Benne : MonoBehaviour
 {
+	public ParticleSystem fx;
 	AmazonDelivery delivery;
 
 	private void Awake()
@@ -14,6 +15,9 @@ public class Benne : MonoBehaviour
 		var obj = other.GetComponentInParent<MoveableObject>();
 		if ( obj && obj.benneable )
 		{
+			fx.transform.position = obj.transform.position;
+			fx.Play();
+
 			if ( obj.benneOmozons )
 			{
 				var plate = other.GetComponentInParent<Plate>();
