@@ -20,6 +20,7 @@ public class MoveableObject : MonoBehaviour
 	private MayhemMeter mayhemMeter;
 	private AmazonDelivery amazon;
 	private Transform cachedPickupParent;
+	private ParticleSystem malusFX;
 
 
 	private void Awake()
@@ -27,6 +28,8 @@ public class MoveableObject : MonoBehaviour
 		m_RigidBody = GetComponent<Rigidbody>();
 		mayhemMeter = FindObjectOfType<MayhemMeter>();
 		amazon = FindObjectOfType<AmazonDelivery>();
+		Transform fxTransform = transform.Find( "FX" );
+		if ( fxTransform ) malusFX = fxTransform.GetChild( 0 ).GetComponent<ParticleSystem>();
 	}
 
 	private void Update()
@@ -40,6 +43,12 @@ public class MoveableObject : MonoBehaviour
 			}
 
 			mayhemMeter.ChangeMeter( -dotPerSecondMalus * Time.deltaTime );
+
+			if ( malusFX && !malusFX.isPlaying ) malusFX.Play( true );
+		}
+		else
+		{
+			if ( malusFX ) malusFX.Stop( true, ParticleSystemStopBehavior.StopEmitting );
 		}
 	}
 
