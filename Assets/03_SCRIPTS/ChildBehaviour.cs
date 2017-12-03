@@ -436,7 +436,7 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.MovingTowardObject:
-                m_Animator.CrossFade("Boy_TableFlip", 0.2f);
+                m_Animator.CrossFade("Boy_TableFlip", 0.0f);
                 break;
             case CurrentState.ThrowSomething:
 
