@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 
 public class GlowingObject : MonoBehaviour
@@ -8,6 +9,9 @@ public class GlowingObject : MonoBehaviour
 
 	private void Awake()
 	{
-		renderers = GetComponentsInChildren<Renderer>();
+		List<Renderer> remders = new List<Renderer>();
+		remders.AddRange( GetComponentsInChildren<MeshRenderer>() );
+		remders.AddRange( GetComponentsInChildren<SkinnedMeshRenderer>() );
+		renderers = remders.ToArray();
 	}
 }

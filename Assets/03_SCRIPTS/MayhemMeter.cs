@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class MayhemMeter : MonoBehaviour
 {
@@ -20,10 +19,11 @@ public class MayhemMeter : MonoBehaviour
 		scale.x = Mathf.Lerp( 0, initialMaxScale, currentMeter / meterMax );
 		meterVisual.localScale = scale;
 
-		float minute = timer / 60;
+		float minute = timer / 1000;
 		float secs = timer % 60;
+		System.TimeSpan span = new System.TimeSpan( 0, 0, 0, (int)timer, 0 );
 
-		timerText.text = System.String.Format( "{0:F1}:{1:F1}", minute.ToString( "00" ), secs.ToString( "00" ) );
+		timerText.text = System.String.Format( "{0:F1}:{1:F1}", span.Minutes.ToString( "00" ), span.Seconds.ToString( "00" ) );
 	}
 
 	private void Awake()
