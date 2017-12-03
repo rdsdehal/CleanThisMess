@@ -5,6 +5,9 @@ public class Benne : MonoBehaviour
 	public ParticleSystem fx;
 	AmazonDelivery delivery;
 
+	public AudioSource audiosource;
+	public AudioClip clip;
+
 	private void Awake()
 	{
 		delivery = FindObjectOfType<AmazonDelivery>();
@@ -17,6 +20,7 @@ public class Benne : MonoBehaviour
 		{
 			fx.transform.position = obj.transform.position;
 			fx.Play();
+			audiosource.PlayOneShot( clip );
 
 			if ( obj.benneOmozons )
 			{
