@@ -355,6 +355,7 @@ public class ChildBehaviour : MoveableObject
                 m_Timer += Time.deltaTime;
                 if (m_Timer > 2.0f)
                 {
+                    Instantiate(vfx_Spit, transform.position, Quaternion.identity);
                     SwitchState(CurrentState.MovingTowardExit);
                 }
                 break;
