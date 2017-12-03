@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b8ecda4e510adb64d833e06331e4ab33
-timeCreated: 1512293575
+guid: 719d96366d986e8458d8fa45952d603e
+timeCreated: 1512309474
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,28 +9,28 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: BasketNet_Model
+    4300000: Flower1_Model
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bones_Material
-    second: {fileID: 2100000, guid: b428f1e7ee6e14143ad7ea4ca549369a, type: 2}
+      name: FlowerGreen_Material
+    second: {fileID: 2100000, guid: eec31ce23fbf78a439b98193da4f707d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Chicken_Material
-    second: {fileID: 2100000, guid: 73ef3d87ca1737145b8cc281fcc6528d, type: 2}
+      name: FlowerRed_Material
+    second: {fileID: 2100000, guid: c94dab4f8aae5b347a725d987cb267f6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: b428f1e7ee6e14143ad7ea4ca549369a, type: 2}
+      name: 'Material #74'
+    second: {fileID: 2100000, guid: 9a9495609f7e8984aa139027cf7703a4, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -55,7 +55,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.7
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
