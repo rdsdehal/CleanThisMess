@@ -4691,6 +4691,7 @@ MonoBehaviour:
     type: 2}
   m_MayhemMeter: {fileID: 1174617034}
   LeavePoint: {x: -14, y: 0, z: -2}
+  SpawnTime: {x: 5, y: 15}
   m_SpawnIndex: 0
   m_MustReload: 0
 --- !u!1 &836787620 stripped
