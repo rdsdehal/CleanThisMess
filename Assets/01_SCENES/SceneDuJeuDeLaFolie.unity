@@ -7422,14 +7422,6 @@ Prefab:
       propertyPath: m_Name
       value: Chair (20)
       objectReference: {fileID: 0}
-    - target: {fileID: 4953390226785008, guid: 74e3e4317fc02644b821af635ac67311, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 356.41068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4953390226785008, guid: 74e3e4317fc02644b821af635ac67311, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74e3e4317fc02644b821af635ac67311, type: 2}
   m_IsPrefabParent: 0
