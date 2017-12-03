@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MayhemMeter : MonoBehaviour
 {
@@ -42,6 +43,6 @@ public class MayhemMeter : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("GAAMU OVAA");
+		SceneManager.LoadSceneAsync (2);
     }
 }

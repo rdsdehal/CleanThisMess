@@ -349,9 +349,11 @@ MonoBehaviour:
   m_ChildList: []
   m_ChildPrefab:
   - {fileID: 1901165882260690, guid: 80ae56f6d96050a4485744054e6b7a35, type: 2}
+  - {fileID: 1901165882260690, guid: a58288f6e6325764ca57efe55b1d0dab, type: 2}
   m_MayhemMeter: {fileID: 114355333306321998}
-  SpawnTime: {x: 4, y: 7}
+  SpawnTime: {x: 8, y: 12}
   m_SpawnIndex: 0
+  timeBeforeHardness: 200
   m_MustReload: 0
 --- !u!114 &114355333306321998
 MonoBehaviour:

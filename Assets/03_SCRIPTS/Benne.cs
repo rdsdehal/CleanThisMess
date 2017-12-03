@@ -16,7 +16,7 @@ public class Benne : MonoBehaviour
 	private void OnTriggerEnter( Collider other )
 	{
 		var obj = other.GetComponentInParent<MoveableObject>();
-		if ( obj && obj.benneable )
+		if ( obj && obj.benneable && !other.isTrigger)
 		{
 			fx.transform.position = obj.transform.position;
 			fx.Play();

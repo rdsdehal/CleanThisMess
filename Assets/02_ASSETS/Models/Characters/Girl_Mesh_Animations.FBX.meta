@@ -26,15 +26,15 @@ ModelImporter:
     400016: //RootNode
     400018: Girl_Model
     4300000: Girl_Model
-    7400000: Manger
-    7400002: Marche
-    7400004: Idle Assis
-    7400006: Vomi
-    7400008: Marche venere
-    7400010: Idle debout
-    7400012: Table flip
-    7400014: Plate flip
-    7400016: Choper mii
+    7400000: MangerG
+    7400002: Marche G
+    7400004: Idle AssisG
+    7400006: VomiG
+    7400008: Marche venereG
+    7400010: Idle deboutG
+    7400012: Table flipG
+    7400014: Plate flipG
+    7400016: Choper miiG
     9500000: //RootNode
     13700000: Girl_Model
   externalObjects:
@@ -70,7 +70,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Marche
+      name: Marche G
       takeName: Take 001
       firstFrame: 10
       lastFrame: 30
@@ -98,7 +98,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Manger
+      name: MangerG
       takeName: Take 001
       firstFrame: 40
       lastFrame: 60
@@ -126,7 +126,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Idle Assis
+      name: Idle AssisG
       takeName: Take 001
       firstFrame: 70
       lastFrame: 100
@@ -154,7 +154,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Vomi
+      name: VomiG
       takeName: Take 001
       firstFrame: 110
       lastFrame: 180
@@ -182,7 +182,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Marche venere
+      name: Marche venereG
       takeName: Take 001
       firstFrame: 190
       lastFrame: 206
@@ -210,7 +210,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Idle debout
+      name: Idle deboutG
       takeName: Take 001
       firstFrame: 210
       lastFrame: 250
@@ -238,7 +238,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Table flip
+      name: Table flipG
       takeName: Take 001
       firstFrame: 260
       lastFrame: 300
@@ -266,7 +266,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Plate flip
+      name: Plate flipG
       takeName: Take 001
       firstFrame: 310
       lastFrame: 360
@@ -294,7 +294,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Choper mii
+      name: Choper miiG
       takeName: Take 001
       firstFrame: 370
       lastFrame: 400
@@ -324,7 +324,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.6
+    globalScale: 0.8
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
