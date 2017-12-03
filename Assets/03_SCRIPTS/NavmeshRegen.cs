@@ -20,7 +20,7 @@ public class NavmeshRegen : MonoBehaviour
 
 		while ( true )
 		{
-			surface.BuildNavMesh();
+			surface.UpdateNavMesh( surface.navMeshData );
 			yield return wait;
 		}
 	}
