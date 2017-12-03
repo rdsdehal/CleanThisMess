@@ -19,6 +19,8 @@ public class MoveableObject : MonoBehaviour
 	protected Rigidbody m_RigidBody;
 	private MayhemMeter mayhemMeter;
 	private AmazonDelivery amazon;
+	private Transform cachedPickupParent;
+
 
 	private void Awake()
 	{
@@ -47,6 +49,7 @@ public class MoveableObject : MonoBehaviour
 		m_RigidBody.useGravity = false;
 		m_RigidBody.velocity = Vector3.zero;
 		m_RigidBody.angularVelocity = Vector3.zero;
+		cachedPickupParent = transform.parent;
 		transform.parent = joint.transform;
 		isTipped = false;
 
@@ -61,7 +64,7 @@ public class MoveableObject : MonoBehaviour
 		m_RigidBody.angularVelocity = Vector3.zero;
 		m_RigidBody.isKinematic = false;
 		m_RigidBody.useGravity = true;
-		transform.SetParent( null, true );
+		transform.SetParent( cachedPickupParent, true );
 
 		m_RigidBody.AddForce( mouseVelocity * mouseVelocityFactor, ForceMode.Impulse );
 	}
@@ -72,7 +75,7 @@ public class MoveableObject : MonoBehaviour
 		m_RigidBody.angularVelocity = Vector3.zero;
 		m_RigidBody.isKinematic = false;
 		m_RigidBody.useGravity = true;
-		transform.SetParent( null, true );
+		transform.SetParent( cachedPickupParent, true );
 
 		transform.position = snapPos.position;
 		transform.rotation = snapPos.rotation;

@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1702280258371846}
   m_IsPrefabParent: 1
+--- !u!1 &1030158471170608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4369792313301766}
+  - component: {fileID: 114360421497603616}
+  m_Layer: 0
+  m_Name: NavMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1064059546403944
 GameObject:
   m_ObjectHideFlags: 1
@@ -113,11 +129,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1702280258371846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2627542, y: 1.3571914, z: -5.1104302}
+  m_LocalPosition: {x: 1.78, y: 1.3571914, z: -5.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4941043173036542}
   - {fileID: 4185690637458510}
+  - {fileID: 4369792313301766}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -148,6 +165,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4185690637458510}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4369792313301766
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030158471170608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4139638242901866}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4941043173036542
 Transform:
@@ -243,13 +273,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: Plante
   mouseVelocityFactor: 1
-  localAnchor: {x: 0, y: 0, z: 0}
+  mouseOffset: 0.5
   canBePickedUp: 1
+  localOffset: {x: 0, y: -0.5, z: 0}
   benneable: 1
   benneOmozons: 1
   canBurn: 1
   initialMalus: 0.5
   dotPerSecondMalus: 0.1
+--- !u!114 &114360421497603616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030158471170608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 0.28045028, y: 0.38351256, z: 0.2994367}
+  m_Center: {x: -0.013220012, y: 0.2095854, z: -0.011108518}
+  m_Area: 3
+  m_AffectedAgents: ffffffff
 --- !u!114 &114949210108938512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -271,7 +317,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.13936484
-  m_Height: 0.36611634
+  m_Radius: 0.23671086
+  m_Height: 0.58530724
   m_Direction: 1
-  m_Center: {x: -0.0027274787, y: 0.2230582, z: 0}
+  m_Center: {x: -0.0027274783, y: 0.27900097, z: 0}
