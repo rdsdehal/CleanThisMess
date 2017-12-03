@@ -1,27 +1,47 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class MayhemMeter : MonoBehaviour
 {
-    public float meterMax;
-    public float currentMeter { get; private set; }
+	public float meterMax;
+	public float currentMeter { get; private set; }
+	public TextMesh timerText;
 
-    private void Awake()
-    {
-        currentMeter = meterMax;
-    }
+	public Transform meterVisual;
+	private float initialMaxScale;
 
-    public void ChangeMeter(float delta)
-    {
-        currentMeter += delta;
+	float timer;
 
-        if (currentMeter > meterMax) currentMeter = meterMax;
-        if (0 > currentMeter) GameOver();
+	private void Update()
+	{
+		timer += Time.deltaTime;
 
-        //Debug.Log( "Meter: " + currentMeter + "/" + meterMax );
-    }
+		Vector3 scale = meterVisual.localScale;
+		scale.x = Mathf.Lerp( 0, initialMaxScale, currentMeter / meterMax );
+		meterVisual.localScale = scale;
 
-    public void GameOver()
-    {
-        //Debug.Log( "GAAMU OVAA" );
-    }
+		float minute = timer / 60;
+		float secs = timer % 60;
+
+		timerText.text = System.String.Format( "{0:F1}:{1:F1}", minute.ToString( "00" ), secs.ToString( "00" ) );
+	}
+
+	private void Awake()
+	{
+		currentMeter = meterMax;
+		initialMaxScale = meterVisual.localScale.x;
+	}
+
+	public void ChangeMeter( float delta )
+	{
+		currentMeter += delta;
+
+		if ( currentMeter > meterMax ) currentMeter = meterMax;
+		if ( 0 > currentMeter ) GameOver();
+	}
+
+	public void GameOver()
+	{
+		Debug.Log( "GAAMU OVAA" );
+	}
 }
