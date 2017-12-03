@@ -4687,8 +4687,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SpawnPoint: {fileID: 1746506968}
   m_ChildList: []
-  m_ChildPrefab: {fileID: 1901165882260690, guid: 80ae56f6d96050a4485744054e6b7a35,
-    type: 2}
+  m_ChildPrefab:
+  - {fileID: 1901165882260690, guid: 80ae56f6d96050a4485744054e6b7a35, type: 2}
   m_MayhemMeter: {fileID: 1174617034}
   LeavePoint: {x: -14, y: 0, z: -2}
   SpawnTime: {x: 5, y: 15}
