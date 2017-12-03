@@ -682,6 +682,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 29a601c89e662224798fe71537d2945f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e1eb7351d1d4a44c978487a3b77a391, type: 2}
+    - target: {fileID: 2300000, guid: 29a601c89e662224798fe71537d2945f, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29a601c89e662224798fe71537d2945f, type: 3}
   m_IsPrefabParent: 0
