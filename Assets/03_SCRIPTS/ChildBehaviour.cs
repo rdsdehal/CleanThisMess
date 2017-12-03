@@ -134,6 +134,7 @@ public class ChildBehaviour : MoveableObject
                 }
                 break;
             case CurrentState.MovingTowardObject:
+                m_Animator.CrossFade("Boy_Walk", 0.5f);
                 m_Throwable = m_ChairManager.FindThrowable(this.gameObject);
                 NavMeshHit closePointThrowable;
                 NavMesh.SamplePosition(m_Throwable.transform.position, out closePointThrowable, 1.5f, NavMesh.AllAreas);
