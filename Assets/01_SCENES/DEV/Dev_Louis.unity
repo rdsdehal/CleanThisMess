@@ -1224,6 +1224,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 23311366453312688, guid: fdc7b3f40328226479213099a1b61f7b,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 16223139c21456f4aadc5277df9cc5c0, type: 2}
+    - target: {fileID: 102606818105560214, guid: fdc7b3f40328226479213099a1b61f7b,
+        type: 2}
+      propertyPath: m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e7b6e43b0577b7f4a9a2c6a1f4c064f3,
+        type: 3}
+    - target: {fileID: 4622724042707646, guid: fdc7b3f40328226479213099a1b61f7b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.952
+      objectReference: {fileID: 0}
+    - target: {fileID: 102606818105560214, guid: fdc7b3f40328226479213099a1b61f7b,
+        type: 2}
+      propertyPath: m_Color.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdc7b3f40328226479213099a1b61f7b, type: 2}
   m_IsPrefabParent: 0
