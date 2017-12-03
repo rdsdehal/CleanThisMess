@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 54911894248429992}
   - component: {fileID: 114359444993909486}
   - component: {fileID: 114457663961538946}
+  - component: {fileID: 208484325926865378}
   m_Layer: 9
   m_Name: Cart
   m_TagString: Untagged
@@ -213,8 +214,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: Cart
   mouseVelocityFactor: 1
-  localAnchor: {x: 0, y: 0, z: 0}
+  mouseOffset: 1
   canBePickedUp: 1
+  localOffset: {x: 0, y: -1, z: 0}
   benneable: 0
   benneOmozons: 1
   canBurn: 0
@@ -232,3 +234,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineColor: {r: 1, g: 0.86379313, b: 0.41911763, a: 1}
+--- !u!208 &208484325926865378
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1161675597935172}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.17, y: 0.44, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.4, z: 0}
+  m_TimeToStationary: 0.5

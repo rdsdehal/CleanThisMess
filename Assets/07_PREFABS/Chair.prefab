@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 114592928954132312}
   - component: {fileID: 114329073713520668}
   - component: {fileID: 114684781057584446}
+  - component: {fileID: 208853594927504310}
   m_Layer: 9
   m_Name: Chair
   m_TagString: Untagged
@@ -141,15 +142,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1394891415077378}
-  m_LocalRotation: {x: -0, y: 0.6944663, z: -0, w: 0.7195253}
-  m_LocalPosition: {x: -5.94, y: 0.23828125, z: 3.43}
+  m_LocalRotation: {x: 0, y: -0.022389537, z: 0, w: -0.99974936}
+  m_LocalPosition: {x: 1.72, y: 0.23828125, z: 2.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4782190048800750}
   - {fileID: 4769268044617666}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -272.031, z: 0}
+  m_LocalEulerAnglesHint: {x: -0, y: 2.5658662, z: -0}
 --- !u!4 &4957608575576554
 Transform:
   m_ObjectHideFlags: 1
@@ -269,8 +270,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: chair
   mouseVelocityFactor: 1
-  localAnchor: {x: 0, y: 0, z: 0}
+  mouseOffset: 0.5
   canBePickedUp: 1
+  localOffset: {x: 0, y: -0.5, z: 0}
   benneable: 1
   benneOmozons: 1
   canBurn: 1
@@ -288,3 +290,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineColor: {r: 1, g: 0.86379313, b: 0.41911763, a: 1}
+--- !u!208 &208853594927504310
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1394891415077378}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.21, y: 0.31, z: 0.215}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.29, z: -0.03}
+  m_TimeToStationary: 0.5
