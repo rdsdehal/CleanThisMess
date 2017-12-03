@@ -281,6 +281,7 @@ MonoBehaviour:
   canBurn: 1
   initialMalus: 0.5
   dotPerSecondMalus: 0.1
+  malusMaterial: {fileID: 2100000, guid: a3b8a94bccafc7944b6e25aa2efbc4ff, type: 2}
 --- !u!114 &114360421497603616
 MonoBehaviour:
   m_ObjectHideFlags: 1
