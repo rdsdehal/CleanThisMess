@@ -18,6 +18,7 @@ public class MousePickup : MonoBehaviour
 	private Camera cam;
 	private List<SnapPosition> snapPos = new List<SnapPosition>();
 	private MeshFilter handRenderer;
+	private float mouseHeight;
 
 	private void Awake()
 	{
@@ -26,6 +27,7 @@ public class MousePickup : MonoBehaviour
 		cam = Camera.main;
 		snapPos = FindObjectsOfType<SnapPosition>().ToList();
 		handRenderer = GetComponentInChildren<MeshFilter>();
+		mouseHeight = transform.position.y;
 	}
 
 	private void Update()
@@ -64,6 +66,9 @@ public class MousePickup : MonoBehaviour
 				pickedObject = moveObject;
 				pickedObject.PickupObject( m_Rigidbody );
 				handRenderer.sharedMesh = grabHand;
+				Vector3 pos = transform.position;
+				pos.y = mouseHeight + pickedObject.mouseOffset;
+				transform.position = pos;
 
 				// SHOW SNAPS
 				foreach ( var item in snapPos )
@@ -114,6 +119,9 @@ public class MousePickup : MonoBehaviour
 
 			pickedObject = null;
 			handRenderer.sharedMesh = emptyHand;
+			Vector3 pos = transform.position;
+			pos.y = mouseHeight;
+			transform.position = pos;
 
 			foreach ( var item in snapPos )
 			{
