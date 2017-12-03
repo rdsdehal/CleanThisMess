@@ -1012,7 +1012,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1901165882260690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.933156, y: 0.000008583069, z: -0.79139966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4597382849446992}
@@ -1075,7 +1075,7 @@ MonoBehaviour:
   canBurn: 0
   initialMalus: 0
   dotPerSecondMalus: 0
-  malusMaterial: {fileID: 0}
+  malusMaterial: {fileID: 2100000, guid: a3b8a94bccafc7944b6e25aa2efbc4ff, type: 2}
   m_MayhemMeter: {fileID: 0}
   m_CurrentState: 0
   m_ExitPosition: {x: -3.53, y: 0.25, z: -0.29}
