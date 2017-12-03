@@ -9,6 +9,11 @@ public class ObjectsManager : MonoBehaviour
     public List<GameObject> m_ThrowableList;
     public Chair m_LastChair = null;
 
+    private void Awake()
+    {
+        m_ThrowableList = FindObjectsOfType<MoveableObject>().Where(m => m.canBePickedUp).Select(m => m.gameObject).ToList();
+    }
+
     public Chair FindChair(GameObject m_Child)
     {
         Chair m_Chair = null;
@@ -28,34 +33,29 @@ public class ObjectsManager : MonoBehaviour
         return m_Chair;
     }
 
-    public GameObject FindNearestThrowable(GameObject m_Child)
+    public GameObject FindThrowable(GameObject m_Child)
     {
-        GameObject NearestThrowable = null;
-        float lastDistance = Mathf.Infinity;
+        GameObject RandomThrowable = null;
         List<GameObject> m_AvailableToThrow = m_ThrowableList;
         if (m_LastChair != null)
         {
             m_AvailableToThrow.Remove(m_LastChair.gameObject);
         }
-        foreach (GameObject element in m_AvailableToThrow)
+        for (int i = m_AvailableToThrow.Count(); i <= 0; i--)
         {
-            if (element.gameObject.activeSelf == true)
+            if (m_AvailableToThrow[i].activeSelf == false)
             {
-                float calculatedDistance = Mathf.Abs(Vector3.Distance(m_Child.transform.position, element.transform.position));
-                if (lastDistance > calculatedDistance)
-                {
-                    lastDistance = calculatedDistance;
-                    NearestThrowable = element;
-                }
+                m_AvailableToThrow.Remove(m_AvailableToThrow[i]);
             }
         }
-        return NearestThrowable;
+        RandomThrowable = m_AvailableToThrow[Random.Range(0, m_AvailableToThrow.Count())];
+        return RandomThrowable;
     }
 
     public bool CheckChairRotation(Chair m_Chair)
     {
         bool m_IsValid = false;
-        if (Vector3.Dot(m_Chair.transform.up, Vector3.up) > 0.8f)
+        if (Vector3.Dot(m_Chair.transform.up, Vector3.up) > 0.8f && m_Chair.transform.position.y < 0.3f)
         {
             m_IsValid = true;
         }

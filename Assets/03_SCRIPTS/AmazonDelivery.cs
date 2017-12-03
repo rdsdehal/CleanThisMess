@@ -6,6 +6,8 @@ public class AmazonDelivery : MonoBehaviour
 	public Vector2 randomDeliveryTime;
 	public Transform deliveryPoint;
 	public GameObject packageBase;
+	public GameObject burningMessPrefab;
+	public ParticleSystem fx;
 
 	public void ScheduleDelivery( GameObject packageContents )
 	{
@@ -19,5 +21,11 @@ public class AmazonDelivery : MonoBehaviour
 		package.GetComponent<AmazonPackage>().packageContents = packageContents;
 
 		yield break;
+	}
+
+	public void PlayDelivery( Vector3 pos )
+	{
+		fx.transform.position = pos;
+		fx.Play();
 	}
 }
