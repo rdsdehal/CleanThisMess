@@ -5400,7 +5400,7 @@ MonoBehaviour:
   m_ChildPrefab:
   - {fileID: 1901165882260690, guid: 80ae56f6d96050a4485744054e6b7a35, type: 2}
   m_MayhemMeter: {fileID: 1174617034}
-  LeavePoint: {x: -14, y: 0, z: -2}
+  LeavePoint: {x: -20, y: 0, z: -2}
   SpawnTime: {x: 4, y: 7}
   m_SpawnIndex: 0
   m_MustReload: 0
