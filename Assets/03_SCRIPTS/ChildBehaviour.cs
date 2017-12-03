@@ -286,6 +286,7 @@ public class ChildBehaviour : MoveableObject
                         }
                         if (m_Timer >= m_IdleTimer)
                         {
+                            vfx_Angry.Play(true);
                             SwitchState(CurrentState.Berserker);
                         }
                     }
@@ -294,6 +295,7 @@ public class ChildBehaviour : MoveableObject
                 {
                     if (m_Timer >= m_IdleTimer)
                     {
+                        vfx_Angry.Play(true);
                         SwitchState(CurrentState.Berserker);
                     }
                 }
@@ -307,6 +309,7 @@ public class ChildBehaviour : MoveableObject
                     m_Plate = plateHit2.collider.GetComponentInParent<Plate>();
                     if (m_Plate == null)
                     {
+                        vfx_Angry.Play(true);
                         SwitchState(CurrentState.Berserker);
                     }
                     else
@@ -329,7 +332,7 @@ public class ChildBehaviour : MoveableObject
                             {
                                 if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
                                 {
-                                    //vfx_Angry.Play(true);
+                                    vfx_Happy.Play(true)
                                     SwitchState(CurrentState.SittingIdle);
                                 }
                                 else
