@@ -771,6 +771,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 198853938932587348, guid: af985b62c792b16499efe756cfc1fafb,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198693126232603244, guid: af985b62c792b16499efe756cfc1fafb,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198693126232603244, guid: af985b62c792b16499efe756cfc1fafb,
+        type: 2}
+      propertyPath: randomSeed
+      value: -1711304030
+      objectReference: {fileID: 0}
+    - target: {fileID: 198853938932587348, guid: af985b62c792b16499efe756cfc1fafb,
+        type: 2}
+      propertyPath: randomSeed
+      value: -870296963
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af985b62c792b16499efe756cfc1fafb, type: 2}
   m_IsPrefabParent: 0
