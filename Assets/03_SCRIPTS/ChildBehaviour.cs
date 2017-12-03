@@ -22,7 +22,7 @@ public class ChildBehaviour : MoveableObject
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
         m_Renderer = GetComponentInChildren<Animator>().gameObject;
         m_MayhemMeter = m_EntryPoint.m_MayhemMeter;
-        m_ExitPosition = m_EntryPoint.LeavePoint;
+        m_ExitPosition = m_EntryPoint.LeavePoint.transform.position;
         m_Animator = GetComponentInChildren<Animator>();
         m_Animator.CrossFade("Boy_Idle", 0.5f);
     }
@@ -30,14 +30,6 @@ public class ChildBehaviour : MoveableObject
     private void Update()
     {
         OnStateUpdate();
-        //if (m_HaveEat)
-        //{
-        //    vfx_StillHappy.Play(true);
-        //}
-        //else
-        //{
-        //    vfx_StillAngry.Play(true);
-        //}
     }
 
     public CurrentState m_CurrentState;
@@ -205,7 +197,11 @@ public class ChildBehaviour : MoveableObject
             case CurrentState.Spawn:
                 if (m_CurrentWaitPoint == 0)
                 {
-                    SwitchState(CurrentState.Idle);
+                    m_NavMeshAgent.SetDestination(m_EntryPoint.m_WaitingPoint.transform.position);
+                    if (m_NavMeshAgent.remainingDistance < 0.2f)
+                    {
+                        SwitchState(CurrentState.Idle);
+                    }
                 }
                 else
                 {
