@@ -288,30 +288,33 @@ public class ChildBehaviour : MoveableObject
                     {
                         SwitchState(CurrentState.Berserker);
                     }
-                }
-                if (m_Timer > 4.0f && m_Plate != null)
-                {
-                    m_Plate.Consume();
-                    if (m_HaveEat)
-                    {
-                        if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
-                        {
-                            SwitchState(CurrentState.SittingIdle);
-                        }
-                        else
-                        {
-                            SwitchState(CurrentState.Spitting);
-                        }
-                    }
                     else
                     {
-                        if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
+                        if (m_Timer > 4.0f)
                         {
-                            SwitchState(CurrentState.SittingIdle);
-                        }
-                        else
-                        {
-                            SwitchState(CurrentState.Spitting);
+                            if (m_HaveEat)
+                            {
+                                if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
+                                {
+                                    SwitchState(CurrentState.SittingIdle);
+                                }
+                                else
+                                {
+                                    SwitchState(CurrentState.Spitting);
+                                }
+                            }
+                            else
+                            {
+                                if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
+                                {
+                                    SwitchState(CurrentState.SittingIdle);
+                                }
+                                else
+                                {
+                                    SwitchState(CurrentState.Spitting);
+                                }
+                            }
+                            m_Plate.Consume();
                         }
                     }
                 }
@@ -417,11 +420,7 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.Sitting:
-                transform.position = m_Chair.transform.position - Vector3.up * 0.25f;
-                m_Renderer.transform.position = transform.position;
-                m_Chair.ExitChair();
-                m_Chair.m_Rigidbody.isKinematic = false;
-                m_NavMeshAgent.enabled = true;
+
                 break;
             case CurrentState.Eating:
                 m_HaveEat = true;
