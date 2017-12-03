@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 4244837939374552}
   - component: {fileID: 54455300888640986}
   - component: {fileID: 114957903129420940}
+  - component: {fileID: 82680507421047474}
   m_Layer: 0
   m_Name: CookingStation
   m_TagString: Untagged
@@ -457,6 +458,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9515066, y: 0.5103872, z: 0.9557904}
   m_Center: {x: 0.008167744, y: 0.25553572, z: 0.00023144484}
+--- !u!82 &82680507421047474
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1763844761529324}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.577
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114957903129420940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -469,6 +550,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fx: {fileID: 198233833918921786}
+  audiosource: {fileID: 82680507421047474}
+  clip: {fileID: 8300000, guid: a7f036b972820474080f94fe89177f0b, type: 3}
+  unluckyPlat: {fileID: 8300000, guid: d9242bdbc14151044bfdee2edbb46d50, type: 3}
 --- !u!198 &198233833918921786
 ParticleSystem:
   m_ObjectHideFlags: 1
