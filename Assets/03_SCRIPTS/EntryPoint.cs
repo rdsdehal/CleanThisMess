@@ -5,7 +5,7 @@ using UnityEngine;
 public class EntryPoint : MonoBehaviour
 {
 
-    public List<GameObject> m_SpawnPoint;
+    public GameObject m_SpawnPoint;
     public List<ChildBehaviour> m_ChildList;
     public GameObject m_ChildPrefab = null;
     public MayhemMeter m_MayhemMeter = null;
@@ -32,16 +32,12 @@ public class EntryPoint : MonoBehaviour
         m_Timer += Time.deltaTime;
         if (m_Timer >= m_NextSpawnTime)
         {
-            GameObject obj = Instantiate(m_ChildPrefab, m_SpawnPoint[m_SpawnIndex].transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(m_ChildPrefab, m_SpawnPoint.transform.position, Quaternion.identity);
             m_ChildList.Add(obj.gameObject.GetComponent<ChildBehaviour>());
             m_ChildList[m_SpawnIndex].m_CurrentWaitPoint = m_SpawnIndex;
             m_SpawnIndex++;
             m_Timer = 0;
         }
-    }
-    public Vector3 GetNewSpawnPoint(int lastIndex)
-    {
-        return m_SpawnPoint[lastIndex--].transform.position;
     }
 
     public void ReloadChild()

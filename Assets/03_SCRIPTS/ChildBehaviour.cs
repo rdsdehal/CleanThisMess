@@ -55,11 +55,17 @@ public class ChildBehaviour : MoveableObject
     private float m_IdleTimer = 0f;
     private float m_Timer = 0f;
 
-    public float m_ObjectMinDistance = 0.2f;
-    public float m_SittingSmoothTime = 1f;
-    public float m_PlateRayDistance = 1f;
+    private float m_ObjectMinDistance = 0.2f;
+    private float m_PlateRayDistance = 1f;
     public float m_LeaveBonus = 2f;
-    public float m_LeaveMalus = 2f;
+    public Vector2 m_LeaveBonusMalus = Vector2.one;
+    public Vector2 m_StandIdleTimer = Vector2.one;
+    public Vector2 m_SitIdleTimer = Vector2.one;
+    [Range(0f, 1f)] public float m_ChairObject = 0.5f;
+    [Range(0f, 1f)] public float m_SpitAfterFirstEat = 0.5f;
+    [Range(0f, 1f)] public float m_SpitAfterSecondEat = 0.5f;
+    [Range(0f, 1f)] public float m_FlipAfterDrop = 0.5f;
+    [Range(0f, 1f)] public float m_BerserkerFlip = 0.5f;
 
     private bool m_HaveEat = false;
 
@@ -87,12 +93,11 @@ public class ChildBehaviour : MoveableObject
             case CurrentState.MovingInQueue:
                 if (m_CurrentWaitPoint > 0)
                 {
-                    m_NavMeshAgent.SetDestination(m_EntryPoint.GetNewSpawnPoint(m_CurrentWaitPoint));
                     m_CurrentWaitPoint--;
                 }
                 break;
             case CurrentState.Idle:
-                m_IdleTimer = Random.Range(8f, 12f);
+                m_IdleTimer = Random.Range(m_StandIdleTimer.x, m_StandIdleTimer.y);
                 break;
             case CurrentState.MovingTowardChair:
                 m_Chair = m_ChairManager.FindChair(this.gameObject);
@@ -108,7 +113,7 @@ public class ChildBehaviour : MoveableObject
                 }
                 break;
             case CurrentState.MovingTowardObject:
-                m_Throwable = m_ChairManager.FindNearestThrowable(this.gameObject);
+                m_Throwable = m_ChairManager.FindThrowable(this.gameObject);
                 NavMeshHit closePointThrowable;
                 NavMesh.SamplePosition(m_Throwable.transform.position, out closePointThrowable, 1.5f, NavMesh.AllAreas);
                 m_NavMeshAgent.SetDestination(closePointThrowable.position);
@@ -119,7 +124,7 @@ public class ChildBehaviour : MoveableObject
             case CurrentState.Sitting:
                 canBePickedUp = false;
                 m_Timer = 0f;
-                m_IdleTimer = Random.Range(3f, 6f);
+                m_IdleTimer = Random.Range(m_SitIdleTimer.x, m_SitIdleTimer.y);
                 m_Chair.EnterChair();
                 m_NavMeshAgent.enabled = false;
                 transform.position = m_Chair.transform.position + Vector3.up * 0.25f;
@@ -133,7 +138,7 @@ public class ChildBehaviour : MoveableObject
                 break;
             case CurrentState.SittingIdle:
                 m_Timer = 0f;
-                m_IdleTimer = Random.Range(4f, 6f);
+                m_IdleTimer = Random.Range(m_SitIdleTimer.x, m_SitIdleTimer.y);
                 break;
             case CurrentState.MovingTowardExit:
                 m_NavMeshAgent.SetDestination(m_ExitPosition);
@@ -141,11 +146,11 @@ public class ChildBehaviour : MoveableObject
             case CurrentState.Disapear:
                 if (m_HaveEat)
                 {
-                    m_MayhemMeter.ChangeMeter(m_LeaveBonus);
+                    m_MayhemMeter.ChangeMeter(m_LeaveBonusMalus.x);
                 }
                 else
                 {
-                    m_MayhemMeter.ChangeMeter(-m_LeaveMalus);
+                    m_MayhemMeter.ChangeMeter(-m_LeaveBonusMalus.y);
                 }
                 Destroy(gameObject);
                 break;
@@ -194,7 +199,7 @@ public class ChildBehaviour : MoveableObject
                 m_Timer += Time.deltaTime;
                 if (m_Timer >= m_IdleTimer)
                 {
-                    if (Random.Range(0f, 1f) > 0.8f)
+                    if (Random.Range(0f, 1f) > m_ChairObject)
                     {
                         SwitchState(CurrentState.MovingTowardChair);
                     }
@@ -272,7 +277,7 @@ public class ChildBehaviour : MoveableObject
                     m_Plate.Consume();
                     if (m_HaveEat)
                     {
-                        if (Random.Range(0f, 1f) > 0.8f)
+                        if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
                         {
                             SwitchState(CurrentState.SittingIdle);
                         }
@@ -283,7 +288,7 @@ public class ChildBehaviour : MoveableObject
                     }
                     else
                     {
-                        if (Random.Range(0f, 1f) > 0.2f)
+                        if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
                         {
                             SwitchState(CurrentState.SittingIdle);
                         }
@@ -341,7 +346,7 @@ public class ChildBehaviour : MoveableObject
                     }
                     else
                     {
-                        if (Random.Range(0f, 1f) > 0.5f)
+                        if (Random.Range(0f, 1f) > m_FlipAfterDrop)
                         {
                             SwitchState(CurrentState.MovingTowardChair);
                         }
@@ -353,7 +358,7 @@ public class ChildBehaviour : MoveableObject
                 }
                 break;
             case CurrentState.Berserker:
-                if (Random.Range(0f, 1f) > 0.5f)
+                if (Random.Range(0f, 1f) > (1 - m_BerserkerFlip))
                 {
                     SwitchState(CurrentState.MovingTowardObject);
                 }
