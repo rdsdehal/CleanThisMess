@@ -715,11 +715,11 @@ MonoBehaviour:
   m_LeaveBonusMalus: {x: 1, y: 1}
   m_StandIdleTimer: {x: 1, y: 1}
   m_SitIdleTimer: {x: 1, y: 1}
-  m_ChairObject: 0.5
-  m_SpitAfterFirstEat: 0.5
-  m_SpitAfterSecondEat: 0.5
+  m_ChairObject: 0.3
+  m_SpitAfterFirstEat: 0.201
+  m_SpitAfterSecondEat: 0.724
   m_FlipAfterDrop: 0.5
-  m_BerserkerFlip: 0.5
+  m_BerserkerFlip: 0.612
   m_CurrentWaitPoint: 0
   m_RaycastLayer:
     serializedVersion: 2
