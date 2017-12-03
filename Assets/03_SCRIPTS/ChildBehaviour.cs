@@ -20,6 +20,8 @@ public class ChildBehaviour : MoveableObject
         m_EntryPoint = FindObjectOfType<EntryPoint>();
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
         m_Renderer = GetComponentInChildren<Animator>().gameObject;
+        m_MayhemMeter = m_EntryPoint.m_MayhemMeter;
+        m_ExitPosition = m_EntryPoint.LeavePoint;
     }
 
     private void Update()
@@ -86,6 +88,7 @@ public class ChildBehaviour : MoveableObject
                 if (m_CurrentWaitPoint > 0)
                 {
                     m_NavMeshAgent.SetDestination(m_EntryPoint.GetNewSpawnPoint(m_CurrentWaitPoint));
+                    m_CurrentWaitPoint--;
                 }
                 break;
             case CurrentState.Idle:
@@ -99,12 +102,16 @@ public class ChildBehaviour : MoveableObject
                 }
                 else
                 {
-                    m_NavMeshAgent.SetDestination(m_Chair.transform.position);
+                    NavMeshHit closePointChair;
+                    NavMesh.SamplePosition(m_Chair.transform.position, out closePointChair, 1.5f, NavMesh.AllAreas);
+                    m_NavMeshAgent.SetDestination(closePointChair.position);
                 }
                 break;
             case CurrentState.MovingTowardObject:
                 m_Throwable = m_ChairManager.FindNearestThrowable(this.gameObject);
-                m_NavMeshAgent.SetDestination(m_Throwable.transform.position);
+                NavMeshHit closePointThrowable;
+                NavMesh.SamplePosition(m_Throwable.transform.position, out closePointThrowable, 1.5f, NavMesh.AllAreas);
+                m_NavMeshAgent.SetDestination(closePointThrowable.position);
                 break;
             case CurrentState.ThrowSomething:
 
@@ -195,14 +202,14 @@ public class ChildBehaviour : MoveableObject
                 }
                 break;
             case CurrentState.MovingTowardChair:
-                if (m_NavMeshAgent.remainingDistance <= 0.6f)
+                if (Vector3.Distance(transform.position, m_NavMeshAgent.destination) < 0.6f)
                 {
                     SwitchState(CurrentState.Sitting);
                 }
                 break;
 
             case CurrentState.MovingTowardObject:
-                if (m_NavMeshAgent.remainingDistance <= m_ObjectMinDistance)
+                if (Vector3.Distance(transform.position, m_NavMeshAgent.destination) < 0.6f)
                 {
                     SwitchState(CurrentState.ThrowSomething);
                 }
@@ -293,7 +300,7 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.MovingTowardExit:
-                if (m_NavMeshAgent.remainingDistance <= 0.2f)
+                if (Vector3.Distance(transform.position, m_NavMeshAgent.destination) < 0.3f)
                 {
                     SwitchState(CurrentState.Disapear);
                 }
@@ -337,7 +344,7 @@ public class ChildBehaviour : MoveableObject
                 }
                 break;
             case CurrentState.Berserker:
-                SwitchState(CurrentState.MovingTowardObject);
+                SwitchState(CurrentState.MovingTowardExit);
                 break;
         }
     }

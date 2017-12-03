@@ -35,8 +35,6 @@ public class EntryPoint : MonoBehaviour
             GameObject obj = Instantiate(m_ChildPrefab, m_SpawnPoint[m_SpawnIndex].transform.position, Quaternion.identity);
             m_ChildList.Add(obj.gameObject.GetComponent<ChildBehaviour>());
             m_ChildList[m_SpawnIndex].m_CurrentWaitPoint = m_SpawnIndex;
-            m_ChildList[m_SpawnIndex].m_ExitPosition = LeavePoint;
-            m_ChildList[m_SpawnIndex].m_MayhemMeter = m_MayhemMeter;
             m_SpawnIndex++;
             m_Timer = 0;
         }
