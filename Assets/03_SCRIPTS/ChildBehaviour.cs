@@ -128,17 +128,13 @@ public class ChildBehaviour : MoveableObject
                 }
                 else
                 {
-                    NavMeshHit closePointChair;
-                    NavMesh.SamplePosition(m_Chair.transform.position, out closePointChair, 1.5f, NavMesh.AllAreas);
-                    m_NavMeshAgent.SetDestination(closePointChair.position);
+                    m_NavMeshAgent.SetDestination(m_Chair.transform.position);
                 }
                 break;
             case CurrentState.MovingTowardObject:
                 m_Animator.CrossFade("Boy_Walk", 0.5f);
                 m_Throwable = m_ChairManager.FindThrowable(this.gameObject);
-                NavMeshHit closePointThrowable;
-                NavMesh.SamplePosition(m_Throwable.transform.position, out closePointThrowable, 1.5f, NavMesh.AllAreas);
-                m_NavMeshAgent.SetDestination(closePointThrowable.position);
+                m_NavMeshAgent.SetDestination(m_Throwable.transform.position);
                 break;
             case CurrentState.ThrowSomething:
                 m_Timer = 0f;
@@ -171,9 +167,7 @@ public class ChildBehaviour : MoveableObject
                 m_IdleTimer = Random.Range(m_SitIdleTimer.x, m_SitIdleTimer.y);
                 break;
             case CurrentState.MovingTowardExit:
-                NavMeshHit closePointExit;
-                NavMesh.SamplePosition(m_ExitPosition, out closePointExit, 1.5f, NavMesh.AllAreas);
-                m_NavMeshAgent.SetDestination(closePointExit.position);
+                m_NavMeshAgent.SetDestination(m_ExitPosition);
                 break;
             case CurrentState.Disapear:
                 if (m_HaveEat)
