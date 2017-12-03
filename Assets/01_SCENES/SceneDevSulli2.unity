@@ -4039,7 +4039,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.033333335
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: dd17aacc250e9da4f854df0924cd5ccf, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: b19392f3f5f27464085091ff1b118b81, type: 2}
 --- !u!4 &757868416
 Transform:
   m_ObjectHideFlags: 0
@@ -4339,6 +4339,14 @@ Prefab:
     - target: {fileID: 1394891415077378, guid: 74e3e4317fc02644b821af635ac67311, type: 2}
       propertyPath: m_Name
       value: Chair (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953390226785008, guid: 74e3e4317fc02644b821af635ac67311, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 2.5658662
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953390226785008, guid: 74e3e4317fc02644b821af635ac67311, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74e3e4317fc02644b821af635ac67311, type: 2}
@@ -4717,10 +4725,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SpawnPoint: {fileID: 835867219}
   m_ChildList: []
-  m_ChildPrefab: {fileID: 1901165882260690, guid: 80ae56f6d96050a4485744054e6b7a35,
-    type: 2}
+  m_ChildPrefab:
+  - {fileID: 1901165882260690, guid: 80ae56f6d96050a4485744054e6b7a35, type: 2}
   m_MayhemMeter: {fileID: 1174617034}
   LeavePoint: {x: -14, y: 0, z: -2}
+  SpawnTime: {x: 8, y: 15}
   m_SpawnIndex: 0
   m_MustReload: 0
 --- !u!1 &836787620 stripped
@@ -6325,6 +6334,10 @@ Prefab:
     - target: {fileID: 4953390226785008, guid: 74e3e4317fc02644b821af635ac67311, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953390226785008, guid: 74e3e4317fc02644b821af635ac67311, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 274.50983
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74e3e4317fc02644b821af635ac67311, type: 2}

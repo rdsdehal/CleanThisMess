@@ -30,14 +30,14 @@ public class ChildBehaviour : MoveableObject
     private void Update()
     {
         OnStateUpdate();
-        if (m_HaveEat)
-        {
-            vfx_StillHappy.Play(true);
-        }
-        else
-        {
-            vfx_StillAngry.Play(true);
-        }
+        //if (m_HaveEat)
+        //{
+        //    vfx_StillHappy.Play(true);
+        //}
+        //else
+        //{
+        //    vfx_StillAngry.Play(true);
+        //}
     }
 
     public CurrentState m_CurrentState;
@@ -128,17 +128,13 @@ public class ChildBehaviour : MoveableObject
                 }
                 else
                 {
-                    NavMeshHit closePointChair;
-                    NavMesh.SamplePosition(m_Chair.transform.position, out closePointChair, 1.5f, NavMesh.AllAreas);
-                    m_NavMeshAgent.SetDestination(closePointChair.position);
+                    m_NavMeshAgent.SetDestination(m_Chair.transform.position);
                 }
                 break;
             case CurrentState.MovingTowardObject:
                 m_Animator.CrossFade("Boy_Walk", 0.5f);
                 m_Throwable = m_ChairManager.FindThrowable(this.gameObject);
-                NavMeshHit closePointThrowable;
-                NavMesh.SamplePosition(m_Throwable.transform.position, out closePointThrowable, 1.5f, NavMesh.AllAreas);
-                m_NavMeshAgent.SetDestination(closePointThrowable.position);
+                m_NavMeshAgent.SetDestination(m_Throwable.transform.position);
                 break;
             case CurrentState.ThrowSomething:
                 m_Timer = 0f;
@@ -150,7 +146,7 @@ public class ChildBehaviour : MoveableObject
                 m_Timer = 0f;
                 m_IdleTimer = Random.Range(m_SitIdleTimer.x, m_SitIdleTimer.y);
                 m_Chair.EnterChair();
-                m_NavMeshAgent.enabled = false;
+                //m_NavMeshAgent.enabled = false;
                 transform.position = m_Chair.transform.position + Vector3.up * 0.25f;
                 transform.forward = m_Chair.transform.forward;
                 break;
@@ -171,9 +167,7 @@ public class ChildBehaviour : MoveableObject
                 m_IdleTimer = Random.Range(m_SitIdleTimer.x, m_SitIdleTimer.y);
                 break;
             case CurrentState.MovingTowardExit:
-                NavMeshHit closePointExit;
-                NavMesh.SamplePosition(m_ExitPosition, out closePointExit, 1.5f, NavMesh.AllAreas);
-                m_NavMeshAgent.SetDestination(closePointExit.position);
+                m_NavMeshAgent.SetDestination(m_ExitPosition);
                 break;
             case CurrentState.Disapear:
                 if (m_HaveEat)
@@ -187,7 +181,7 @@ public class ChildBehaviour : MoveableObject
                 Destroy(gameObject);
                 break;
             case CurrentState.PickUp:
-                m_NavMeshAgent.enabled = false;
+                //m_NavMeshAgent.enabled = false;
                 m_Animator.CrossFade("Boy_Caught", 0.5f);
                 break;
             case CurrentState.Release:
@@ -197,7 +191,7 @@ public class ChildBehaviour : MoveableObject
                 m_Animator.CrossFade("Boy_Heavy_Walk", 0.5f);
                 vfx_Angry.Play(true);
                 m_Renderer.transform.position = transform.position;
-                m_NavMeshAgent.enabled = true;
+                //m_NavMeshAgent.enabled = true;
                 break;
 
         }
@@ -378,7 +372,7 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.Release:
-                m_NavMeshAgent.enabled = true;
+                //m_NavMeshAgent.enabled = true;
                 RaycastHit releaseHit;
                 Ray downRay = new Ray(transform.position, Vector3.down);
                 if (Physics.Raycast(downRay, out releaseHit, 100.0f, m_RaycastLayer, QueryTriggerInteraction.Collide))
@@ -461,7 +455,7 @@ public class ChildBehaviour : MoveableObject
                 m_Renderer.transform.position = transform.position;
                 m_Chair.ExitChair();
                 m_Chair.m_Rigidbody.isKinematic = false;
-                m_NavMeshAgent.enabled = true;
+                //m_NavMeshAgent.enabled = true;
                 break;
 
             case CurrentState.SittingIdle:
@@ -470,7 +464,7 @@ public class ChildBehaviour : MoveableObject
                 m_Renderer.transform.position = transform.position;
                 m_Chair.ExitChair();
                 m_Chair.m_Rigidbody.isKinematic = false;
-                m_NavMeshAgent.enabled = true;
+                //m_NavMeshAgent.enabled = true;
                 break;
             case CurrentState.MovingTowardExit:
 

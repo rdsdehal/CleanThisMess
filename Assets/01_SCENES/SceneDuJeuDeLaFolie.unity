@@ -2182,7 +2182,7 @@ Prefab:
         type: 2}
       propertyPath: m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 9f6a658ea55a5e14399bb9ad19956db2,
+      objectReference: {fileID: 12800000, guid: 64d0b4ef55df77a42a3524fb20a3495c,
         type: 3}
     - target: {fileID: 23311366453312688, guid: fdc7b3f40328226479213099a1b61f7b,
         type: 2}
@@ -2220,7 +2220,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4622724042707646, guid: fdc7b3f40328226479213099a1b61f7b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.75
+      value: 1.92
       objectReference: {fileID: 0}
     - target: {fileID: 4129423433043286, guid: fdc7b3f40328226479213099a1b61f7b, type: 2}
       propertyPath: m_LocalScale.y
@@ -2241,6 +2241,11 @@ Prefab:
     - target: {fileID: 4622724042707646, guid: fdc7b3f40328226479213099a1b61f7b, type: 2}
       propertyPath: m_LocalScale.z
       value: 1.7123326
+      objectReference: {fileID: 0}
+    - target: {fileID: 102606818105560214, guid: fdc7b3f40328226479213099a1b61f7b,
+        type: 2}
+      propertyPath: m_FontSize
+      value: 188
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdc7b3f40328226479213099a1b61f7b, type: 2}
@@ -4694,7 +4699,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.033333335
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: fbe3bf5c25e888145b799ef24819514b, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 9752c40d63f0094498505a808b455b6d, type: 2}
 --- !u!4 &757868416
 Transform:
   m_ObjectHideFlags: 0
