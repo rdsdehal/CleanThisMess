@@ -353,7 +353,7 @@ public class ChildBehaviour : MoveableObject
                 m_NavMeshAgent.enabled = true;
                 RaycastHit releaseHit;
                 Ray downRay = new Ray(transform.position, Vector3.down);
-                if (Physics.Raycast(downRay, out releaseHit, 100.0f, m_RaycastLayer))
+                if (Physics.Raycast(downRay, out releaseHit, 100.0f, m_RaycastLayer, QueryTriggerInteraction.Collide))
                 {
                     m_Chair = releaseHit.collider.GetComponentInParent<Chair>();
                     if (m_Chair != null)
