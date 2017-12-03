@@ -6,13 +6,15 @@ public class Plate : MonoBehaviour
 	{
 		Clean,
 		Full,
-		Dirty
+		Dirty,
+		Garbage
 	}
 
 	public PlateState plateState = PlateState.Clean;
 
 	public GameObject dirtyPlate;
 	public GameObject[] food;
+	public GameObject[] garbage;
 
 	public void Clean()
 	{
@@ -22,6 +24,10 @@ public class Plate : MonoBehaviour
 		for ( int i = 0 ; i < food.Length ; i++ )
 		{
 			food[i].SetActive( false );
+		}
+		for ( int i = 0 ; i < garbage.Length ; i++ )
+		{
+			garbage[i].SetActive( false );
 		}
 	}
 
@@ -43,6 +49,10 @@ public class Plate : MonoBehaviour
 		for ( int i = 0 ; i < food.Length ; i++ )
 		{
 			food[i].SetActive( false );
+		}
+		for ( int i = 0 ; i < garbage.Length ; i++ )
+		{
+			garbage[i].SetActive( false );
 		}
 	}
 }
