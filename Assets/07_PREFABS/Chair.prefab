@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 114592928954132312}
   - component: {fileID: 114329073713520668}
   - component: {fileID: 114684781057584446}
-  - component: {fileID: 208538731134913198}
   m_Layer: 9
   m_Name: Chair
   m_TagString: Untagged
@@ -142,15 +141,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1394891415077378}
-  m_LocalRotation: {x: 0, y: 0.99999404, z: 0, w: 0.0034498663}
-  m_LocalPosition: {x: 1.73, y: 0.23828125, z: 4.37}
-  m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
+  m_LocalRotation: {x: 0, y: -0.022389537, z: 0, w: -0.99974936}
+  m_LocalPosition: {x: 1.72, y: 0.23828125, z: 2.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4782190048800750}
   - {fileID: 4769268044617666}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0, y: 179.60468, z: 0}
+  m_LocalEulerAnglesHint: {x: -0, y: 2.5658662, z: -0}
 --- !u!4 &4957608575576554
 Transform:
   m_ObjectHideFlags: 1
@@ -270,7 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: chair
   mouseVelocityFactor: 1
-  localAnchor: {x: 0, y: -0.5, z: 0.2}
+  localAnchor: {x: 0, y: -0.7, z: 0.3}
   canBePickedUp: 1
   benneable: 1
   initialMalus: 1
@@ -287,18 +286,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineColor: {r: 1, g: 0.86379313, b: 0.41911763, a: 1}
---- !u!208 &208538731134913198
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1394891415077378}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.17, y: 0.365, z: 0.24}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.28, z: 0}
-  m_TimeToStationary: 0.5
