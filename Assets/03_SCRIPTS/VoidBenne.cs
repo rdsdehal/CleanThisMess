@@ -12,7 +12,7 @@ public class VoidBenne : MonoBehaviour
 	private void OnTriggerEnter( Collider other )
 	{
 		var obj = other.GetComponentInParent<MoveableObject>();
-		if ( obj )
+		if ( obj && obj.benneOmozons )
 		{
 			delivery.ScheduleDelivery( obj.gameObject );
 			obj.gameObject.SetActive( false );
