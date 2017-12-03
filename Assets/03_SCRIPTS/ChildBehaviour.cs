@@ -456,6 +456,7 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.SittingIdle:
+                canBePickedUp = true;
                 transform.position = m_Chair.transform.position - Vector3.up * 0.25f;
                 m_Renderer.transform.position = transform.position;
                 m_Chair.ExitChair();
