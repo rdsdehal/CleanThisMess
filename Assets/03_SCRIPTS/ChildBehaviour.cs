@@ -185,7 +185,10 @@ public class ChildBehaviour : MoveableObject
                 }
                 break;
             case CurrentState.MovingInQueue:
-
+                if (m_EntryPoint.m_MustReload)
+                {
+                    SwitchState(CurrentState.MovingInQueue);
+                }
                 break;
             case CurrentState.Idle:
                 m_Timer += Time.deltaTime;
@@ -228,24 +231,30 @@ public class ChildBehaviour : MoveableObject
                 if (Physics.Raycast(forwardRay, out plateHit, m_PlateRayDistance, m_RaycastLayer, QueryTriggerInteraction.Collide))
                 {
                     Plate m_Plate = plateHit.collider.GetComponentInParent<Plate>();
-                    if (m_Plate != null && m_Plate.plateState == Plate.PlateState.Full)
+                    if (m_Plate != null)
                     {
-                        SwitchState(CurrentState.Eating);
+                        if (m_Plate.plateState == Plate.PlateState.Full)
+                        {
+                            SwitchState(CurrentState.Eating);
+                        }
+                        else if (m_Plate.plateState == Plate.PlateState.Garbage)
+                        {
+                            SwitchState(CurrentState.Spitting);
+                        }
+                        if (m_Timer >= m_IdleTimer)
+                        {
+                            SwitchState(CurrentState.Berserker);
+                        }
                     }
-                    if (m_Timer >= m_IdleTimer)
+                    else
                     {
-                        SwitchState(CurrentState.Berserker);
-                    }
-                }
-                else
-                {
-                    if (m_Timer >= m_IdleTimer)
-                    {
-                        SwitchState(CurrentState.Berserker);
+                        if (m_Timer >= m_IdleTimer)
+                        {
+                            SwitchState(CurrentState.Berserker);
+                        }
                     }
                 }
                 break;
-
             case CurrentState.Eating:
                 m_Timer += Time.deltaTime;
                 RaycastHit plateHit2;
@@ -332,7 +341,7 @@ public class ChildBehaviour : MoveableObject
                     }
                     else
                     {
-                        if (Random.Range(0f, 1f) > 0.2f)
+                        if (Random.Range(0f, 1f) > 0.5f)
                         {
                             SwitchState(CurrentState.MovingTowardChair);
                         }
@@ -344,7 +353,14 @@ public class ChildBehaviour : MoveableObject
                 }
                 break;
             case CurrentState.Berserker:
-                SwitchState(CurrentState.MovingTowardExit);
+                if (Random.Range(0f, 1f) > 0.5f)
+                {
+                    SwitchState(CurrentState.MovingTowardObject);
+                }
+                else
+                {
+                    SwitchState(CurrentState.MovingTowardExit);
+                }
                 break;
         }
     }

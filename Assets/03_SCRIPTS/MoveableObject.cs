@@ -6,8 +6,9 @@ public class MoveableObject : MonoBehaviour
 	public string objectType;
 	[Range( 0, 1 )]
 	public float mouseVelocityFactor = 1;
-	public Vector3 localAnchor;
+	public float mouseOffset;
 	public bool canBePickedUp;
+	public Vector3 localOffset;
 	public bool benneable;
 	public bool benneOmozons;
 	public bool canBurn;
@@ -49,7 +50,7 @@ public class MoveableObject : MonoBehaviour
 		transform.parent = joint.transform;
 		isTipped = false;
 
-		transform.localPosition = Vector3.zero + localAnchor;
+		transform.localPosition = Vector3.zero + localOffset;
 		float yRot = transform.localEulerAngles.y;
 		transform.localRotation = Quaternion.identity;
 		transform.Rotate( new Vector3( 0, yRot, 0 ) );
