@@ -4073,7 +4073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2686e64ccbfcac84899962ae08fe7ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regenEverySec: 0.25
+  regenEverySec: 1
 --- !u!1 &758405897
 GameObject:
   m_ObjectHideFlags: 0
@@ -7384,6 +7384,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 33265476780190828, guid: ad80ff540b6c1c343a38b65eb34dfdbe,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: 29a601c89e662224798fe71537d2945f, type: 3}
+    - target: {fileID: 23873255103833330, guid: ad80ff540b6c1c343a38b65eb34dfdbe,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e1eb7351d1d4a44c978487a3b77a391, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
   m_IsPrefabParent: 0
