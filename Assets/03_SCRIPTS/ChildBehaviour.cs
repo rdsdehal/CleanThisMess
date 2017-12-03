@@ -440,7 +440,7 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.Sitting:
-                vfx_Poulet.Play(false);
+                vfx_Poulet.Stop(true);
                 break;
             case CurrentState.Eating:
                 m_HaveEat = true;
