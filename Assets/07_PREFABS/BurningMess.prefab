@@ -391,9 +391,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: 
   mouseVelocityFactor: 1
-  mouseOffset: 0
+  mouseOffset: 0.6
   canBePickedUp: 1
-  localOffset: {x: 0, y: 0, z: 0}
+  localOffset: {x: 0, y: -0.6, z: 0}
   benneable: 1
   benneOmozons: 0
   canBurn: 0
