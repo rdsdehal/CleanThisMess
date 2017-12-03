@@ -130,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1923082346954824}
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.068, y: 7.6463444e-17, z: -4.747}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4719748887837940}
@@ -289,7 +289,7 @@ MonoBehaviour:
   canBePickedUp: 1
   localOffset: {x: 0, y: -1, z: 0}
   benneable: 1
-  benneOmozons: 0
+  benneOmozons: 1
   canBurn: 0
   initialMalus: 0
   dotPerSecondMalus: 0

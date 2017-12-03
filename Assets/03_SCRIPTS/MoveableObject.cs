@@ -31,7 +31,7 @@ public class MoveableObject : MonoBehaviour
 		m_RigidBody = GetComponent<Rigidbody>();
 		mayhemMeter = FindObjectOfType<MayhemMeter>();
 		amazon = FindObjectOfType<AmazonDelivery>();
-		rendererMan = GetComponentInChildren<MeshRenderer>();
+		rendererMan = GetComponentInChildren<Renderer>();
 		defaultMats = rendererMan.materials;
 		malusMats = new Material[2] { defaultMats[0], malusMaterial };
 	}
