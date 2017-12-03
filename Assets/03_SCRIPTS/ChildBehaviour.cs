@@ -78,6 +78,7 @@ public class ChildBehaviour : MoveableObject
     public ParticleSystem vfx_Happy = null;
     public ParticleSystem vfx_StillHappy = null;
     public ParticleSystem vfx_Spitting = null;
+    public ParticleSystem vfx_Poulet = null;
     public GameObject vfx_Spit = null;
 
     [HideInInspector] public int m_CurrentWaitPoint = 0;
@@ -260,7 +261,7 @@ public class ChildBehaviour : MoveableObject
 
             case CurrentState.Sitting:
                 m_Timer += Time.deltaTime;
-
+                vfx_Poulet.Play(true);
                 RaycastHit plateHit;
                 Ray forwardRay = new Ray(transform.position + Vector3.up * 0.3f, transform.forward);
                 if (Physics.Raycast(forwardRay, out plateHit, m_PlateRayDistance, m_RaycastLayer, QueryTriggerInteraction.Collide))
@@ -439,7 +440,7 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.Sitting:
-
+                vfx_Poulet.Play(false);
                 break;
             case CurrentState.Eating:
                 m_HaveEat = true;
