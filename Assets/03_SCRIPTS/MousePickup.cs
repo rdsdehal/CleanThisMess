@@ -57,7 +57,7 @@ public class MousePickup : MonoBehaviour
 		RaycastHit pickupHit;
 		Ray worldRay = new Ray( cam.transform.position, transform.position - cam.transform.position );
 
-		if ( Physics.Raycast( worldRay, out pickupHit, 100, objectLayer ) )
+		if ( Physics.Raycast( worldRay, out pickupHit, 100, objectLayer, QueryTriggerInteraction.Collide ) )
 		{
 			// PICKUP OBJECT
 			var moveObject = pickupHit.collider.GetComponentInParent<MoveableObject>();
