@@ -46,11 +46,11 @@ public class MoveableObject : MonoBehaviour
 		m_RigidBody.isKinematic = true;
 		m_RigidBody.useGravity = false;
 		m_RigidBody.velocity = Vector3.zero;
-		m_RigidBody.angularVelocity = Vector3.zero + localOffset;
+		m_RigidBody.angularVelocity = Vector3.zero;
 		transform.parent = joint.transform;
 		isTipped = false;
 
-		transform.localPosition = Vector3.zero;
+		transform.localPosition = Vector3.zero + localOffset;
 		float yRot = transform.localEulerAngles.y;
 		transform.localRotation = Quaternion.identity;
 		transform.Rotate( new Vector3( 0, yRot, 0 ) );
