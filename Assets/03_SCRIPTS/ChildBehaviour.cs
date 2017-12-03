@@ -24,6 +24,7 @@ public class ChildBehaviour : MoveableObject
         m_MayhemMeter = m_EntryPoint.m_MayhemMeter;
         m_ExitPosition = m_EntryPoint.LeavePoint;
         m_Animator = GetComponentInChildren<Animator>();
+        m_Animator.CrossFade("Boy_Idle", 0.5f);
     }
 
     private void Update()
@@ -114,6 +115,7 @@ public class ChildBehaviour : MoveableObject
                 }
                 break;
             case CurrentState.Idle:
+
                 m_IdleTimer = Random.Range(m_StandIdleTimer.x, m_StandIdleTimer.y);
                 break;
             case CurrentState.MovingTowardChair:
@@ -239,7 +241,6 @@ public class ChildBehaviour : MoveableObject
                         SwitchState(CurrentState.MovingTowardObject);
                     }
                 }
-                m_Animator.CrossFade("Boy_Walk", 0.5f);
                 break;
             case CurrentState.MovingTowardChair:
                 if (Vector3.Distance(transform.position, m_NavMeshAgent.destination) < 0.6f)
