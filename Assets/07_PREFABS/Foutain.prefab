@@ -221,7 +221,7 @@ MonoBehaviour:
   benneOmozons: 1
   canBurn: 1
   initialMalus: 1
-  dotPerSecondMalus: 0.5
+  dotPerSecondMalus: 0.25
   malusMaterial: {fileID: 2100000, guid: a3b8a94bccafc7944b6e25aa2efbc4ff, type: 2}
 --- !u!114 &114273172255306110
 MonoBehaviour:
