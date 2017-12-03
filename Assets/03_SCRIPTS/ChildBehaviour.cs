@@ -62,6 +62,7 @@ public class ChildBehaviour : MoveableObject
     public Vector2 m_LeaveBonusMalus = Vector2.one;
     public Vector2 m_StandIdleTimer = Vector2.one;
     public Vector2 m_SitIdleTimer = Vector2.one;
+    public Vector2 m_ImpulseForce = Vector2.one;
     [Range(0f, 1f)] public float m_ChairObject = 0.5f;
     [Range(0f, 1f)] public float m_SpitAfterFirstEat = 0.5f;
     [Range(0f, 1f)] public float m_SpitAfterSecondEat = 0.5f;
@@ -236,7 +237,7 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.ThrowSomething:
-                m_Throwable.GetComponent<Rigidbody>().AddForceAtPosition((transform.forward * 3f) + Vector3.up * 3f, transform.position, ForceMode.Impulse);
+                m_Throwable.GetComponent<Rigidbody>().AddForceAtPosition((transform.forward * m_ImpulseForce.x) + Vector3.up * m_ImpulseForce.y, transform.position, ForceMode.Impulse);
                 m_Timer += Time.deltaTime;
                 if (m_Timer > 2.0f)
                 {
@@ -287,30 +288,33 @@ public class ChildBehaviour : MoveableObject
                     {
                         SwitchState(CurrentState.Berserker);
                     }
-                }
-                if (m_Timer > 4.0f && m_Plate != null)
-                {
-                    m_Plate.Consume();
-                    if (m_HaveEat)
-                    {
-                        if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
-                        {
-                            SwitchState(CurrentState.SittingIdle);
-                        }
-                        else
-                        {
-                            SwitchState(CurrentState.Spitting);
-                        }
-                    }
                     else
                     {
-                        if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
+                        if (m_Timer > 4.0f)
                         {
-                            SwitchState(CurrentState.SittingIdle);
-                        }
-                        else
-                        {
-                            SwitchState(CurrentState.Spitting);
+                            if (m_HaveEat)
+                            {
+                                if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
+                                {
+                                    SwitchState(CurrentState.SittingIdle);
+                                }
+                                else
+                                {
+                                    SwitchState(CurrentState.Spitting);
+                                }
+                            }
+                            else
+                            {
+                                if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
+                                {
+                                    SwitchState(CurrentState.SittingIdle);
+                                }
+                                else
+                                {
+                                    SwitchState(CurrentState.Spitting);
+                                }
+                            }
+                            m_Plate.Consume();
                         }
                     }
                 }
@@ -383,7 +387,6 @@ public class ChildBehaviour : MoveableObject
                 }
                 else
                 {
-                    Debug.Log("Entry MovingToExit");
                     SwitchState(CurrentState.MovingTowardExit);
                 }
                 break;
@@ -417,11 +420,7 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.Sitting:
-                transform.position = m_Chair.transform.position - Vector3.up * 0.25f;
-                m_Renderer.transform.position = transform.position;
-                m_Chair.ExitChair();
-                m_Chair.m_Rigidbody.isKinematic = false;
-                m_NavMeshAgent.enabled = true;
+
                 break;
             case CurrentState.Eating:
                 m_HaveEat = true;
