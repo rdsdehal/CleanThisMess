@@ -39,6 +39,7 @@ public class EntryPoint : MonoBehaviour
         m_LerpTimer += Time.deltaTime;
         timeReducerX = Mathf.Lerp(SpawnTime.x, 2f, m_LerpTimer / timeBeforeHardness);
         timeReducerY = Mathf.Lerp(SpawnTime.y, 2f, m_LerpTimer / timeBeforeHardness);
+
         if (m_Timer >= m_NextSpawnTime)
         {
             GameObject obj = Instantiate(m_ChildPrefab[Random.Range(0, m_ChildPrefab.Length)], m_SpawnPoint.transform.position, Quaternion.identity);
@@ -46,7 +47,7 @@ public class EntryPoint : MonoBehaviour
             m_ChildList[m_SpawnIndex].m_CurrentWaitPoint = m_SpawnIndex;
             m_SpawnIndex++;
             m_Timer = 0;
-            m_NextSpawnTime = Random.Range(SpawnTime.x - timeReducerX, SpawnTime.y - timeReducerY);
+            m_NextSpawnTime = Random.Range(timeReducerX, timeReducerY);
         }
     }
 
