@@ -131,7 +131,7 @@ public class ChildBehaviour : MoveableObject
                 break;
             case CurrentState.ThrowSomething:
                 m_Timer = 0f;
-
+                m_Throwable.GetComponent<Rigidbody>().AddForceAtPosition((transform.forward * m_ImpulseForce.x) + Vector3.up * m_ImpulseForce.y, transform.position, ForceMode.Impulse);
                 break;
             case CurrentState.Sitting:
                 m_Animator.CrossFade("Boy_Idle_Sit", 0.5f);
@@ -251,7 +251,7 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.ThrowSomething:
-                m_Throwable.GetComponent<Rigidbody>().AddForceAtPosition((transform.forward * m_ImpulseForce.x) + Vector3.up * m_ImpulseForce.y, transform.position, ForceMode.Impulse);
+
                 m_Timer += Time.deltaTime;
                 if (m_Timer > 2.0f)
                 {

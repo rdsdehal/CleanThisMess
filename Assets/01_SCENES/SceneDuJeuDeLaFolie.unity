@@ -12345,7 +12345,7 @@ Prefab:
     - target: {fileID: 114174213631972780, guid: f77e905f79007b842859ac06baad1f1d,
         type: 2}
       propertyPath: timeBeforeHardness
-      value: 1000
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f77e905f79007b842859ac06baad1f1d, type: 2}
