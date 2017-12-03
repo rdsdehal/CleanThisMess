@@ -161,8 +161,8 @@ public class ChildBehaviour : MoveableObject
                 vfx_Spitting.Play(true);
                 break;
             case CurrentState.SittingIdle:
+                canBePickedUp = true;
                 m_Animator.CrossFade("Boy_Idle_Sit", 0.5f);
-                canBePickedUp = false;
                 m_Timer = 0f;
                 m_IdleTimer = Random.Range(m_SitIdleTimer.x, m_SitIdleTimer.y);
                 break;
@@ -456,7 +456,7 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.SittingIdle:
-                canBePickedUp = true;
+
                 transform.position = m_Chair.transform.position - Vector3.up * 0.25f;
                 m_Renderer.transform.position = transform.position;
                 m_Chair.ExitChair();
