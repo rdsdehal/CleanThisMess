@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4970742002727334}
   - component: {fileID: 114382739888323512}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NavMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
