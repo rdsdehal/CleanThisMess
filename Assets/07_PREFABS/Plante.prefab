@@ -243,8 +243,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: Plante
   mouseVelocityFactor: 1
-  localAnchor: {x: 0, y: 0, z: 0}
+  mouseOffset: 0.5
   canBePickedUp: 1
+  localOffset: {x: 0, y: -0.5, z: 0}
   benneable: 1
   benneOmozons: 1
   canBurn: 1
@@ -271,7 +272,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.13936484
-  m_Height: 0.36611634
+  m_Radius: 0.23671086
+  m_Height: 0.58530724
   m_Direction: 1
-  m_Center: {x: -0.0027274787, y: 0.2230582, z: 0}
+  m_Center: {x: -0.0027274783, y: 0.27900097, z: 0}

@@ -21,6 +21,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: OmozonEmissive_Material
     second: {fileID: 2100000, guid: 542c93ce5b5362a48aad604d128c26a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OmozonPlaque_Material
+    second: {fileID: 2100000, guid: eee53d161d6565044a68d80755f82a20, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -50,7 +55,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 1.4
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

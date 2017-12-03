@@ -226,15 +226,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1068031250333838}
-  m_LocalRotation: {x: 0, y: 0.038064443, z: 0, w: 0.99927527}
-  m_LocalPosition: {x: 1.7199998, y: 0.23828125, z: 3.48}
+  m_LocalRotation: {x: 0, y: 0.031833205, z: 0, w: 0.99949324}
+  m_LocalPosition: {x: 3.65, y: 0.23828125, z: 4.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4571607305798328}
   - {fileID: 4875009863845212}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0, y: 4.3629184, z: 0}
+  m_LocalEulerAnglesHint: {x: -0, y: 3.6484332, z: 0}
 --- !u!4 &4875009863845212
 Transform:
   m_ObjectHideFlags: 1
@@ -382,8 +382,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: table
   mouseVelocityFactor: 1
-  localAnchor: {x: 0, y: 0, z: 0}
+  mouseOffset: 1
   canBePickedUp: 1
+  localOffset: {x: 0, y: -1, z: 0}
   benneable: 0
   benneOmozons: 1
   canBurn: 1
