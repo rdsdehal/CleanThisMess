@@ -10,6 +10,8 @@ public class AmazonPackage : MonoBehaviour
 		packageContents.transform.rotation = Quaternion.identity;
 		packageContents.SetActive( true );
 
+		FindObjectOfType<AmazonDelivery>().PlayDelivery( transform.position );
+
 		Invoke( "DoSpawn", 0.05f );
 	}
 
