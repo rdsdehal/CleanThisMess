@@ -1,48 +1,48 @@
 fileFormatVersion: 2
-guid: 2b258d620ccaad84f8550b8f2e414c2d
-timeCreated: 1512248717
+guid: 620f0085fb5ab784596140e2605f1a14
+timeCreated: 1512287517
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Girl_Bones_Bassin
-    100002: Girl_Bones_Epaules
-    100004: Girl_Bones_Feet_L
-    100006: Girl_Bones_Feet_R
-    100008: Girl_Bones_Hand_L
-    100010: Girl_Bones_Hand_R
-    100012: Girl_Bones_Tete
-    100014: Girl_Bones_Torse
-    100016: //RootNode
-    100018: Girl_Model
-    400000: Girl_Bones_Bassin
-    400002: Girl_Bones_Epaules
-    400004: Girl_Bones_Feet_L
-    400006: Girl_Bones_Feet_R
-    400008: Girl_Bones_Hand_L
-    400010: Girl_Bones_Hand_R
-    400012: Girl_Bones_Tete
-    400014: Girl_Bones_Torse
-    400016: //RootNode
-    400018: Girl_Model
-    4300000: Girl_Model
-    7400000: Manger
-    7400002: Marche
+    100000: FatBoy_Bones_Bassin
+    100002: FatBoy_Bones_Epaules
+    100004: FatBoy_Bones_Feet_L
+    100006: FatBoy_Bones_Feet_R
+    100008: FatBoy_Bones_Hand_L
+    100010: FatBoy_Bones_Hand_R
+    100012: FatBoy_Bones_Tete
+    100014: FatBoy_Bones_Torse
+    100016: FatBoy_Model
+    100018: //RootNode
+    400000: FatBoy_Bones_Bassin
+    400002: FatBoy_Bones_Epaules
+    400004: FatBoy_Bones_Feet_L
+    400006: FatBoy_Bones_Feet_R
+    400008: FatBoy_Bones_Hand_L
+    400010: FatBoy_Bones_Hand_R
+    400012: FatBoy_Bones_Tete
+    400014: FatBoy_Bones_Torse
+    400016: FatBoy_Model
+    400018: //RootNode
+    4300000: FatBoy_Model
+    7400000: Marche
+    7400002: Manger
     7400004: Idle Assis
     7400006: Vomi
     7400008: Marche venere
-    7400010: Idle debout
+    7400010: Idle Debout
     7400012: Table flip
     7400014: Plate flip
     7400016: Choper mii
     9500000: //RootNode
-    13700000: Girl_Model
+    13700000: FatBoy_Model
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Girl_Material
-    second: {fileID: 2100000, guid: 9f0ab84b3f78c2f499f62605f80cb803, type: 2}
+      name: FatBoy_Model
+    second: {fileID: 2100000, guid: d301ea2c7c97a434bb3b86e94841438a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -210,7 +210,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Idle debout
+      name: Idle Debout
       takeName: Take 001
       firstFrame: 210
       lastFrame: 250
@@ -220,7 +220,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
