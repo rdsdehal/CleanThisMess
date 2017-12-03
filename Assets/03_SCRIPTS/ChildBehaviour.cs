@@ -125,6 +125,7 @@ public class ChildBehaviour : MoveableObject
                 }
                 break;
             case CurrentState.MovingTowardObject:
+                m_Timer = 0f;
                 m_Animator.CrossFade("Boy_Walk", 0.5f);
                 m_Throwable = m_ChairManager.FindThrowable(this.gameObject);
                 m_NavMeshAgent.SetDestination(m_Throwable.transform.position);
@@ -244,14 +245,15 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.MovingTowardObject:
-                if (m_NavMeshAgent.remainingDistance < 2.0f)
+                if (Vector3.Distance(transform.position, m_NavMeshAgent.destination) < 0.6f)
                 {
                     m_Animator.CrossFade("Boy_TableFlip", 0.0f);
                     transform.rotation = Quaternion.LookRotation((m_Throwable.transform.position - transform.position));
-                }
-                if (Vector3.Distance(transform.position, m_NavMeshAgent.destination) < 0.6f)
-                {
-                    SwitchState(CurrentState.ThrowSomething);
+                    m_Timer += Time.deltaTime;
+                    if (m_Timer >= 1.0f)
+                    {
+                        SwitchState(CurrentState.ThrowSomething);
+                    }
                 }
                 break;
 
