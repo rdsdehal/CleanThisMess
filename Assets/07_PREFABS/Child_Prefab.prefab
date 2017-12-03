@@ -1012,7 +1012,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1901165882260690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.933156, y: 0.000008583069, z: -0.79139966}
+  m_LocalPosition: {x: 3.5616498, y: 0.000008583069, z: 0.25202787}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4597382849446992}
@@ -1090,9 +1090,13 @@ MonoBehaviour:
   m_BerserkerFlip: 0
   vfx_Eating: {fileID: 198090738156711250}
   vfx_Angry: {fileID: 198819789835783136}
+  vfx_StillAngry: {fileID: 198108282914736408, guid: 8b2c486fed61d1543a8b2989c7059d7c,
+    type: 2}
   vfx_Happy: {fileID: 198053259658458350}
+  vfx_StillHappy: {fileID: 198029089337846450, guid: 2ccf1be90c930e540a52746fbf660d09,
+    type: 2}
   vfx_Spitting: {fileID: 198786497708419458}
-  vfx_Spit: {fileID: 0}
+  vfx_Spit: {fileID: 1251850354810100, guid: cb4fa16fdcb11ce44a9c97a3a236907f, type: 2}
   m_CurrentWaitPoint: 0
   m_RaycastLayer:
     serializedVersion: 2
@@ -21199,7 +21203,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -455228079
+  randomSeed: -1202594387
   InitialModule:
     serializedVersion: 3
     enabled: 1

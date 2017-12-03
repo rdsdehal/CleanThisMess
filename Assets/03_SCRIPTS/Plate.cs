@@ -38,7 +38,7 @@ public class Plate : MonoBehaviour
 		if ( plateState == PlateState.Clean )
 		{
 
-			if ( Random.value > 0.85f )
+			if ( Random.value > 0.95f )
 			{
 				plateState = PlateState.Garbage;
 

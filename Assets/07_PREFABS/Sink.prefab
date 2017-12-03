@@ -686,7 +686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   splash: {fileID: 198733708830468988}
   audioSource: {fileID: 82218177825905992}
-  clip: {fileID: 8300000, guid: 7dd5f936868c66648a61475143ee4e17, type: 3}
+  clip: {fileID: 8300000, guid: ff86c0d5adec75e4e9b53ca42ead62e3, type: 3}
 --- !u!114 &114570749593698704
 MonoBehaviour:
   m_ObjectHideFlags: 1
