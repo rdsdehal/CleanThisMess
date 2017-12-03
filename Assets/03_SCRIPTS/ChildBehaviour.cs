@@ -96,7 +96,7 @@ public class ChildBehaviour : MoveableObject
         switch (m_NewState)
         {
             case CurrentState.Spawn:
-
+                m_Animator.CrossFade("Boy_Walk", 0.5f);
                 break;
             case CurrentState.InQueue:
 
