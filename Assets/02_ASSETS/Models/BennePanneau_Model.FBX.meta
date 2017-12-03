@@ -1,39 +1,22 @@
 fileFormatVersion: 2
-guid: 5726ce497df9eef4d9d9fa5edb92135b
-timeCreated: 1512247300
+guid: 711bba994a90ff048998a4580f47d644
+timeCreated: 1512297126
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Shit_Material
-    2100002: Parapluie_Material
-    2100004: Paille_Material
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Shit_Model
+    4300000: Box001
+    4300002: BennePanneau_Model
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: No Name
-    second: {fileID: 2100000, guid: c72b084a8c8fed540848544698b17efe, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Paille_Material
-    second: {fileID: 2100000, guid: a26d87ced67cfa24ba7736da9bf169b4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Parapluie_Material
-    second: {fileID: 2100000, guid: abb33d4fdaace9e47999d5abdcde91f7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Shit_Material
-    second: {fileID: 2100000, guid: c72b084a8c8fed540848544698b17efe, type: 2}
+    second: {fileID: 2100000, guid: 8c44b9fe047f44f45a53ed48ee09b308, type: 2}
   materials:
     importMaterials: 0
     materialName: 0
