@@ -20,7 +20,9 @@ public class AmazonDelivery : MonoBehaviour
 	IEnumerator DoDelivery( GameObject packageContents )
 	{
 		yield return new WaitForSeconds( Random.Range( randomDeliveryTime.x, randomDeliveryTime.y ) );
-		var package = Instantiate( packageBase, deliveryPoint );
+		var package = Instantiate( packageBase );
+		package.transform.position = deliveryPoint.transform.position;
+		package.transform.rotation = Quaternion.identity;
 		package.GetComponent<AmazonPackage>().packageContents = packageContents;
 
 		yield break;
