@@ -9,5 +9,11 @@ public class CookingStation : MonoBehaviour
 		{
 			plate.Cook();
 		}
+
+		var moveableObject = other.GetComponentInParent<MoveableObject>();
+		if ( moveableObject != null && moveableObject.canBurn )
+		{
+			moveableObject.Burn();
+		}
 	}
 }

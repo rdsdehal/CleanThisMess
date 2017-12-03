@@ -39,11 +39,14 @@ public class ObjectsManager : MonoBehaviour
         }
         foreach (GameObject element in m_AvailableToThrow)
         {
-            float calculatedDistance = Mathf.Abs(Vector3.Distance(m_Child.transform.position, element.transform.position));
-            if (lastDistance > calculatedDistance)
+            if (element.gameObject.activeSelf == true)
             {
-                lastDistance = calculatedDistance;
-                NearestThrowable = element;
+                float calculatedDistance = Mathf.Abs(Vector3.Distance(m_Child.transform.position, element.transform.position));
+                if (lastDistance > calculatedDistance)
+                {
+                    lastDistance = calculatedDistance;
+                    NearestThrowable = element;
+                }
             }
         }
         return NearestThrowable;

@@ -66,7 +66,6 @@ Shader "StandardOnTop"
 
 			Blend [_SrcBlend] [_DstBlend]
 			ZTest Always
-			ZWrite Off
 
 			CGPROGRAM
 			#pragma target 3.0
@@ -235,7 +234,6 @@ Shader "StandardOnTop"
 
 			Blend [_SrcBlend] [_DstBlend]
 			ZTest Always
-			ZWrite Off
 
 			CGPROGRAM
 			#pragma target 2.0
