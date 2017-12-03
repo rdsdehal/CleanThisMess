@@ -179,6 +179,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114196839286730062, guid: 114ed7f383603074e97f004b25240e30,
+        type: 2}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114196839286730062, guid: 114ed7f383603074e97f004b25240e30,
+        type: 2}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7dd5f936868c66648a61475143ee4e17, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 114ed7f383603074e97f004b25240e30, type: 2}
   m_IsPrefabParent: 0
@@ -1098,15 +1108,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4558188400745206, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.48
+      value: -4.76
       objectReference: {fileID: 0}
     - target: {fileID: 4558188400745206, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.79
+      value: 1.97
       objectReference: {fileID: 0}
     - target: {fileID: 4558188400745206, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.06
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: 4558188400745206, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
       propertyPath: m_LocalRotation.x
