@@ -2242,6 +2242,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.7123326
       objectReference: {fileID: 0}
+    - target: {fileID: 102606818105560214, guid: fdc7b3f40328226479213099a1b61f7b,
+        type: 2}
+      propertyPath: m_FontSize
+      value: 188
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdc7b3f40328226479213099a1b61f7b, type: 2}
   m_IsPrefabParent: 0
@@ -4694,7 +4699,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.033333335
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 53f0674fdcd6b4e40b398f7fa0e1f125, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 9752c40d63f0094498505a808b455b6d, type: 2}
 --- !u!4 &757868416
 Transform:
   m_ObjectHideFlags: 0
