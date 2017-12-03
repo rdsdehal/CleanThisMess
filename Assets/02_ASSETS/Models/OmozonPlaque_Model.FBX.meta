@@ -10,6 +10,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: OmozonPlaque_Model
+    4300002: PlaqueOmozon_Model
   externalObjects:
   - first:
       type: UnityEngine:Material

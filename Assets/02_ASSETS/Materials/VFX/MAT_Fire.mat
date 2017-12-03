@@ -76,9 +76,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _Displacement: 0.147
     - _DstBlend: 0
-    - _Firedissolvepower: 1.91
+    - _Firedissolvepower: 3.1
     - _Firepanspeed: 1.25
-    - _Firesize: 0.78
+    - _Firesize: 0.91
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
