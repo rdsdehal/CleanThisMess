@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 4171366549832508}
   - component: {fileID: 33192147911446202}
   - component: {fileID: 23413213655297456}
+  - component: {fileID: 95360299670075162}
   m_Layer: 0
   m_Name: MESH_Fire_01
   m_TagString: Untagged
@@ -80,7 +81,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1927934563055506
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292396454190426}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.009329977, z: 1.4099832e-18}
+  m_LocalPosition: {x: 0, y: 0.009329977, z: 1.409983e-18}
   m_LocalScale: {x: 0.7110605, y: 0.7110605, z: 0.7110605}
   m_Children: []
   m_Father: {fileID: 4828267435714290}
@@ -216,7 +217,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183726098370122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.335, y: 0.638329, z: -0.177}
+  m_LocalPosition: {x: 31.449348, y: 0.345, z: -16.58533}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4656998264156430}
@@ -300,7 +301,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292396454190426}
-  m_Mesh: {fileID: 4300000, guid: 6b8ff297d364e234d8cd4c684d413950, type: 3}
+  m_Mesh: {fileID: 4300004, guid: bcf03664807b7b44db1e1ff2d32afb0f, type: 3}
 --- !u!33 &33295644494070744
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -335,6 +336,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95360299670075162
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292396454190426}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4175ea97af0a782459cc5667bb3ade5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114029266366956962
 MonoBehaviour:
   m_ObjectHideFlags: 1
