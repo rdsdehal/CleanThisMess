@@ -12,10 +12,19 @@ public class Benne : MonoBehaviour
 	private void OnTriggerEnter( Collider other )
 	{
 		var obj = other.GetComponentInParent<MoveableObject>();
-		if ( obj && obj.benneable && obj.benneOmozons )
+		if ( obj && obj.benneable )
 		{
-			delivery.ScheduleDelivery( obj.gameObject );
-			obj.gameObject.SetActive( false );
+			if ( obj.benneOmozons )
+			{
+				var plate = other.GetComponentInParent<Plate>();
+				if ( plate != null ) plate.Clean();
+				delivery.ScheduleDelivery( obj.gameObject );
+				obj.gameObject.SetActive( false );
+			}
+			else
+			{
+				Destroy( obj.gameObject );
+			}
 		}
 	}
 }
