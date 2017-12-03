@@ -13,7 +13,7 @@ public class ChildBehaviour : MoveableObject
     private GameObject m_Throwable = null;
     private NavMeshAgent m_NavMeshAgent = null;
     private Animator m_Animator = null;
-    public MayhemMeter m_MayhemMeter = null;
+    [HideInInspector] public MayhemMeter m_MayhemMeter = null;
 
     private void Start()
     {
@@ -29,6 +29,14 @@ public class ChildBehaviour : MoveableObject
     private void Update()
     {
         OnStateUpdate();
+        if (m_HaveEat)
+        {
+            //vfx_Happy.Play(true);
+        }
+        else
+        {
+            //vfx_StillAngry.Play(true);
+        }
     }
 
     public CurrentState m_CurrentState;
@@ -52,7 +60,7 @@ public class ChildBehaviour : MoveableObject
         Release,
     }
 
-    public Vector3 m_ExitPosition = Vector3.zero;
+    [HideInInspector] public Vector3 m_ExitPosition = Vector3.zero;
 
     private float m_IdleTimer = 0f;
     private float m_Timer = 0f;
@@ -71,7 +79,14 @@ public class ChildBehaviour : MoveableObject
 
     private bool m_HaveEat = false;
 
-    public int m_CurrentWaitPoint = 0;
+    public ParticleSystem vfx_Eating = null;
+    public ParticleSystem vfx_Angry = null;
+    //public ParticleSystem vfx_StillAngry = null;
+    public ParticleSystem vfx_Happy = null;
+    public ParticleSystem vfx_Spitting = null;
+    public GameObject vfx_Spit = null;
+
+    [HideInInspector] public int m_CurrentWaitPoint = 0;
 
     public LayerMask m_RaycastLayer;
 
@@ -137,10 +152,13 @@ public class ChildBehaviour : MoveableObject
                 break;
             case CurrentState.Eating:
                 m_Animator.CrossFade("Boy_Eat", 0.5f);
+                vfx_Eating.Play(true);
                 m_Timer = 0f;
                 break;
             case CurrentState.Spitting:
+                m_Timer = 0f;
                 m_Animator.CrossFade("Boy_Vomi", 0.5f);
+                vfx_Spitting.Play(true);
                 break;
             case CurrentState.SittingIdle:
                 m_Animator.CrossFade("Boy_Idle_Sit", 0.5f);
@@ -173,6 +191,7 @@ public class ChildBehaviour : MoveableObject
                 break;
             case CurrentState.Berserker:
                 m_Animator.CrossFade("Boy_Heavy_Walk", 0.5f);
+                vfx_Angry.Play(true);
                 m_Renderer.transform.position = transform.position;
                 m_NavMeshAgent.enabled = true;
                 break;
