@@ -236,7 +236,7 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.ThrowSomething:
-                m_Throwable.GetComponent<Rigidbody>().AddForceAtPosition((transform.forward * 10f) + Vector3.up * 10f, transform.position, ForceMode.Impulse);
+                m_Throwable.GetComponent<Rigidbody>().AddForceAtPosition((transform.forward * 3f) + Vector3.up * 3f, transform.position, ForceMode.Impulse);
                 m_Timer += Time.deltaTime;
                 if (m_Timer > 2.0f)
                 {
