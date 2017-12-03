@@ -332,7 +332,7 @@ public class ChildBehaviour : MoveableObject
                             {
                                 if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
                                 {
-                                    vfx_Happy.Play(true)
+                                    vfx_Happy.Play(true);
                                     SwitchState(CurrentState.SittingIdle);
                                 }
                                 else
