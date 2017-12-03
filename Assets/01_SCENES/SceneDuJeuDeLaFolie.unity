@@ -4841,7 +4841,7 @@ MonoBehaviour:
   - {fileID: 1901165882260690, guid: 80ae56f6d96050a4485744054e6b7a35, type: 2}
   m_MayhemMeter: {fileID: 1174617034}
   LeavePoint: {x: -14, y: 0, z: -2}
-  SpawnTime: {x: 4, y: 10}
+  SpawnTime: {x: 4, y: 7}
   m_SpawnIndex: 0
   m_MustReload: 0
 --- !u!1 &836787620 stripped
@@ -7517,16 +7517,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 33265476780190828, guid: ad80ff540b6c1c343a38b65eb34dfdbe,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300002, guid: 29a601c89e662224798fe71537d2945f, type: 3}
-    - target: {fileID: 23873255103833330, guid: ad80ff540b6c1c343a38b65eb34dfdbe,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3e1eb7351d1d4a44c978487a3b77a391, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
   m_IsPrefabParent: 0

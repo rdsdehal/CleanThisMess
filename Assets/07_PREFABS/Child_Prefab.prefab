@@ -1078,10 +1078,10 @@ MonoBehaviour:
   m_MayhemMeter: {fileID: 0}
   m_CurrentState: 0
   m_ExitPosition: {x: -3.53, y: 0.25, z: -0.29}
-  m_LeaveBonusMalus: {x: 1, y: 1}
-  m_StandIdleTimer: {x: 3, y: 8}
-  m_SitIdleTimer: {x: 5, y: 10}
-  m_ImpulseForce: {x: 0.1, y: 0.2}
+  m_LeaveBonusMalus: {x: 1, y: 5}
+  m_StandIdleTimer: {x: 4, y: 8}
+  m_SitIdleTimer: {x: 6, y: 10}
+  m_ImpulseForce: {x: 1, y: 2}
   m_ChairObject: 0.3
   m_SpitAfterFirstEat: 0.95
   m_SpitAfterSecondEat: 0.5
@@ -1197,7 +1197,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.14
-  m_Speed: 3
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 300
