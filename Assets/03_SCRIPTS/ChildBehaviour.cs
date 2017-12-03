@@ -244,6 +244,11 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.MovingTowardObject:
+                if (m_NavMeshAgent.remainingDistance < 2.0f)
+                {
+                    m_Animator.CrossFade("Boy_TableFlip", 0.0f);
+                    transform.rotation = Quaternion.LookRotation((m_Throwable.transform.position - transform.position));
+                }
                 if (Vector3.Distance(transform.position, m_NavMeshAgent.destination) < 0.6f)
                 {
                     SwitchState(CurrentState.ThrowSomething);
@@ -434,7 +439,7 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.MovingTowardObject:
-                m_Animator.CrossFade("Boy_TableFlip", 0.0f);
+
                 break;
             case CurrentState.ThrowSomething:
 
