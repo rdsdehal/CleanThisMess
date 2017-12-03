@@ -7,9 +7,10 @@ public class EntryPoint : MonoBehaviour
 
     public GameObject m_SpawnPoint;
     public List<ChildBehaviour> m_ChildList;
-    public GameObject m_ChildPrefab = null;
+    public GameObject[] m_ChildPrefab = null;
     public MayhemMeter m_MayhemMeter = null;
     public Vector3 LeavePoint = Vector3.zero;
+    public Vector2 SpawnTime = Vector2.one;
 
     private float m_Timer = 0;
     private float m_NextSpawnTime = 0;
@@ -19,7 +20,7 @@ public class EntryPoint : MonoBehaviour
 
     private void Awake()
     {
-        m_NextSpawnTime = Random.Range(5f, 10f);
+        m_NextSpawnTime = Random.Range(SpawnTime.x, SpawnTime.y);
         if (m_ChildPrefab == null)
         {
             Debug.LogWarning("[EntryPoint] has no ChildPrefab.");
@@ -32,7 +33,7 @@ public class EntryPoint : MonoBehaviour
         m_Timer += Time.deltaTime;
         if (m_Timer >= m_NextSpawnTime)
         {
-            GameObject obj = Instantiate(m_ChildPrefab, m_SpawnPoint.transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(m_ChildPrefab[Random.Range(0, m_ChildPrefab.Length)], m_SpawnPoint.transform.position, Quaternion.identity);
             m_ChildList.Add(obj.gameObject.GetComponent<ChildBehaviour>());
             m_ChildList[m_SpawnIndex].m_CurrentWaitPoint = m_SpawnIndex;
             m_SpawnIndex++;

@@ -13,7 +13,7 @@ public class ChildBehaviour : MoveableObject
     private GameObject m_Throwable = null;
     private NavMeshAgent m_NavMeshAgent = null;
     private Animator m_Animator = null;
-    public MayhemMeter m_MayhemMeter = null;
+    [HideInInspector] public MayhemMeter m_MayhemMeter = null;
 
     private void Start()
     {
@@ -24,11 +24,20 @@ public class ChildBehaviour : MoveableObject
         m_MayhemMeter = m_EntryPoint.m_MayhemMeter;
         m_ExitPosition = m_EntryPoint.LeavePoint;
         m_Animator = GetComponentInChildren<Animator>();
+        m_Animator.CrossFade("Boy_Idle", 0.5f);
     }
 
     private void Update()
     {
         OnStateUpdate();
+        if (m_HaveEat)
+        {
+            vfx_StillHappy.Play(true);
+        }
+        else
+        {
+            vfx_StillAngry.Play(true);
+        }
     }
 
     public CurrentState m_CurrentState;
@@ -52,7 +61,7 @@ public class ChildBehaviour : MoveableObject
         Release,
     }
 
-    public Vector3 m_ExitPosition = Vector3.zero;
+    [HideInInspector] public Vector3 m_ExitPosition = Vector3.zero;
 
     private float m_IdleTimer = 0f;
     private float m_Timer = 0f;
@@ -71,7 +80,15 @@ public class ChildBehaviour : MoveableObject
 
     private bool m_HaveEat = false;
 
-    public int m_CurrentWaitPoint = 0;
+    public ParticleSystem vfx_Eating = null;
+    public ParticleSystem vfx_Angry = null;
+    public ParticleSystem vfx_StillAngry = null;
+    public ParticleSystem vfx_Happy = null;
+    public ParticleSystem vfx_StillHappy = null;
+    public ParticleSystem vfx_Spitting = null;
+    public GameObject vfx_Spit = null;
+
+    [HideInInspector] public int m_CurrentWaitPoint = 0;
 
     public LayerMask m_RaycastLayer;
 
@@ -99,6 +116,7 @@ public class ChildBehaviour : MoveableObject
                 }
                 break;
             case CurrentState.Idle:
+
                 m_IdleTimer = Random.Range(m_StandIdleTimer.x, m_StandIdleTimer.y);
                 break;
             case CurrentState.MovingTowardChair:
@@ -123,7 +141,7 @@ public class ChildBehaviour : MoveableObject
                 break;
             case CurrentState.ThrowSomething:
                 m_Timer = 0f;
-                m_Animator.CrossFade("Boy_TableFlip", 0.5f);
+
                 break;
             case CurrentState.Sitting:
                 m_Animator.CrossFade("Boy_Idle_Sit", 0.5f);
@@ -137,14 +155,17 @@ public class ChildBehaviour : MoveableObject
                 break;
             case CurrentState.Eating:
                 m_Animator.CrossFade("Boy_Eat", 0.5f);
+                vfx_Eating.Play(true);
                 m_Timer = 0f;
                 break;
             case CurrentState.Spitting:
+                m_Timer = 0f;
                 m_Animator.CrossFade("Boy_Vomi", 0.5f);
+                vfx_Spitting.Play(true);
                 break;
             case CurrentState.SittingIdle:
+                canBePickedUp = true;
                 m_Animator.CrossFade("Boy_Idle_Sit", 0.5f);
-                canBePickedUp = false;
                 m_Timer = 0f;
                 m_IdleTimer = Random.Range(m_SitIdleTimer.x, m_SitIdleTimer.y);
                 break;
@@ -173,6 +194,7 @@ public class ChildBehaviour : MoveableObject
                 break;
             case CurrentState.Berserker:
                 m_Animator.CrossFade("Boy_Heavy_Walk", 0.5f);
+                vfx_Angry.Play(true);
                 m_Renderer.transform.position = transform.position;
                 m_NavMeshAgent.enabled = true;
                 break;
@@ -220,7 +242,6 @@ public class ChildBehaviour : MoveableObject
                         SwitchState(CurrentState.MovingTowardObject);
                     }
                 }
-                m_Animator.CrossFade("Boy_Walk", 0.5f);
                 break;
             case CurrentState.MovingTowardChair:
                 if (Vector3.Distance(transform.position, m_NavMeshAgent.destination) < 0.6f)
@@ -288,30 +309,35 @@ public class ChildBehaviour : MoveableObject
                     {
                         SwitchState(CurrentState.Berserker);
                     }
-                }
-                if (m_Timer > 4.0f && m_Plate != null)
-                {
-                    m_Plate.Consume();
-                    if (m_HaveEat)
-                    {
-                        if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
-                        {
-                            SwitchState(CurrentState.SittingIdle);
-                        }
-                        else
-                        {
-                            SwitchState(CurrentState.Spitting);
-                        }
-                    }
                     else
                     {
-                        if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
+                        if (m_Timer > 4.0f)
                         {
-                            SwitchState(CurrentState.SittingIdle);
-                        }
-                        else
-                        {
-                            SwitchState(CurrentState.Spitting);
+                            if (m_HaveEat)
+                            {
+                                if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
+                                {
+                                    vfx_Happy.Play(true);
+                                    SwitchState(CurrentState.SittingIdle);
+                                }
+                                else
+                                {
+                                    SwitchState(CurrentState.Spitting);
+                                }
+                            }
+                            else
+                            {
+                                if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
+                                {
+                                    //vfx_Angry.Play(true);
+                                    SwitchState(CurrentState.SittingIdle);
+                                }
+                                else
+                                {
+                                    SwitchState(CurrentState.Spitting);
+                                }
+                            }
+                            m_Plate.Consume();
                         }
                     }
                 }
@@ -329,6 +355,7 @@ public class ChildBehaviour : MoveableObject
                 m_Timer += Time.deltaTime;
                 if (m_Timer > 2.0f)
                 {
+                    Instantiate(vfx_Spit, transform.position, Quaternion.identity);
                     SwitchState(CurrentState.MovingTowardExit);
                 }
                 break;
@@ -350,7 +377,7 @@ public class ChildBehaviour : MoveableObject
                 m_NavMeshAgent.enabled = true;
                 RaycastHit releaseHit;
                 Ray downRay = new Ray(transform.position, Vector3.down);
-                if (Physics.Raycast(downRay, out releaseHit, 100.0f, m_RaycastLayer))
+                if (Physics.Raycast(downRay, out releaseHit, 100.0f, m_RaycastLayer, QueryTriggerInteraction.Collide))
                 {
                     m_Chair = releaseHit.collider.GetComponentInParent<Chair>();
                     if (m_Chair != null)
@@ -411,17 +438,13 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.MovingTowardObject:
-
+                m_Animator.CrossFade("Boy_TableFlip", 0.2f);
                 break;
             case CurrentState.ThrowSomething:
 
                 break;
             case CurrentState.Sitting:
-                transform.position = m_Chair.transform.position - Vector3.up * 0.25f;
-                m_Renderer.transform.position = transform.position;
-                m_Chair.ExitChair();
-                m_Chair.m_Rigidbody.isKinematic = false;
-                m_NavMeshAgent.enabled = true;
+
                 break;
             case CurrentState.Eating:
                 m_HaveEat = true;
@@ -438,6 +461,7 @@ public class ChildBehaviour : MoveableObject
                 break;
 
             case CurrentState.SittingIdle:
+
                 transform.position = m_Chair.transform.position - Vector3.up * 0.25f;
                 m_Renderer.transform.position = transform.position;
                 m_Chair.ExitChair();
@@ -454,9 +478,10 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.Release:
-
+                m_Animator.CrossFade("Boy_Walk", 0.5f);
                 break;
             case CurrentState.Berserker:
+                m_Animator.CrossFade("Boy_Heavy_Walk", 0.5f);
                 m_Chair.ExitChair();
                 break;
         }

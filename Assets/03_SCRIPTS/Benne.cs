@@ -5,6 +5,9 @@ public class Benne : MonoBehaviour
 	public ParticleSystem fx;
 	AmazonDelivery delivery;
 
+	public AudioSource audiosource;
+	public AudioClip clip;
+
 	private void Awake()
 	{
 		delivery = FindObjectOfType<AmazonDelivery>();
@@ -13,10 +16,11 @@ public class Benne : MonoBehaviour
 	private void OnTriggerEnter( Collider other )
 	{
 		var obj = other.GetComponentInParent<MoveableObject>();
-		if ( obj && obj.benneable )
+		if ( obj && obj.benneable && !other.isTrigger )
 		{
 			fx.transform.position = obj.transform.position;
 			fx.Play();
+			audiosource.PlayOneShot( clip );
 
 			if ( obj.benneOmozons )
 			{

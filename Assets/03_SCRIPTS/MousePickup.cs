@@ -11,6 +11,7 @@ public class MousePickup : MonoBehaviour
 	public LayerMask snapObjectLayer;
 	public Mesh emptyHand;
 	public Mesh grabHand;
+	public AudioClip pickupSound;
 
 	private MoveableObject pickedObject;
 	private Rigidbody m_Rigidbody;
@@ -19,6 +20,7 @@ public class MousePickup : MonoBehaviour
 	private List<SnapPosition> snapPos = new List<SnapPosition>();
 	private MeshFilter handRenderer;
 	private float mouseHeight;
+	private AudioSource source;
 
 	private void Awake()
 	{
@@ -28,6 +30,7 @@ public class MousePickup : MonoBehaviour
 		snapPos = FindObjectsOfType<SnapPosition>().ToList();
 		handRenderer = GetComponentInChildren<MeshFilter>();
 		mouseHeight = transform.position.y;
+		source = GetComponent<AudioSource>();
 	}
 
 	private void Update()
@@ -57,7 +60,7 @@ public class MousePickup : MonoBehaviour
 		RaycastHit pickupHit;
 		Ray worldRay = new Ray( cam.transform.position, transform.position - cam.transform.position );
 
-		if ( Physics.Raycast( worldRay, out pickupHit, 100, objectLayer ) )
+		if ( Physics.Raycast( worldRay, out pickupHit, 100, objectLayer, QueryTriggerInteraction.Collide ) )
 		{
 			// PICKUP OBJECT
 			var moveObject = pickupHit.collider.GetComponentInParent<MoveableObject>();
@@ -69,6 +72,7 @@ public class MousePickup : MonoBehaviour
 				Vector3 pos = transform.position;
 				pos.y = mouseHeight + pickedObject.mouseOffset;
 				transform.position = pos;
+				source.PlayOneShot( pickupSound );
 
 				// SHOW SNAPS
 				foreach ( var item in snapPos )
@@ -122,6 +126,7 @@ public class MousePickup : MonoBehaviour
 			Vector3 pos = transform.position;
 			pos.y = mouseHeight;
 			transform.position = pos;
+			source.PlayOneShot( pickupSound );
 
 			foreach ( var item in snapPos )
 			{

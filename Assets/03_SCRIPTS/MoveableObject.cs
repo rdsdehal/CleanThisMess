@@ -14,19 +14,26 @@ public class MoveableObject : MonoBehaviour
 	public bool canBurn;
 	public float initialMalus;
 	public float dotPerSecondMalus;
+	public Material malusMaterial;
 
 	private bool isTipped;
 	protected Rigidbody m_RigidBody;
 	private MayhemMeter mayhemMeter;
 	private AmazonDelivery amazon;
 	private Transform cachedPickupParent;
+	private Renderer rendererMan;
 
+	private Material[] defaultMats;
+	private Material[] malusMats;
 
 	private void Awake()
 	{
 		m_RigidBody = GetComponent<Rigidbody>();
 		mayhemMeter = FindObjectOfType<MayhemMeter>();
 		amazon = FindObjectOfType<AmazonDelivery>();
+		rendererMan = GetComponentInChildren<Renderer>();
+		defaultMats = rendererMan.materials;
+		malusMats = new Material[2] { defaultMats[0], malusMaterial };
 	}
 
 	private void Update()
@@ -40,6 +47,11 @@ public class MoveableObject : MonoBehaviour
 			}
 
 			mayhemMeter.ChangeMeter( -dotPerSecondMalus * Time.deltaTime );
+			if ( malusMaterial != null ) { rendererMan.materials = malusMats; }
+		}
+		else
+		{
+			if ( malusMaterial != null ) { rendererMan.materials = defaultMats; }
 		}
 	}
 
