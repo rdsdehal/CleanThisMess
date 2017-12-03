@@ -1070,8 +1070,8 @@ MonoBehaviour:
   mouseOffset: 0.75
   canBePickedUp: 1
   localOffset: {x: 0, y: -0.75, z: 0}
-  benneable: 0
-  benneOmozons: 0
+  benneable: 1
+  benneOmozons: 1
   canBurn: 0
   initialMalus: 0
   dotPerSecondMalus: 0
@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_LeaveBonusMalus: {x: 1, y: 5}
   m_StandIdleTimer: {x: 4, y: 8}
   m_SitIdleTimer: {x: 6, y: 10}
-  m_ImpulseForce: {x: 1, y: 2}
+  m_ImpulseForce: {x: 0.4, y: 0.75}
   m_ChairObject: 0.3
   m_SpitAfterFirstEat: 0.95
   m_SpitAfterSecondEat: 0.5
@@ -1090,7 +1090,9 @@ MonoBehaviour:
   m_BerserkerFlip: 0
   vfx_Eating: {fileID: 198090738156711250}
   vfx_Angry: {fileID: 198819789835783136}
+  vfx_StillAngry: {fileID: 0}
   vfx_Happy: {fileID: 198053259658458350}
+  vfx_StillHappy: {fileID: 0}
   vfx_Spitting: {fileID: 198786497708419458}
   vfx_Spit: {fileID: 0}
   m_CurrentWaitPoint: 0
