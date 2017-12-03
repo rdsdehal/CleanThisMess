@@ -712,8 +712,8 @@ MonoBehaviour:
   m_CurrentState: 0
   m_ExitPosition: {x: -3.53, y: 0.25, z: -0.29}
   m_LeaveBonusMalus: {x: 1, y: 1}
-  m_StandIdleTimer: {x: 2, y: 4}
-  m_SitIdleTimer: {x: 2, y: 4}
+  m_StandIdleTimer: {x: 3, y: 8}
+  m_SitIdleTimer: {x: 5, y: 10}
   m_ChairObject: 0.3
   m_SpitAfterFirstEat: 0.201
   m_SpitAfterSecondEat: 0.724
