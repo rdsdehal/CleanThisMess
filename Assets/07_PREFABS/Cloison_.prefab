@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4604019133299204}
   - component: {fileID: 114187806428135872}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NavMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1605868469263006}
   m_LocalRotation: {x: -0, y: 0.6949952, z: -0, w: 0.7190144}
-  m_LocalPosition: {x: 52.53, y: -4.6, z: -12.42}
+  m_LocalPosition: {x: -4.31, y: 0.5906806, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4045932397724270}
@@ -267,8 +267,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ea3a4896616020c49931c3dd38a7d7cf, type: 2}
-  - {fileID: 2100000, guid: 3e2de0512aff7f54e969d2b56191cbce, type: 2}
+  - {fileID: 2100000, guid: e8837e1bf56b2f7499442b84cd8b88b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -358,6 +357,7 @@ MonoBehaviour:
   canBurn: 1
   initialMalus: 0
   dotPerSecondMalus: 0
+  malusMaterial: {fileID: 2100000, guid: a3b8a94bccafc7944b6e25aa2efbc4ff, type: 2}
 --- !u!114 &114836545227269732
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4594297030793854}
   - component: {fileID: 114610533682019400}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NavMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 54911894248429992}
   - component: {fileID: 114359444993909486}
   - component: {fileID: 114457663961538946}
-  - component: {fileID: 208484325926865378}
   m_Layer: 9
   m_Name: Cart
   m_TagString: Untagged
@@ -252,6 +251,7 @@ MonoBehaviour:
   canBurn: 0
   initialMalus: 1
   dotPerSecondMalus: 0.5
+  malusMaterial: {fileID: 2100000, guid: a3b8a94bccafc7944b6e25aa2efbc4ff, type: 2}
 --- !u!114 &114457663961538946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,18 +279,3 @@ MonoBehaviour:
   m_Center: {x: -0.013220012, y: 0.37877607, z: -0.011108518}
   m_Area: 3
   m_AffectedAgents: ffffffff
---- !u!208 &208484325926865378
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1161675597935172}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.17, y: 0.44, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.4, z: 0}
-  m_TimeToStationary: 0.5

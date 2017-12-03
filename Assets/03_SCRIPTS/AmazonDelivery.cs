@@ -9,6 +9,9 @@ public class AmazonDelivery : MonoBehaviour
 	public GameObject burningMessPrefab;
 	public ParticleSystem fx;
 
+	public AudioSource audiosource;
+	public AudioClip clip;
+
 	public void ScheduleDelivery( GameObject packageContents )
 	{
 		StartCoroutine( DoDelivery( packageContents ) );
@@ -17,7 +20,9 @@ public class AmazonDelivery : MonoBehaviour
 	IEnumerator DoDelivery( GameObject packageContents )
 	{
 		yield return new WaitForSeconds( Random.Range( randomDeliveryTime.x, randomDeliveryTime.y ) );
-		var package = Instantiate( packageBase, deliveryPoint );
+		var package = Instantiate( packageBase );
+		package.transform.position = deliveryPoint.transform.position;
+		package.transform.rotation = Quaternion.identity;
 		package.GetComponent<AmazonPackage>().packageContents = packageContents;
 
 		yield break;
@@ -27,5 +32,6 @@ public class AmazonDelivery : MonoBehaviour
 	{
 		fx.transform.position = pos;
 		fx.Play();
+		audiosource.PlayOneShot( clip );
 	}
 }
