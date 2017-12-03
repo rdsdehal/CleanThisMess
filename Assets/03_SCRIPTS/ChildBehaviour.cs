@@ -32,11 +32,11 @@ public class ChildBehaviour : MoveableObject
         OnStateUpdate();
         if (m_HaveEat)
         {
-            //vfx_Happy.Play(true);
+            vfx_StillHappy.Play(true);
         }
         else
         {
-            //vfx_StillAngry.Play(true);
+            vfx_StillAngry.Play(true);
         }
     }
 
@@ -82,8 +82,9 @@ public class ChildBehaviour : MoveableObject
 
     public ParticleSystem vfx_Eating = null;
     public ParticleSystem vfx_Angry = null;
-    //public ParticleSystem vfx_StillAngry = null;
+    public ParticleSystem vfx_StillAngry = null;
     public ParticleSystem vfx_Happy = null;
+    public ParticleSystem vfx_StillHappy = null;
     public ParticleSystem vfx_Spitting = null;
     public GameObject vfx_Spit = null;
 
@@ -140,7 +141,7 @@ public class ChildBehaviour : MoveableObject
                 break;
             case CurrentState.ThrowSomething:
                 m_Timer = 0f;
-                m_Animator.CrossFade("Boy_TableFlip", 0.5f);
+
                 break;
             case CurrentState.Sitting:
                 m_Animator.CrossFade("Boy_Idle_Sit", 0.5f);
@@ -285,6 +286,7 @@ public class ChildBehaviour : MoveableObject
                         }
                         if (m_Timer >= m_IdleTimer)
                         {
+                            vfx_Angry.Play(true);
                             SwitchState(CurrentState.Berserker);
                         }
                     }
@@ -293,6 +295,7 @@ public class ChildBehaviour : MoveableObject
                 {
                     if (m_Timer >= m_IdleTimer)
                     {
+                        vfx_Angry.Play(true);
                         SwitchState(CurrentState.Berserker);
                     }
                 }
@@ -306,6 +309,7 @@ public class ChildBehaviour : MoveableObject
                     m_Plate = plateHit2.collider.GetComponentInParent<Plate>();
                     if (m_Plate == null)
                     {
+                        vfx_Angry.Play(true);
                         SwitchState(CurrentState.Berserker);
                     }
                     else
@@ -316,6 +320,7 @@ public class ChildBehaviour : MoveableObject
                             {
                                 if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
                                 {
+                                    vfx_Happy.Play(true);
                                     SwitchState(CurrentState.SittingIdle);
                                 }
                                 else
@@ -327,6 +332,7 @@ public class ChildBehaviour : MoveableObject
                             {
                                 if (Random.Range(0f, 1f) > (1 - m_SpitAfterFirstEat))
                                 {
+                                    vfx_Happy.Play(true);
                                     SwitchState(CurrentState.SittingIdle);
                                 }
                                 else
@@ -352,6 +358,7 @@ public class ChildBehaviour : MoveableObject
                 m_Timer += Time.deltaTime;
                 if (m_Timer > 2.0f)
                 {
+                    Instantiate(vfx_Spit, transform.position, Quaternion.identity);
                     SwitchState(CurrentState.MovingTowardExit);
                 }
                 break;
@@ -434,7 +441,7 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.MovingTowardObject:
-
+                m_Animator.CrossFade("Boy_TableFlip", 0.2f);
                 break;
             case CurrentState.ThrowSomething:
 
@@ -474,9 +481,10 @@ public class ChildBehaviour : MoveableObject
 
                 break;
             case CurrentState.Release:
-
+                m_Animator.CrossFade("Boy_Walk", 0.5f);
                 break;
             case CurrentState.Berserker:
+                m_Animator.CrossFade("Boy_Heavy_Walk", 0.5f);
                 m_Chair.ExitChair();
                 break;
         }
