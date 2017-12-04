@@ -6,16 +6,24 @@ public class Sink : MonoBehaviour
 
 	public AudioSource audioSource;
 	public AudioClip clip;
+	public AudioClip unluckyclip;
 
 	private void OnTriggerEnter( Collider other )
 	{
 		var plate = other.GetComponentInParent<Plate>();
 		if ( plate != null )
 		{
-			plate.Clean();
-			splash.transform.position = plate.transform.position;
-			splash.Play();
-			audioSource.PlayOneShot( clip );
+			if ( plate.plateState == Plate.PlateState.Garbage )
+			{
+				audioSource.PlayOneShot( unluckyclip );
+			}
+			else
+			{
+				plate.Clean();
+				splash.transform.position = plate.transform.position;
+				splash.Play();
+				audioSource.PlayOneShot( clip );
+			}
 		}
 	}
 }
