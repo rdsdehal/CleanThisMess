@@ -1177,11 +1177,11 @@ MonoBehaviour:
   m_StandIdleTimer: {x: 6, y: 10}
   m_SitIdleTimer: {x: 8, y: 12}
   m_ImpulseForce: {x: 250, y: 125}
-  m_ChairObject: 0.3
+  m_ChairObject: 0.6
   m_SpitAfterFirstEat: 0.95
   m_SpitAfterSecondEat: 0.5
   m_FlipAfterDrop: 0.5
-  m_BerserkerFlip: 0
+  m_BerserkerFlip: 0.6
   vfx_Eating: {fileID: 198090738156711250}
   vfx_Angry: {fileID: 198819789835783136}
   vfx_StillAngry: {fileID: 198259572665525302}
