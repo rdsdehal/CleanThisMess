@@ -30,7 +30,7 @@ public class Benne : MonoBehaviour
 				delivery.ScheduleDelivery( obj.gameObject );
 				obj.gameObject.SetActive( false );
 
-				var child = GetComponentInParent<ChildBehaviour>();
+				var child = other.GetComponentInParent<ChildBehaviour>();
 				if ( child )
 				{
 					fxSoul.transform.position = obj.transform.position;
