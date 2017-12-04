@@ -14,7 +14,7 @@ public class TutoExit : MonoBehaviour
 		{
 			childCount++;
 
-			if ( childCount >= 3 )
+			if ( childCount > 5 )
 			{
 				FindObjectOfType<TutoManager>().EndTuto();
 			}
