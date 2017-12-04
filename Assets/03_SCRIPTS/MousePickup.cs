@@ -13,6 +13,9 @@ public class MousePickup : MonoBehaviour
 	public Mesh grabHand;
 	public AudioClip pickupSound;
 
+	public Light spotTarget;
+	public float spotTargetHeight;
+
 	private MoveableObject pickedObject;
 	private Rigidbody m_Rigidbody;
 	private GlowingOutlineRenderer glowRenderer;
@@ -45,11 +48,11 @@ public class MousePickup : MonoBehaviour
 			m_Rigidbody.MovePosition( screenHit.point );
 		}
 
-		if (Input.GetMouseButton (0)) 
+		if ( Input.GetMouseButton( 0 ) )
 		{
 			handRenderer.sharedMesh = grabHand;
 		}
-		else 
+		else
 		{
 			handRenderer.sharedMesh = emptyHand;
 		}
@@ -57,10 +60,16 @@ public class MousePickup : MonoBehaviour
 		if ( pickedObject == null )
 		{
 			DoEmptyHand();
+			spotTarget.enabled = false;
 		}
 		else
 		{
 			DoFullHand();
+
+			spotTarget.enabled = true;
+			Vector3 pos = transform.position;
+			pos.y = spotTargetHeight;
+			spotTarget.transform.position = pos;
 		}
 	}
 
