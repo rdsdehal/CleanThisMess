@@ -11,7 +11,9 @@ public class EntryPoint : MonoBehaviour
 	public List<ChildBehaviour> m_ChildList;
 	public GameObject[] m_ChildPrefab = null;
 	public MayhemMeter m_MayhemMeter = null;
+	public Vector2 SpawnTime = Vector2.one;
 	public AnimationCurve spawnCurve;
+	public float timeToMaxCurve;
 
 	private float m_Timer = 0;
 	private float reductionTimer = 0;
@@ -38,7 +40,7 @@ public class EntryPoint : MonoBehaviour
 
 		if ( reductionTimer < Time.time )
 		{
-			reductionTimer = Time.time + spawnCurve.Evaluate( Time.time );
+			reductionTimer = Time.time + spawnCurve.Evaluate( Time.time / timeToMaxCurve );
 			GameObject obj = Instantiate( m_ChildPrefab[Random.Range( 0, m_ChildPrefab.Length )], m_SpawnPoint.transform.position, Quaternion.identity );
 			m_ChildList.Add( obj.gameObject.GetComponent<ChildBehaviour>() );
 			m_ChildList[m_SpawnIndex].m_CurrentWaitPoint = m_SpawnIndex;
