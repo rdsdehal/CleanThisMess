@@ -6,7 +6,7 @@ public class AmazonPackage : MonoBehaviour
 
 	private void OnCollisionEnter( Collision collision )
 	{
-		packageContents.transform.position = transform.position;
+		packageContents.transform.position = transform.position + ( Vector3.up * 0.25f );
 		packageContents.transform.rotation = Quaternion.identity;
 		var rb = packageContents.GetComponent<Rigidbody>();
 		if ( rb )
