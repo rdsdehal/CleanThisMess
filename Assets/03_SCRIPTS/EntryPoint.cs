@@ -5,54 +5,58 @@ using UnityEngine;
 public class EntryPoint : MonoBehaviour
 {
 
-    public GameObject m_SpawnPoint;
-    public GameObject m_WaitingPoint;
-    public GameObject LeavePoint;
-    public List<ChildBehaviour> m_ChildList;
-    public GameObject[] m_ChildPrefab = null;
-    public MayhemMeter m_MayhemMeter = null;
-    public Vector2 SpawnTime = Vector2.one;
+	public GameObject m_SpawnPoint;
+	public GameObject m_WaitingPoint;
+	public GameObject LeavePoint;
+	public List<ChildBehaviour> m_ChildList;
+	public GameObject[] m_ChildPrefab = null;
+	public MayhemMeter m_MayhemMeter = null;
+	public Vector2 SpawnTime = Vector2.one;
 
-    private float m_Timer = 0;
-    private float m_LerpTimer = 0;
-    private float m_NextSpawnTime = 0;
-    private float timeReducerX = 0;
-    private float timeReducerY = 0;
-    public int m_SpawnIndex = 0;
-    public float timeBeforeHardness = 180f;
+	private float m_Timer = 0;
+	private float m_LerpTimer = 0;
+	private float m_NextSpawnTime = 0;
+	public int m_SpawnIndex = 0;
+	public float decreaseEverySec = 180f;
 
-    public bool m_MustReload = false;
+	public bool m_MustReload = false;
 
-    private void Awake()
-    {
-        m_NextSpawnTime = Random.Range(SpawnTime.x, SpawnTime.y);
-        if (m_ChildPrefab == null)
-        {
-            Debug.LogWarning("[EntryPoint] has no ChildPrefab.");
-        }
-    }
+	private void Awake()
+	{
+		m_NextSpawnTime = Random.Range( SpawnTime.x, SpawnTime.y );
+		if ( m_ChildPrefab == null )
+		{
+			Debug.LogWarning( "[EntryPoint] has no ChildPrefab." );
+		}
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        m_Timer += Time.deltaTime;
-        m_LerpTimer += Time.deltaTime;
-        timeReducerX = Mathf.Lerp(SpawnTime.x, 2f, m_LerpTimer / timeBeforeHardness);
-        timeReducerY = Mathf.Lerp(SpawnTime.y, 2f, m_LerpTimer / timeBeforeHardness);
+	// Update is called once per frame
+	void Update()
+	{
+		m_Timer += Time.deltaTime;
+		m_LerpTimer += Time.deltaTime;
 
-        if (m_Timer >= m_NextSpawnTime)
-        {
-            GameObject obj = Instantiate(m_ChildPrefab[Random.Range(0, m_ChildPrefab.Length)], m_SpawnPoint.transform.position, Quaternion.identity);
-            m_ChildList.Add(obj.gameObject.GetComponent<ChildBehaviour>());
-            m_ChildList[m_SpawnIndex].m_CurrentWaitPoint = m_SpawnIndex;
-            m_SpawnIndex++;
-            m_Timer = 0;
-            m_NextSpawnTime = Random.Range(timeReducerX, timeReducerY);
-        }
-    }
+		if ( m_LerpTimer > Time.time )
+		{
+			m_LerpTimer = Time.time + decreaseEverySec;
 
-    public void ReloadChild()
-    {
-        m_MustReload = true;
-    }
+			SpawnTime.x = Mathf.Max( SpawnTime.x - 1, 1 );
+			SpawnTime.y = Mathf.Max( SpawnTime.y - 1, 1 );
+		}
+
+		if ( m_Timer >= m_NextSpawnTime )
+		{
+			GameObject obj = Instantiate( m_ChildPrefab[Random.Range( 0, m_ChildPrefab.Length )], m_SpawnPoint.transform.position, Quaternion.identity );
+			m_ChildList.Add( obj.gameObject.GetComponent<ChildBehaviour>() );
+			m_ChildList[m_SpawnIndex].m_CurrentWaitPoint = m_SpawnIndex;
+			m_SpawnIndex++;
+			m_Timer = 0;
+			m_NextSpawnTime = Random.Range( SpawnTime.x, SpawnTime.y );
+		}
+	}
+
+	public void ReloadChild()
+	{
+		m_MustReload = true;
+	}
 }
