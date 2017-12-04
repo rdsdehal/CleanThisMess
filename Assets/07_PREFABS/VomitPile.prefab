@@ -284,4 +284,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab9568b6ac61e547a80046bd9a69086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dotPerSecond: 0.25
+  cleanBonus: 1
+  dotPerSecond: 1
