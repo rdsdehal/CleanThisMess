@@ -439,6 +439,31 @@ MonoBehaviour:
   - {fileID: 1901165882260690, guid: 02d4c1f5c5257ac4a97e4fb0933cf064, type: 2}
   m_MayhemMeter: {fileID: 114355333306321998}
   SpawnTime: {x: 14, y: 16}
+  spawnCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 17.654068
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.78992444
+      value: 8.397305
+      inSlope: -22.8405
+      outSlope: -22.8405
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: -8.988868
+      outSlope: -8.988868
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  timeToMaxCurve: 600
   m_SpawnIndex: 0
   decreaseEverySec: 25
   reduceMan: 3
