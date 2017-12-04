@@ -4902,6 +4902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc434e3474b3d14183c60be9b03279b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTuto: 0
   meterMax: 1e+9
   timerText: {fileID: 460384163}
   meterVisual: {fileID: 1830746072}
@@ -16474,6 +16475,7 @@ GameObject:
   - component: {fileID: 1692191442}
   - component: {fileID: 1692191441}
   - component: {fileID: 1692191440}
+  - component: {fileID: 1692191444}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -16559,13 +16561,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Best Time 00:00 \nTime 00:00"
+  m_Text: 
 --- !u!222 &1692191443
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1692191438}
+--- !u!114 &1692191444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1692191438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7267e91a9f58c4394c9b1bf77ac9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1692191442}
 --- !u!1 &1703874435
 GameObject:
   m_ObjectHideFlags: 0
