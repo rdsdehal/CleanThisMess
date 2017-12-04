@@ -18,6 +18,7 @@ public class EntryPoint : MonoBehaviour
 	private float m_NextSpawnTime = 0;
 	public int m_SpawnIndex = 0;
 	public float decreaseEverySec = 180f;
+	public float reduceMan;
 
 	public bool m_MustReload = false;
 
@@ -40,8 +41,8 @@ public class EntryPoint : MonoBehaviour
 		{
 			m_LerpTimer = Time.time + decreaseEverySec;
 
-			SpawnTime.x = Mathf.Max( SpawnTime.x - 1, 1 );
-			SpawnTime.y = Mathf.Max( SpawnTime.y - 1, 1 );
+			SpawnTime.x = Mathf.Max( SpawnTime.x - reduceMan, 1 );
+			SpawnTime.y = Mathf.Max( SpawnTime.y - reduceMan, 1 );
 		}
 
 		if ( m_Timer >= m_NextSpawnTime )
