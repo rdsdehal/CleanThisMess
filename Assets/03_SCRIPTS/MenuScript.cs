@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-	private void Awake()
+	private void Start()
 	{
 		Cursor.visible = true;
 	}

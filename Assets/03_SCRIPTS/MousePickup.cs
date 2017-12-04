@@ -31,11 +31,11 @@ public class MousePickup : MonoBehaviour
 		handRenderer = GetComponentInChildren<MeshFilter>();
 		mouseHeight = transform.position.y;
 		source = GetComponent<AudioSource>();
+		Cursor.visible = false;
 	}
 
 	private void Update()
 	{
-		Cursor.visible = false;
 		glowRenderer.glowingObjects.Clear();
 
 		Ray screenRay = cam.ScreenPointToRay( Input.mousePosition );

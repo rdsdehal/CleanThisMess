@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589245, b: 0.2978263, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -88,7 +88,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000046, guid: 09b1d4ea9522e5241893ec662b55a62f,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -4902,6 +4903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc434e3474b3d14183c60be9b03279b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTuto: 0
   meterMax: 1e+9
   timerText: {fileID: 460384163}
   meterVisual: {fileID: 1830746072}
@@ -16474,6 +16476,7 @@ GameObject:
   - component: {fileID: 1692191442}
   - component: {fileID: 1692191441}
   - component: {fileID: 1692191440}
+  - component: {fileID: 1692191444}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -16559,13 +16562,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Best Time 00:00 \nTime 00:00"
+  m_Text: 
 --- !u!222 &1692191443
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1692191438}
+--- !u!114 &1692191444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1692191438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7267e91a9f58c4394c9b1bf77ac9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1692191442}
 --- !u!1 &1703874435
 GameObject:
   m_ObjectHideFlags: 0
@@ -17719,8 +17734,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1859946792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 212.5, y: 119.5, z: 0}
-  m_LocalScale: {x: 0.53125, y: 0.53125, z: 0.53125}
+  m_LocalPosition: {x: 483.5, y: 272, z: 0}
+  m_LocalScale: {x: 1.20875, y: 1.20875, z: 1.20875}
   m_Children:
   - {fileID: 618477283}
   - {fileID: 982968404}
