@@ -441,6 +441,7 @@ MonoBehaviour:
   SpawnTime: {x: 8, y: 12}
   m_SpawnIndex: 0
   decreaseEverySec: 30
+  reduceMan: 1
   m_MustReload: 0
 --- !u!114 &114355333306321998
 MonoBehaviour:
