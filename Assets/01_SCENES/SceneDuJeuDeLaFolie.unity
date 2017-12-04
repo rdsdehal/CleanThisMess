@@ -6004,23 +6004,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4890122490407604, guid: f8e96a20925f9a84086008063ede0a72,
     type: 2}
   m_PrefabInternal: {fileID: 884543476}
---- !u!1 &891277752 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1468720826670484, guid: ad80ff540b6c1c343a38b65eb34dfdbe,
-    type: 2}
-  m_PrefabInternal: {fileID: 1279770936}
---- !u!65 &891277756
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 891277752}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5350409, y: 0.14333093, z: 1.7503396}
-  m_Center: {x: 0.029091686, y: 0.031857587, z: -0.051276624}
 --- !u!1001 &893172098
 Prefab:
   m_ObjectHideFlags: 0
@@ -8631,30 +8614,6 @@ Prefab:
     - target: {fileID: 4558188400745206, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355672850040182, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.010498
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355672850040182, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1.9415
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355672850040182, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.018504
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355672850040182, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.6391291
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355672850040182, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.6391291
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355672850040182, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.6391291
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad80ff540b6c1c343a38b65eb34dfdbe, type: 2}
