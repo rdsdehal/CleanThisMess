@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutoManager : MonoBehaviour
 {
 	public GameObject tutoPPRoot;
+	public GameObject tutoEnd;
 	int currentslide = 0;
 	bool isOK;
+	bool endTuto;
 
 	private void Awake()
 	{
 		Time.timeScale = 0;
+	}
+
+	private void Start()
+	{
+		Cursor.visible = true;
 	}
 
 	private void Update()
@@ -32,7 +40,20 @@ public class TutoManager : MonoBehaviour
 			{
 				isOK = true;
 				Time.timeScale = 1;
+				Cursor.visible = false;
+			}
+
+			if ( endTuto )
+			{
+				SceneManager.LoadSceneAsync( 0 );
 			}
 		}
+	}
+
+	public void EndTuto()
+	{
+		Time.timeScale = 0;
+		endTuto = true;
+		tutoEnd.SetActive( true );
 	}
 }
