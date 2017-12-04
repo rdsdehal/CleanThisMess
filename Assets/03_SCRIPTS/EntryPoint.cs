@@ -35,7 +35,6 @@ public class EntryPoint : MonoBehaviour
 	void Update()
 	{
 		m_Timer += Time.deltaTime;
-		m_LerpTimer += Time.deltaTime;
 
 		if ( m_LerpTimer > Time.time )
 		{

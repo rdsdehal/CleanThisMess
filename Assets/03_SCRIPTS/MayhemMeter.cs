@@ -43,6 +43,12 @@ public class MayhemMeter : MonoBehaviour
 
 	public void GameOver()
 	{
+		float bestTime = PlayerPrefs.GetFloat( "CleanThisMess.BestTime", 0 );
+		if ( bestTime < timer ) bestTime = timer;
+
+		PlayerPrefs.SetFloat( "CleanThisMess.BestTime", bestTime );
+		PlayerPrefs.SetFloat( "CleanThisMess.CurrentTime", timer );
+
 		SceneManager.LoadSceneAsync( 2 );
 	}
 }
