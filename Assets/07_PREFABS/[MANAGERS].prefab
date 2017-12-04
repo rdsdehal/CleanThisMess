@@ -438,10 +438,10 @@ MonoBehaviour:
   - {fileID: 1901165882260690, guid: a58288f6e6325764ca57efe55b1d0dab, type: 2}
   - {fileID: 1901165882260690, guid: 02d4c1f5c5257ac4a97e4fb0933cf064, type: 2}
   m_MayhemMeter: {fileID: 114355333306321998}
-  SpawnTime: {x: 10, y: 14}
+  SpawnTime: {x: 14, y: 16}
   m_SpawnIndex: 0
   decreaseEverySec: 25
-  reduceMan: 2
+  reduceMan: 3
   m_MustReload: 0
 --- !u!114 &114355333306321998
 MonoBehaviour:
