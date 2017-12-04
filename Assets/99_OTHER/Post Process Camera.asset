@@ -109,23 +109,23 @@ MonoBehaviour:
         texture: {fileID: 0}
         intensity: 3
   colorGrading:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       tonemapping:
-        tonemapper: 0
+        tonemapper: 2
         neutralBlackIn: 0.02
         neutralWhiteIn: 10
         neutralBlackOut: 0
         neutralWhiteOut: 10
-        neutralWhiteLevel: 5.3
+        neutralWhiteLevel: 2.29
         neutralWhiteClip: 10
       basic:
-        postExposure: 0
+        postExposure: 0.27
         temperature: 0
         tint: 0
         hueShift: 0
-        saturation: 1.27
-        contrast: 1
+        saturation: 1.216
+        contrast: 1.047
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
@@ -154,9 +154,9 @@ MonoBehaviour:
               tangentMode: 0
             - serializedVersion: 2
               time: 1
-              value: 1
-              inSlope: 1
-              outSlope: 1
+              value: 0.8305785
+              inSlope: 0.37098286
+              outSlope: 0.37098286
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
@@ -182,7 +182,7 @@ MonoBehaviour:
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
-            m_RotationOrder: 4
+            m_RotationOrder: 0
           m_Loop: 0
           m_ZeroValue: 0
           m_Range: 1
@@ -272,11 +272,11 @@ MonoBehaviour:
           m_Range: 1
         e_CurrentEditingCurve: 0
         e_CurveY: 1
-        e_CurveR: 0
+        e_CurveR: 1
         e_CurveG: 0
         e_CurveB: 0
   userLut:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       lut: {fileID: 2800000, guid: 12708b631b35d9941b3a0d017344cc7b, type: 3}
       contribution: 0.53
