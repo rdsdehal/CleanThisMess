@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1041494850910172}
   m_LocalRotation: {x: 0.7071058, y: -0, z: -0, w: 0.7071078}
-  m_LocalPosition: {x: 0, y: 0.73, z: -0.156}
+  m_LocalPosition: {x: 0, y: -0.357, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4668542314383978}
@@ -249,10 +249,10 @@ Light:
   m_Enabled: 0
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5.18
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Intensity: 2.24
   m_Range: 10
-  m_SpotAngle: 30
+  m_SpotAngle: 15
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -268,7 +268,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -300,6 +300,8 @@ MonoBehaviour:
   emptyHand: {fileID: 4300000, guid: 01ff71a39a6ad5846b264440a33b1563, type: 3}
   grabHand: {fileID: 4300000, guid: fed66f16899231f419437049d6865870, type: 3}
   pickupSound: {fileID: 8300000, guid: 83e1066ac58af8e46931918238bd1b5d, type: 3}
+  spotTarget: {fileID: 108766244962246740}
+  spotTargetHeight: 1
 --- !u!135 &135005960478984608
 SphereCollider:
   m_ObjectHideFlags: 1
