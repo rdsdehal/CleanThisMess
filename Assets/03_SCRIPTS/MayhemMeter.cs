@@ -10,6 +10,7 @@ public class MayhemMeter : MonoBehaviour
 
 	public Transform meterVisual;
 	private float initialMaxScale;
+	bool loadingscene;
 
 	float timer;
 
@@ -44,6 +45,8 @@ public class MayhemMeter : MonoBehaviour
 
 	public void GameOver()
 	{
+		if (loadingscene) return;
+		loadingscene = true;
 		if ( isTuto )
 		{
 			SceneManager.LoadSceneAsync( 0 );

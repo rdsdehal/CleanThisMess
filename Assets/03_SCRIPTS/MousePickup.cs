@@ -45,6 +45,15 @@ public class MousePickup : MonoBehaviour
 			m_Rigidbody.MovePosition( screenHit.point );
 		}
 
+		if (Input.GetMouseButton (0)) 
+		{
+			handRenderer.sharedMesh = grabHand;
+		}
+		else 
+		{
+			handRenderer.sharedMesh = emptyHand;
+		}
+
 		if ( pickedObject == null )
 		{
 			DoEmptyHand();
@@ -68,7 +77,7 @@ public class MousePickup : MonoBehaviour
 			{
 				pickedObject = moveObject;
 				pickedObject.PickupObject( m_Rigidbody );
-				handRenderer.sharedMesh = grabHand;
+
 				Vector3 pos = transform.position;
 				pos.y = mouseHeight + pickedObject.mouseOffset;
 				transform.position = pos;
@@ -122,7 +131,7 @@ public class MousePickup : MonoBehaviour
 			}
 
 			pickedObject = null;
-			handRenderer.sharedMesh = emptyHand;
+
 			Vector3 pos = transform.position;
 			pos.y = mouseHeight;
 			transform.position = pos;

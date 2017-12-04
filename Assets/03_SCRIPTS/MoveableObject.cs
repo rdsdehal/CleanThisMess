@@ -78,7 +78,7 @@ public class MoveableObject : MonoBehaviour
 		m_RigidBody.useGravity = true;
 		transform.SetParent( cachedPickupParent, true );
 
-		m_RigidBody.AddForce( mouseVelocity * mouseVelocityFactor, ForceMode.Impulse );
+		m_RigidBody.AddForce( mouseVelocity * mouseVelocityFactor * 5, ForceMode.Impulse );
 	}
 
 	public virtual void ReleaseObject( Transform snapPos )

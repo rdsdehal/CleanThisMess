@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f54c97788ee122429cebf85011e70a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMagnitudeForLaunch: 15
+  maxMagnitudeForLaunch: 200
   floorLayer:
     serializedVersion: 2
     m_Bits: 256
