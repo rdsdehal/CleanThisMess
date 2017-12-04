@@ -3,7 +3,6 @@
 public class Benne : MonoBehaviour
 {
 	public ParticleSystem fx;
-	public ParticleSystem fxSoul;
 	AmazonDelivery delivery;
 
 	public AudioSource audiosource;
@@ -29,13 +28,6 @@ public class Benne : MonoBehaviour
 				if ( plate != null ) plate.Clean();
 				delivery.ScheduleDelivery( obj.gameObject );
 				obj.gameObject.SetActive( false );
-
-				var child = other.GetComponentInParent<ChildBehaviour>();
-				if ( child )
-				{
-					fxSoul.transform.position = obj.transform.position;
-					fxSoul.Play();
-				}
 			}
 			else
 			{

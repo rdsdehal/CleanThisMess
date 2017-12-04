@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EntryPoint : MonoBehaviour
 {
-
 	public GameObject m_SpawnPoint;
 	public GameObject m_WaitingPoint;
 	public GameObject LeavePoint;
