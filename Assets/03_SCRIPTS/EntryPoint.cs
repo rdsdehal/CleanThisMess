@@ -36,12 +36,13 @@ public class EntryPoint : MonoBehaviour
 	{
 		m_Timer += Time.deltaTime;
 
-		if ( m_LerpTimer > Time.time )
+		if ( m_LerpTimer < Time.time )
 		{
 			m_LerpTimer = Time.time + decreaseEverySec;
 
 			SpawnTime.x = Mathf.Max( SpawnTime.x - reduceMan, 1 );
 			SpawnTime.y = Mathf.Max( SpawnTime.y - reduceMan, 1 );
+			Debug.Log( "DECREASE" );
 		}
 
 		if ( m_Timer >= m_NextSpawnTime )
