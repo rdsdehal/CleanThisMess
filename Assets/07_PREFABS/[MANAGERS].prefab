@@ -104,6 +104,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1765796326172324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4498725115157712}
+  - component: {fileID: 23656909502699518}
+  - component: {fileID: 102739975304931364}
+  m_Layer: 0
+  m_Name: Jauge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1863740447337816
 GameObject:
   m_ObjectHideFlags: 1
@@ -172,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1393787493152550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.19, y: 1.291, z: 2.97}
+  m_LocalPosition: {x: -8.19, y: 1.14, z: 2.906}
   m_LocalScale: {x: 4, y: 4.031973, z: 3}
   m_Children: []
   m_Father: {fileID: 4552137453550634}
@@ -204,6 +221,19 @@ Transform:
   m_Father: {fileID: 4523973480373094}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4498725115157712
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1765796326172324}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029504295}
+  m_LocalPosition: {x: -2.437, y: 1.211, z: -4.87}
+  m_LocalScale: {x: 0.69691, y: 0.69691, z: 0.69691}
+  m_Children: []
+  m_Father: {fileID: 4659331264133470}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -0, y: 180.00034, z: 0}
 --- !u!4 &4523973480373094
 Transform:
   m_ObjectHideFlags: 1
@@ -233,7 +263,7 @@ Transform:
   - {fileID: 4241645446113908}
   - {fileID: 4192432372550636}
   m_Father: {fileID: 4659331264133470}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
 --- !u!4 &4567213187272446
 Transform:
@@ -260,6 +290,7 @@ Transform:
   m_Children:
   - {fileID: 4523973480373094}
   - {fileID: 4913185051169592}
+  - {fileID: 4498725115157712}
   - {fileID: 4552137453550634}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -311,6 +342,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23656909502699518
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1765796326172324}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: a983586015b90414088c96bfbee89262, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!102 &102557766700201244
 TextMesh:
   serializedVersion: 3
@@ -332,6 +397,27 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!102 &102739975304931364
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1765796326172324}
+  m_Text: Cook's nerves
+  m_OffsetZ: 0
+  m_CharacterSize: 0.03
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 156
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: e7b6e43b0577b7f4a9a2c6a1f4c064f3, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
 --- !u!114 &114174213631972780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,10 +436,12 @@ MonoBehaviour:
   m_ChildPrefab:
   - {fileID: 1901165882260690, guid: 80ae56f6d96050a4485744054e6b7a35, type: 2}
   - {fileID: 1901165882260690, guid: a58288f6e6325764ca57efe55b1d0dab, type: 2}
+  - {fileID: 1901165882260690, guid: 02d4c1f5c5257ac4a97e4fb0933cf064, type: 2}
   m_MayhemMeter: {fileID: 114355333306321998}
   SpawnTime: {x: 8, y: 12}
   m_SpawnIndex: 0
-  timeBeforeHardness: 200
+  decreaseEverySec: 30
+  reduceMan: 1
   m_MustReload: 0
 --- !u!114 &114355333306321998
 MonoBehaviour:
@@ -466,11 +554,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.42479452, g: 0.5955882, b: 0.524915, a: 1}
+  m_Color: {r: 0.8014706, g: 0.8014706, b: 0.8014706, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 1.97, y: 0.13}
+  m_Size: {x: 1.56, y: 0.07}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
