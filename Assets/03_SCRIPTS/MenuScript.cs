@@ -7,6 +7,7 @@ public class MenuScript : MonoBehaviour
 {
 	private void Start()
 	{
+		Time.timeScale = 1;
 		Cursor.visible = true;
 	}
 	public void LoadScene( int scene )
