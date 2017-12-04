@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4355672850040182}
   - component: {fileID: 33265476780190828}
   - component: {fileID: 23873255103833330}
+  - component: {fileID: 65505924811190832}
   m_Layer: 0
   m_Name: OmozonPlaque_Model
   m_TagString: Untagged
@@ -115,8 +116,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1468720826670484}
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.953, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.010498, y: -1.9415, z: -0.018504}
+  m_LocalScale: {x: 0.6391291, y: 0.6391291, z: 0.6391291}
   m_Children: []
   m_Father: {fileID: 4558188400745206}
   m_RootOrder: 1
@@ -142,7 +143,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1993425170489120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.266, y: 1.953, z: -3.034}
+  m_LocalPosition: {x: 0.807, y: 1.953, z: -3.117}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4458251145921960}
@@ -204,6 +205,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1468720826670484}
   m_Mesh: {fileID: 4300002, guid: 29a601c89e662224798fe71537d2945f, type: 3}
+--- !u!65 &65505924811190832
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1468720826670484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5350409, y: 0.14333093, z: 1.7503396}
+  m_Center: {x: 0.029091686, y: 0.031857587, z: -0.051276624}
 --- !u!82 &82224929290779668
 AudioSource:
   m_ObjectHideFlags: 1
@@ -215,7 +228,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.274
   m_Pitch: 1
   Loop: 0
   Mute: 0

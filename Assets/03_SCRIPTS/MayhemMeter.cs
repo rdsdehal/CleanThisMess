@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MayhemMeter : MonoBehaviour
 {
+	public bool isTuto = false;
 	public float meterMax;
 	public float currentMeter { get; private set; }
 	public TextMesh timerText;
@@ -43,6 +44,19 @@ public class MayhemMeter : MonoBehaviour
 
 	public void GameOver()
 	{
-		SceneManager.LoadSceneAsync( 2 );
+		if ( isTuto )
+		{
+			SceneManager.LoadSceneAsync( 0 );
+		}
+		else
+		{
+			float bestTime = PlayerPrefs.GetFloat( "CleanThisMess.BestTime", 0 );
+			if ( bestTime < timer ) bestTime = timer;
+
+			PlayerPrefs.SetFloat( "CleanThisMess.BestTime", bestTime );
+			PlayerPrefs.SetFloat( "CleanThisMess.CurrentTime", timer );
+
+			SceneManager.LoadSceneAsync( 2 );
+		}
 	}
 }
