@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc434e3474b3d14183c60be9b03279b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTuto: 0
   meterMax: 200
   timerText: {fileID: 102557766700201244}
   meterVisual: {fileID: 4241645446113908}
