@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+	private void Awake()
+	{
+		Cursor.visible = true;
+	}
 	public void LoadScene( int scene )
 	{
 		SceneManager.LoadSceneAsync( scene );
