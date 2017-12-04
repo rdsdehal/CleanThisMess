@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EntryPoint : MonoBehaviour
 {
-
 	public GameObject m_SpawnPoint;
 	public GameObject m_WaitingPoint;
 	public GameObject LeavePoint;
@@ -36,11 +35,11 @@ public class EntryPoint : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		//m_Timer += Time.deltaTime;
+		m_Timer += Time.deltaTime;
 
 		if ( reductionTimer < Time.time )
 		{
-			reductionTimer = Time.time + spawnCurve.Evaluate( Time.time / timeToMaxCurve );
+			reductionTimer = Time.time + spawnCurve.Evaluate( m_Timer / timeToMaxCurve );
 			GameObject obj = Instantiate( m_ChildPrefab[Random.Range( 0, m_ChildPrefab.Length )], m_SpawnPoint.transform.position, Quaternion.identity );
 			m_ChildList.Add( obj.gameObject.GetComponent<ChildBehaviour>() );
 			m_ChildList[m_SpawnIndex].m_CurrentWaitPoint = m_SpawnIndex;
