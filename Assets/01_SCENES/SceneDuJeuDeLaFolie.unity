@@ -7682,8 +7682,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4343853, y: 6.11, z: 2.8334217}
-  m_Center: {x: 0.14088917, y: 0, z: -3.6454954}
+  m_Size: {x: 1.1111727, y: 6.11, z: 2.8334217}
+  m_Center: {x: -0.19750452, y: 0, z: -3.6454954}
 --- !u!1 &1021486305
 GameObject:
   m_ObjectHideFlags: 0
@@ -11435,49 +11435,6 @@ Prefab:
     - target: {fileID: 4668542314383978, guid: 72e298a986b5bec4c8b7d4ec2baa790f, type: 2}
       propertyPath: m_RootOrder
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 108766244962246740, guid: 72e298a986b5bec4c8b7d4ec2baa790f,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101125597930524, guid: 72e298a986b5bec4c8b7d4ec2baa790f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.357
-      objectReference: {fileID: 0}
-    - target: {fileID: 108766244962246740, guid: 72e298a986b5bec4c8b7d4ec2baa790f,
-        type: 2}
-      propertyPath: m_CullingMask.m_Bits
-      value: 768
-      objectReference: {fileID: 0}
-    - target: {fileID: 108766244962246740, guid: 72e298a986b5bec4c8b7d4ec2baa790f,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 108766244962246740, guid: 72e298a986b5bec4c8b7d4ec2baa790f,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 108766244962246740, guid: 72e298a986b5bec4c8b7d4ec2baa790f,
-        type: 2}
-      propertyPath: m_SpotAngle
-      value: 33.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 108766244962246740, guid: 72e298a986b5bec4c8b7d4ec2baa790f,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 108766244962246740, guid: 72e298a986b5bec4c8b7d4ec2baa790f,
-        type: 2}
-      propertyPath: m_Intensity
-      value: 2.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101125597930524, guid: 72e298a986b5bec4c8b7d4ec2baa790f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72e298a986b5bec4c8b7d4ec2baa790f, type: 2}
